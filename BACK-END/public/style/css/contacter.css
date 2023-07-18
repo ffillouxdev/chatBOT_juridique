@@ -1,0 +1,468 @@
+@media screen and (min-width: 500px) and (min-height: 790px) {
+    *{
+        padding: 0;
+        outline: none;
+        text-decoration: none;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    body{
+        background-color: #f5f5f5;
+    }
+
+    /*Partie NAVBAR*/
+    nav{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100px;
+        transition: width 0.2s linear;
+        box-shadow: 0 0 10px #ccc;
+    }
+
+    .left-nav li a {
+        color: #000;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    .left-nav li a span {
+        vertical-align: middle;
+    }
+
+    .left-nav a:hover {
+        color: darkblue;
+    }
+
+    nav a{
+        position: relative;
+        font-size: 14px;
+        display: table;
+        width: 300px;
+        padding: 10px;
+    }
+
+    .transi {
+        position: relative;
+        width: 70px;
+        height: 40px;
+        top: 14px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    nav:hover{
+        width: 200px;
+    }   
+
+    li.actual a{
+        color: red;
+    }
+
+
+    /*Partie MAIN*/
+    main{
+        width: 85%;
+        margin-left: 14%;
+        margin-top: 8%;
+    }
+
+    .formulaire {
+        padding: 20px 30px;
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-left: 2%;
+        width: 80%;
+    }
+
+    .formulaire h1{
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .formulaire h1:hover{
+        color: darkblue;
+    }
+
+    .formulaire form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .formulaire form input{
+        height: 35px;
+    }
+
+    .formulaire form .yourself{
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .formulaire form .yourself input{
+        width: 48%;
+    }
+
+    .formulaire form #Email{
+        margin-top: 10px;
+        width: 50%;
+    }
+
+    .formulaire form #Message{
+        margin-top: 10px;
+        width: 50%;
+        resize: none;
+        font-size: 13px;
+    }
+
+    .formulaire form #submit{
+        margin-top: 5px;
+        width: 50%;
+    }
+
+    .formulaire form #submit:hover{
+        background-color: darkblue;
+        color: #fff;
+    }
+    
+    /*Partie Footer*/
+    footer{
+        height: 9px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        position: absolute; 
+        bottom: 0; 
+        right: 0;
+        margin: 0 auto;
+        padding-top: 10px;
+        font-size: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .footer-content{
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .links h2{
+        margin-left: 30px;
+    }
+
+    .links li:hover{
+        text-decoration: underline;
+        color: darkblue;
+        border-radius: 5px;
+    }
+
+    .links li{
+        list-style-type: none;
+        margin-left: 10px;
+    }
+
+    .links a{
+        text-decoration: none;
+        color: #000;
+    }
+
+    .links a:visited{
+        color: #000;
+    }
+
+    .links a:hover{
+        text-decoration: underline;
+        color: darkblue;
+        border-radius: 5px;
+    }
+
+    .footer p {
+        text-align: center;
+        color: darkblue;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 500px) and (max-height: 820px){
+    *{
+        padding: 0;
+        outline: none;
+        text-decoration: none;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    body{
+        background-color: #f5f5f5;
+        background-size: cover;
+    }
+
+    p{
+        color: darkblue;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: center;
+    }
+
+   
+    nav{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100px;
+        overflow: hidden;
+        transition: width 0.2s linear;
+        box-shadow: 0 0 10px #ccc;
+    }
+
+    .left-nav li a {
+        color: #000;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      
+      .left-nav li a span {
+        vertical-align: middle;
+      }
+
+    .left-nav a:hover {
+        color: darkblue;
+    }
+
+    nav a{
+        position: relative;
+        font-size: 14px;
+        display: table;
+        width: 300px;
+        padding: 10px;
+    }
+
+    .transi {
+        position: relative;
+        width: 70px;
+        height: 40px;
+        top: 14px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    nav:hover{
+        width: 200px;
+    }   
+
+    li.actual a{
+        color: red;   
+    }
+
+   
+    /*Partie MAIN*/
+    main{
+        width: 85%;
+        margin-left: 14%;
+        padding: 0px 10px;
+        overflow: hidden;
+        margin-bottom: 4.5%;
+    }
+
+     main h1{
+        text-align: center;
+        font-size: 30px;
+    }
+
+    main h1:hover{
+        color: darkblue;
+        text-shadow: 0 0 10px #2f2f2f;
+    }
+
+    .formulaire {
+        padding: 20px 30px;
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-left: 2%;
+        width: 80%;
+    }
+
+    .formulaire h1{
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .formulaire h1:hover{
+        color: darkblue;
+    }
+
+    .formulaire form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .formulaire form input{
+        height: 35px;
+    }
+
+    .formulaire form .yourself{
+        width: 40%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .formulaire form .yourself input{
+        width: 48%;
+    }
+
+    .formulaire form #Email{
+        margin-top: 10px;
+        width: 40%;
+    }
+
+    .formulaire form #Message{
+        margin-top: 10px;
+        width: 40%;
+        resize: none;
+        font-size: 13px;
+    }
+
+    .formulaire form #submit{
+        margin-top: 5px;
+        width: 40%;
+    }
+
+    .formulaire form #submit:hover{
+        background-color: darkblue;
+        color: #fff;
+    }
+
+    /*FOOTER*/
+    footer{
+        height: 9px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        position: absolute; 
+        bottom: 0; 
+        right: 0;
+        margin: 0 auto;
+        padding-top: 10px;
+        font-size: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .footer-content{
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .links h2{
+        margin-left: 30px;
+    }
+
+    .links li:hover{
+        text-decoration: underline;
+        color: darkblue;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .links a:visited{
+        color: #000;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 490px){
+    *{
+        padding: 0;
+        outline: none;
+        text-decoration: none;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+
+    /*Partie MAIN*/
+
+    main{
+        margin-left: 100px;
+        padding: 0px 10px;
+    }
+
+    .members{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 400px;
+    }
+
+
+    .photo img{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 2px solid #000;
+        margin: 10px;
+    }
+
+    .photo img:hover{
+        border: 3px solid darkblue;
+    }
+
+    .links a:visited{
+        color: #000;
+    }
+
+    /*Partie Footer*/
+}      
