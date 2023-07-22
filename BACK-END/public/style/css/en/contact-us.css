@@ -17,10 +17,8 @@
         bottom: 0;
         left: 0;
         width: 100px;
-        overflow: hidden;
         transition: width 0.2s linear;
         box-shadow: 0 0 10px #ccc;
-        z-index: 2;
     }
 
     .left-nav li a {
@@ -62,72 +60,76 @@
         color: red;
     }
 
+
     /*Partie MAIN*/
     main{
         width: 85%;
-        margin-left: 13.5%;
-        padding: 0px 10px;
-        overflow: hidden;
-    }
-    
-    .members{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin-bottom: 10%;
-        margin-top: 10%;
+        margin-left: 14%;
+        margin-top: 8%;
     }
 
-    .photo img{
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        border: 2px solid #000;
-        margin: 10px;
+    .form-content {
+        padding: 20px 30px;
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-left: 2%;
+        width: 80%;
     }
 
-    .photo img:hover{
-        border: 3px solid darkblue;
+    .form-content h1{
+        text-align: center;
+        font-size: 30px;
     }
 
-    .photo p{
-        text-align: middle;
-    }
-    .photo h2:hover{
+    .form-content h1:hover{
         color: darkblue;
     }
 
-    .photo.membre1{
-        text-align: center;
+    .form-content form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
-    .photo.membre2{
-        margin-left: 10%;
-        text-align: center;
+    .form-content form input{
+        height: 35px;
     }
 
-   .photo.membre1 ul li{
-        list-style-type: none;
-        margin-left: 10px;
+    .form-content form .yourself{
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
 
-    .reseaux img {
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        border: 2px solid #000;
+    .form-content form .yourself input{
+        width: 48%;
     }
 
-    .photo.membre1 img:hover{
-        border: 3px solid darkblue;
+    .form-content form #Email{
+        margin-top: 10px;
+        width: 50%;
     }
 
-    .photo.membre2 ul li{
-        list-style-type: none;
-        margin-left: 10px;
+    .form-content form #Message{
+        margin-top: 10px;
+        width: 50%;
+        resize: none;
+        font-size: 13px;
     }
 
+    .form-content form #submit{
+        margin-top: 5px;
+        width: 50%;
+    }
 
+    .form-content form #submit:hover{
+        background-color: darkblue;
+        color: #fff;
+    }
+    
     /*Partie Footer*/
     footer{
         height: 9px;
@@ -151,6 +153,7 @@
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+        overflow: hidden;
     }
 
     .links h2{
@@ -173,14 +176,14 @@
         color: #000;
     }
 
+    .links a:visited{
+        color: #000;
+    }
+
     .links a:hover{
         text-decoration: underline;
         color: darkblue;
         border-radius: 5px;
-    }
-
-    .links a:visited{
-        color: #000;
     }
 
     .footer p {
@@ -188,6 +191,10 @@
         color: darkblue;
     }
 }
+
+
+
+
 
 
 
@@ -211,9 +218,17 @@
 
     body{
         background-color: #f5f5f5;
+        background-size: cover;
     }
 
-    /*Partie NAVBAR*/
+    p{
+        color: darkblue;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: center;
+    }
+
+   
     nav{
         position: absolute;
         top: 0;
@@ -223,18 +238,17 @@
         overflow: hidden;
         transition: width 0.2s linear;
         box-shadow: 0 0 10px #ccc;
-        z-index: 2;
     }
 
     .left-nav li a {
         color: #000;
         display: inline-block;
         vertical-align: middle;
-    }
-    
-    .left-nav li a span {
+      }
+      
+      .left-nav li a span {
         vertical-align: middle;
-    }
+      }
 
     .left-nav a:hover {
         color: darkblue;
@@ -262,85 +276,92 @@
     }   
 
     li.actual a{
-        color: red;
+        color: red;   
     }
 
+   
     /*Partie MAIN*/
     main{
         width: 85%;
-        margin-left: 13.5%;
+        margin-left: 14%;
         padding: 0px 10px;
         overflow: hidden;
-    }
-    
-    .members{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin-bottom: 10%;
-        margin-top: 5%;
+        margin-bottom: 4.5%;
     }
 
-    .photo img{
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        border: 2px solid #000;
-        margin: 10px;
+     main h1{
+        text-align: center;
+        font-size: 30px;
     }
 
-    .photo img:hover{
-        border: 3px solid darkblue;
+    main h1:hover{
+        color: darkblue;
+        text-shadow: 0 0 10px #2f2f2f;
     }
 
-    .photo p{
-        text-align: middle;
+    .form-content {
+        padding: 20px 30px;
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-left: 2%;
+        width: 80%;
     }
-    .photo h2:hover{
+
+    .form-content h1{
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .form-content h1:hover{
         color: darkblue;
     }
 
-    .photo.membre1{
-        text-align: center;
-    }
-
-    .photo.membre2{
-        margin-left: 10%;
-        text-align: center;
-    }
-
-   .photo.membre1 ul li{
-        list-style-type: none;
-        margin-left: 10px;
-    }
-
-    .reseaux{
+    .form-content form {
         display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        width: 100%;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
     }
 
-    
-    .reseaux img {
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        border: 2px solid #000;
+    .form-content form input{
+        height: 35px;
     }
 
-    .photo.membre1 img:hover{
-        border: 3px solid darkblue;
+    .form-content form .yourself{
+        width: 40%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
 
-    .photo.membre2 ul li{
-        list-style-type: none;
-        margin-left: 10px;
+    .form-content form .yourself input{
+        width: 48%;
     }
 
+    .form-content form #Email{
+        margin-top: 10px;
+        width: 40%;
+    }
 
-    /*Partie Footer*/
+    .form-content form #Message{
+        margin-top: 10px;
+        width: 40%;
+        resize: none;
+        font-size: 13px;
+    }
+
+    .form-content form #submit{
+        margin-top: 5px;
+        width: 40%;
+    }
+
+    .form-content form #submit:hover{
+        background-color: darkblue;
+        color: #fff;
+    }
+
+    /*FOOTER*/
     footer{
         height: 9px;
         width: 100%;
@@ -373,34 +394,22 @@
         text-decoration: underline;
         color: darkblue;
         border-radius: 5px;
-    }
-
-    .links li{
-        list-style-type: none;
-        margin-left: 10px;
-    }
-
-    .links a{
-        text-decoration: none;
-        color: #000;
-    }
-
-    .links a:hover{
-        text-decoration: underline;
-        color: darkblue;
-        border-radius: 5px;
+        cursor: pointer;
     }
 
     .links a:visited{
         color: #000;
     }
-
-    .footer p {
-        text-align: center;
-        color: darkblue;
-    }
-
 }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -421,7 +430,6 @@
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
-    /*Partie NAVBAR*/
 
     /*Partie MAIN*/
 
@@ -452,66 +460,9 @@
         border: 3px solid darkblue;
     }
 
-    /*Partie Footer*/
-    footer{
-        height: 50px;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        padding-top: 10px;
-        font-size: 15px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
-
-    .footer-content{
-        margin: 0 auto;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .links h2{
-        margin-left: 30px;
-    }
-
-    .links li:hover{
-        text-decoration: underline;
-        color: darkblue;
-        border-radius: 5px;
-    }
-
-    .links li{
-        list-style-type: none;
-        margin-left: 10px;
-    }
-
-    .links a{
-        text-decoration: none;
-        color: #000;
-    }
-
-    .links a:hover{
-        text-decoration: underline;
-        color: darkblue;
-        border-radius: 5px;
-    }
-
     .links a:visited{
         color: #000;
     }
 
-    .footer p {
-        text-align: center;
-        color: darkblue;
-    }
+    /*Partie Footer*/
 }      
-
-
-@media(max-width: 360px){
-
- }

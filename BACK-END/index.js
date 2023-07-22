@@ -12,7 +12,7 @@
     // Indique quel port utiliser
     const PORT = 8080;
 
-    const lang = process.env.LANG.slice(0, 2);
+    const lang = process.env.LANG.slice(0, 2);//"en" ; 
 
     // Permet d'utiliser les fichiers statiques (css, js, images, etc...)
     app_juridique.use(express.static(__dirname + "/public"));

@@ -68,28 +68,100 @@
         color: red;   
     }
 
-   
-    /*Partie MAIN*/
-    main{
-        /*Mette au milieu*/
+    .bottom-nav{
         position: absolute;
-        top: 45%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        transition: height 0.2s linear;
+        box-shadow: 0 0 10px #ccc;
+        color: #000;
     }
+    .bottom-nav li {
+        text-align: center;
+    }
+    .bottom-nav select{
+        width: 90px;
+    }
+   
+    /*Partie Popup puis MAIN*/
+
+    .langage_Popup_container {
+       background-color: #72727285;
+       position: fixed;
+       top: 0;
+       left: 0;
+       height: 100vh;
+       width: 100vw;
+       opacity: 1;
+       transition: opacity 0.2s ease;
+    }
+
+    /*Permet  de cacher le popup avec l'opacité à 0*/
+    .langage_Popup_container.close{
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    /*Permet  de montrer le popup avec l'opacité à 1*/
+    .langage_Popup_container.show{
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .popup {
+        text-align: center;
+        background-color: #fff;
+        box-shadow: 0 0 10px #ccc;
+        width: 40%;
+        margin: 0 auto;
+        margin-top: 20%; 
+        border-radius: 10px;
+    }
+
+    .popup p {
+        font-size: 17px;
+    }
+
+    .lang_choix{
+        margin-bottom: 3%;
+    }
+
+    .lang_choix select {
+        width: 50%;
+    }
+
+    .errorLang {
+        color: red;
+        font-size: 0.8rem;
+      } 
 
      main h1{
         text-align: center;
         font-size: 30px;
     }
     
+    #body-content {
+        display: none;
+    }
+
     main h1:hover{
         color: darkblue;
         text-shadow: 0 0 10px #2f2f2f;
     }
 
+    /*Partie chatbot*/
+    article{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        overflow: hidden;   
+    }
+
     .chatbot-section{
         margin: 0 auto;
+        margin-top: 1%;
         padding: 30px 20px 70px;
         width: 50vw;
         height: 70vh;
@@ -292,6 +364,10 @@
         background-size: cover;
     }
 
+    #body-content {
+        display: none;
+    }
+
     p{
         color: darkblue;
         font-size: 20px;
@@ -299,15 +375,6 @@
         text-align: center;
     }
 
-    article{
-        margin-top: 2%;
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        background-color: #f5f5f5;
-        overflow: hidden;   
-    }
-    
     nav{
         position: absolute;
         top: 0;
@@ -359,8 +426,139 @@
         color: red;   
     }
 
-   
-    /*Partie MAIN*/
+    .bottom-nav{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        transition: height 0.2s linear;
+        box-shadow: 0 0 10px #ccc;
+        color: #000;
+    }
+    .bottom-nav li {
+        text-align: center;
+    }
+    .bottom-nav select{
+        width: 90px;
+    }
+    
+    /*Partie cookies */
+    .cookies_container{
+        background-color: #72727285;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        opacity: 1;
+        z-index: 1000;
+    }
+
+    .cookies_container.close{
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .cookies{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 170px;
+        background-color: #f5f5f5;
+        box-shadow: 0 0 10px #ccc;
+    }
+
+    .cookies h1 {
+        margin-top: 2%;
+    }
+
+    .cookies p {
+        font-size: 15px;
+        color: darkblue;
+    }
+    
+    .decision-button {
+        width: 30%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .decision-button button {
+        width: 150px;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        background-color: darkblue;
+        color: #fff;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .decision-button button:hover {
+        background-color: #000;
+        height: 31px;
+    }
+
+    .decision-button button:active {
+        background-color: #000;
+        height: 31px;
+    }
+    /*Partie Popup puis MAIN*/
+
+    .langage_Popup_container {
+       background-color: #72727285;
+       position: fixed;
+       top: 0;
+       left: 0;
+       height: 100vh;
+       width: 100vw;
+       opacity: 1;
+       transition: opacity 0.2s ease;
+    }
+
+    /*Permet  de cacher le popup avec l'opacité à 0*/
+    .langage_Popup_container.close{
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    /*Permet  de montrer le popup avec l'opacité à 1*/
+    .langage_Popup_container.show{
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .popup {
+        text-align: center;
+        background-color: #fff;
+        box-shadow: 0 0 10px #ccc;
+        width: 40%;
+        margin: 0 auto;
+        margin-top: 20%; 
+    }
+
+    .popup p {
+        font-size: 17px;
+    }
+
+    .lang_choix{
+        margin-bottom: 3%;
+    }
+
+    .lang_choix select {
+        width: 50%;
+    }
+
+    .errorLang {
+        color: red;
+        font-size: 0.8rem;
+      } 
+
     main{
         margin: 0 auto;
         margin-top: 2%;
@@ -369,7 +567,8 @@
         width: 50%;
         overflow: hidden;
     }
-    
+
+   
     main h1{
         margin: 0 auto;
         margin-top: 2%;
@@ -384,8 +583,19 @@
         text-shadow: 0 0 10px #2f2f2f;
     }
 
+    /*Partie chatbot*/
+    article{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        background-color: #f5f5f5;
+        overflow: hidden;   
+    }
+
+
     .chatbot-section{
         margin: 0 auto;
+        margin-top: 1%;
         padding: 30px 20px 30px;
         width: 40vw;
         height: 70vh;
@@ -394,6 +604,18 @@
         border-radius: 10px;
         box-shadow: 0 0 10px #ccc;
     } 
+
+    .chatbot-section{
+        margin: 0 auto;
+        margin-top: 1%;
+        padding: 30px 20px 30px;
+        width: 40vw;
+        height: 70vh;
+        max-height: 100vh;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #ccc;
+    }  
 
     .chatbot-section .chatbot-reponse{
         height: 230px;

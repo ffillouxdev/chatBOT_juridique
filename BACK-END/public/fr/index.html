@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/css/index.css">
+    <link rel="stylesheet" href="style/css/fr/index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <script src="style/js/home.js" defer></script>
+    <script src="style/js/fr/home.js" defer></script>
     <title>chatBOT</title>
 </head>
-<body>
+<body id="body-content">
     <nav>
         <div class="header">
             <ul class="left-nav">
-                <li class="actual"><a href="#">
+                <li class="actual"><a href="">
                     <i class="transi home"></i>
-                <span class="material-symbols-outlined">home</span>
-                Accueil</a></li>
+                    <span class="material-symbols-outlined">home</span>
+                    Accueil</a></li>
                 <li><a href="/About">
                     <i class="transi about"></i>
                     <span class="material-symbols-outlined">account_circle</span>
@@ -24,13 +24,59 @@
                     <i class="transi contact"></i>
                     <span class="material-symbols-outlined">mail</span>
                     Contact</a></li>
-                <li><a href="#">
+                <li><a href="">
                     <span class="material-symbols-outlined">help</span>
                    FAQ</a></li>
             </ul>
         </div>
+        <div class="bottom-nav">
+            <ul>
+                <li>pays :
+                    <br> 
+                    <select name="changer_pays" id="changer_pays">
+                        <optgroup label="pays Francophone" id="langs">
+                            <option value="de France">France</option>
+                            <option value="de Belgique">Belgique</option>
+                            <option value="de la partie du Canada Français">Canada (parlant français)</option>
+                            <option value="du Luxembourg">Luxembourg</option>
+                            <option value="de Monaco">Monaco</option>
+                            <option value="de Suisse">Suisse</option>
+                        </optgroup>
+                    </select>
+                </li>
+            </ul>
+        </div>
     </nav>
     <main>
+        <div class="cookies_container">
+            <div class="cookies">
+                <h1>Avant de commencer</h1>
+                <p>Nous utilisons des cookies et d'autres données pour le fonctionnement du site et pour améliorer votre expérience. En cliquant sur "Accepter", vous acceptez l'utilisation des cookies et autres données sinon cliquez sur "Refuser" mais le site n'utilisera que les cookies nécessaires.</p>
+                <div class="decision-button">
+                    <button id="refuser_cookies">Refuser</button>
+                    <button id="accepter_cookies">Accepter</button>
+                </div>
+            </div>
+        </div>
+        <div class="langage_Popup_container" >
+            <div class="popup">
+                <p>Hey, de quel pays francophone viens-tu ?</p>
+                <div class="lang_choix">
+                    <select name="french_loc" id="french_loc">
+                        <optgroup label="pays Francophone" id="langs">
+                            <option value="null">null</option>
+                            <option value="de France">France</option>
+                            <option value="de Belgique">Belgique</option>
+                            <option value="de la partie du Canada Français">Canada (parlant français)</option>
+                            <option value="du Luxembourg">Luxembourg</option>
+                            <option value="de Monaco">Monaco</option>
+                            <option value="de Suisse">Suisse</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <input type="submit" id="submitP" value="Close">
+            </div>
+        </div>
         <h1>Bienvenue sur le chatBOT Juridique !!!</h1>
         <article>
             <div class="chatbot-section">

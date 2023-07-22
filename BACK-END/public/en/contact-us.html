@@ -3,35 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Contact-us </title>
-    <link rel="stylesheet" href="/css/contact-us.css">
+    <link rel="stylesheet" href="style/css/en/contact-us.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <script src="../script/contact-us.js" defer></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>    
+    <title>Contact us</title>
 </head>
 <body>
     <nav>
         <div class="header">
             <ul class="left-nav">
-                <li><a href="../en/index.html">
-                <span class="material-symbols-outlined">home</span>
-               Accueil</a></li>
-                <li><a href="#">
+                <li><a href="/">
+                    <span class="material-symbols-outlined">home</span>
+                    Home</a></li>
+                <li><a href="/About">
                     <span class="material-symbols-outlined">account_circle</span>
-                    A propos</a></li>
-                <li><a href="contact-us.html">
+                    About-us</a></li>
+                <li class="actual"><a href="">
                     <span class="material-symbols-outlined">mail</span>
                     Contact</a></li>
-                <li><a href="#">
+                <li><a href="">
                     <span class="material-symbols-outlined">help</span>
                    FAQ</a></li>
             </ul>
         </div>
     </nav>
     <main>
-
+        <div class="form-content">
+            <h1>Contact us</h1>
+            <form class="form" action="#">
+                <div class="yourself">
+                    <input type="text" id="Lastname" placeholder="Lastname" required>
+                    <input type="text" id="Firstname" placeholder="Fistname" required>
+                </div>
+                <input type="email" id="Email" placeholder="Email" required>
+                <textarea name="Message" id="Message" cols="30" rows="10" placeholder="Type your message, question." required></textarea>
+                <input type="submit" id="submit" value="Send">     
+            </form>
+        </div>
     </main>
+    <script src="style/js/en/contact.js"></script>
     <footer>
-
-    </footer> 
+        <div class="footer">
+            <hr>
+            <br>
+            <div class="footer-section about">
+                <p>The legal chatBOT is a decision support tool for businesses and individuals.</p>
+            </div>
+            <div class="footer-content">
+                    <div class="contact-numero">
+                        <span class="material-symbols-outlined">phone</span> &nbsp; 06 88 03 97 00
+                        <br>
+                        <span class="material-symbols-outlined">mail</span> &nbsp; fillouxflorian56@gmail.com
+                    </div>
+                    <div class="footer-section links">
+                        <h2>Useful links</h2>
+                        <ul>
+                            <li><a href="/About">Team</a></li>
+                            <li>Privacy Policy<a href="#"></a></li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
