@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/css/en/404.css">
+    <link rel="stylesheet" href="/style/css/en/404.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>404</title>
 </head>
 <body>
     <nav>
-        <div class="header">
+        <div class="header-computer">
             <ul class="left-nav">
                 <li><a href="/">
                     <span class="material-symbols-outlined">home</span>
                     Home</a></li>
-                <li class="actual"><a href="/About">
+                <li><a href="/About">
                     <span class="material-symbols-outlined">account_circle</span>
                     About-us</a></li>
                 <li><a href="/Contact">
@@ -25,12 +25,35 @@
                    FAQ</a></li>
             </ul>
         </div>
+        <div class="header-mobile">
+            <input type="checkbox" name="checkbox-nav" id="checknav"><label for="checknav"><span class="material-symbols-outlined">menu</span><img src="style/assets/img/linkedin.png" alt="logo-CHATLawBOT"></label>
+            <ul class="top-nav">
+                <div class="li-container">
+                    <div class="left-li">
+                        <li><a href="/">
+                            <span class="material-symbols-outlined">home</span>
+                            Home</a></li>
+                        <li><a href="/About">
+                            <span class="material-symbols-outlined">account_circle</span>
+                            About-us</a></li>
+                    </div>
+                    <div class="right-li">
+                        <li><a href="/Contact">
+                            <span class="material-symbols-outlined">mail</span>
+                            Contact</a></li>
+                        <li><a href="">
+                            <span class="material-symbols-outlined">help</span>
+                           FAQ</a></li>
+                    </div>
+                </div>
+            </ul>
+            <hr>    
+        </div>
     </nav>
     <main>
         <div class="ErrorURL">
             <p id="ERROR">Error 404</p>
             <div class="logo404">
-                <img src="style/assets/img/branchement.png" alt="404_pic">
             </div>
             <p>Oops, the page was not found!</p>
             <a id="home" href="/">Back to home</a>
@@ -41,19 +64,19 @@
         <div class="footer">
             <br>
             <div class="footer-section about">
-                <p>The legal chatBOT is a decision support tool for businesses and individuals.</p>
+                <p>The chatLawBOT chatBOT is a decision support tool for businesses and individuals.</p>
             </div>
             <div class="footer-content">
                     <div class="contact-number">
                         <span class="material-symbols-outlined">phone</span> &nbsp; 06 88 03 97 00
                         <br>
-                        <span class="material-symbols-outlined">mail</span> &nbsp; fillouxflorian56@gmail.com
+                        <span class="material-symbols-outlined">mail</span> &nbsp; forum.lyon1@gmail.com
                     </div>
                     <div class="footer-section links">
                         <h2>Useful links</h2>
                         <ul>
-                            <li><a href="#">Team</a></li>
-                            <li>Privacy Policy<a href="#"></a></li>
+                            <li><a href="/Contact">Contact Us</a></li>
+                            <li><a href="/Privacy-Policy">Privacy Policy</a> | <a href="/CookiePolicy">Cookies Policy</a></li>
                         </ul>
                     </div>
             </div>

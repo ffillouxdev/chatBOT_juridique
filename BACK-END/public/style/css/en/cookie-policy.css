@@ -8,16 +8,15 @@
 
     body{
         background-color: #f5f5f5;
-        background-size: cover;
     }
-     
+
+    /*NAVBAR part*/
     nav{
         position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
         width: 100px;
-        overflow: hidden;
         transition: width 0.2s linear;
         box-shadow: 0 0 10px #ccc;
     }
@@ -26,11 +25,11 @@
         color: #000;
         display: inline-block;
         vertical-align: middle;
-      }
-      
-      .left-nav li a span {
+    }
+    
+    .left-nav li a span {
         vertical-align: middle;
-      }
+    }
 
     .left-nav a:hover {
         color: darkblue;
@@ -58,57 +57,52 @@
     }   
 
     li.actual a{
-        color: red;   
+        color: red;
     }
 
-
-    /*NAV mobile*/
-    .header-mobile {
+      /*NAV mobile*/
+      .header-mobile {
         display: none;
     }
 
-    /*Partie MAIN CONTENT*/
-    .erreurURL{
-        background: url(./branchement.png) no-repeat center;
-        background-size: cover;
-        margin: auto auto  0 20%;
-        margin-top: 7%;
-        width: 70%;
-        height: 100%;
+     /*MAIN part*/
+     main{
+        margin: 0 auto;
+        margin-top: 2%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .erreurURL p{
-        text-align: center;
-        font-size: 30px;
-        font-weight: bold;
-        color: #000;
-        margin-top: 100px;
-    }
-
-    .erreurURL #ERREUR{
-        font-size: 50px;
-        font-weight: bold;
-        color: red;
-        margin-bottom: 12%;
-    }
-
-    .erreurURL a {
-        color: darkblue;
-        font-size: 20px;
-        font-weight: bold;
+        width: 60%;
+        overflow: hidden;
     }
     
-    a#home:hover {
+    main h1{
+        margin: 0 auto;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        font-size: 1.8em;
+        text-align: center;
+    }
+    
+    main h1:hover{
+        color: darkblue;
+        text-shadow: 0 0 10px #2f2f2f;
+    }
+
+    main a:hover {
+        color: red; 
         text-decoration: underline;
+    }
+
+    main a{
+        color: #000;
+        text-decoration: underline;
+    }
+
+    main i {
         color: darkblue;
     }
 
-
-    /*FOOTER*/
+    /*Footer part*/
     footer{
         height: 9px;
         width: 100%;
@@ -131,6 +125,7 @@
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+        overflow: hidden;
     }
 
     .about p{
@@ -157,6 +152,7 @@
     .links a{
         text-decoration: underline;
         text-decoration: none;
+        color: #000;
     }
 
     .links a:visited{
@@ -174,6 +170,13 @@
         color: darkblue;
     }
 }
+
+
+
+
+
+
+
 
 
 
@@ -195,9 +198,8 @@
         background-color: #f5f5f5;
         background-size: cover;
     }
-
-
-    /*Partie NAVBAR*/
+   
+    /*NAVBAR part */
     nav{
         position: absolute;
         top: 0;
@@ -213,7 +215,6 @@
         color: #000;
         display: inline-block;
         vertical-align: middle;
-        text-decoration: none;
       }
       
       .left-nav li a span {
@@ -249,64 +250,50 @@
         color: red;   
     }
 
-    
-    /*NAV mobile*/
-    .header-mobile {
+      /*NAV mobile*/
+      .header-mobile {
         display: none;
     }
-
-
-    /*Partie MAIN CONTENT*/
-
-    main{
-        margin: 0 auto;
-        margin-top: 2%;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        overflow: hidden;
-    }
    
-    .erreurURL{
-        background: url(./branchement.png) no-repeat center;
-        background-size: cover;
-        margin: auto auto  0 20%;
-        margin-top: 5%;
-        width: 70%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    /*MAIN part*/
+    main{
+        width: 83%;
+        margin-left: 16%;
+        padding: 0px 10px;
+        overflow: hidden;
+        margin-bottom: 4.5%;
     }
 
-    .erreurURL p{
+     main h1{
         text-align: center;
         font-size: 30px;
-        font-weight: bold;
-        color: #000;
     }
 
-
-    .erreurURL #ERREUR{
-        font-size: 50px;
-        font-weight: bold;
-        color: red;
-        margin-bottom: 15%;
-        }
-
-    .erreurURL a {
+    main h1:hover{
         color: darkblue;
-        font-size: 20px;
-        font-weight: bold;
+        text-shadow: 0 0 10px #2f2f2f;
     }
- 
-    a#home:hover {
+
+    main p{
+        font-size: 15px;
+        text-align: justify;
+    }
+
+    main a:hover {
+        color: red; 
         text-decoration: underline;
+    }
+
+    main a{
+        color: #000;
+        text-decoration: underline;
+    }
+
+    main i {
         color: darkblue;
     }
 
-    /*FOOTER*/
+    /*Footer part*/
     footer{
         height: 9px;
         width: 100%;
@@ -329,6 +316,7 @@
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+        overflow: hidden;
     }
 
     .about p{
@@ -355,6 +343,7 @@
     .links a{
         text-decoration: underline;
         text-decoration: none;
+        color: #000;
     }
 
     .links a:visited{
@@ -379,7 +368,16 @@
 
 
 
+
+
+
+
+
+
+
+
 @media(max-width: 490px){
+
     *{
         padding: 0;
         outline: none;
@@ -395,118 +393,42 @@
     #body-content {
         display: none;
     }
-    
-    /*Partie NAVBAR*/
-    .header-computer {
-        display: none;
-    }   
 
-    .top-nav{
-        display: none;
-    }
-
-    .li-container{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 50%;
-    }
-
-    .top-nav li {
-        list-style-type: none;
-    }
-
-    .top-nav li a {
-        color: #000;
-        display: inline-block;
-        vertical-align: middle;
-      }
-      
-    .top-nav li a span {
-        vertical-align: middle;
-    }
-
-    .header-mobile img {
-        height: 30px;
-        margin-left: 40%;
-    }
-
-    .top-nav a:hover {
-        color: darkblue;
-    }
-
-    nav a{
-        position: relative;
-        font-size: 14px;
-        display: table;
-        width: 100px;
-        padding: 10px;
-    }
-
-
-    li.actual a{
-        color: red;   
-    }
-
-    #checknav{
-        display: none;
-
-    }
-
-    .left-li {
-        width: 50%;
-        margin-left: 15%;
-    }
-
-    .right-li{
-        width: 50%;
-        margin-left: 70%;
-    }
-
-    #checknav:checked ~ .top-nav{
-        display: block;
-    }
-
-    /*Partie MAIN et erreur*/
-    .erreurURL{
-        background: url(./branchement.png) no-repeat center;
-        width: 100%;
-        height: 80%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 45%;
-    }
-
-    .erreurURL p{
+    /*text and MAIN part*/
+    main h1{
+        margin: 0 auto;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        font-size: 1.8em;
         text-align: center;
-        font-size: 30px;
-        margin-top: 40%;
-        font-weight: bold;
+    }
+    
+    main h1:hover{
+        color: darkblue;
+        text-shadow: 0 0 10px #2f2f2f;
+    }
+
+    main p{
+        font-size: 18px;
+        text-align: justify;
+    }
+
+
+    main a{
         color: #000;
-    }
-
-
-    .erreurURL #ERREUR{
-        font-size: 50px;
-        font-weight: bold;
-        color: red;
-        margin-bottom: 15%;
-        }
-
-    .erreurURL a {
-        color: darkblue;
-        font-size: 20px;
-        font-weight: bold;
-    }
- 
-    a#home:hover {
         text-decoration: underline;
+    }
+
+    main a:hover {
+        color: red; 
+        text-decoration: underline;
+    }
+
+    main i {
         color: darkblue;
     }
 
-     /*partie FOOTER*/
+     /*FOOTER part*/
      .footer{
         height: 9px;
         width: 100%;
@@ -542,14 +464,6 @@
         margin-top: 20%;
     }
 
-    .contact-numero{
-        width: 90%;
-    }
-
-    .links{
-        margin-left: 10%;
-    }
-
     .links h2{
         margin-left: 30px;
     }
@@ -561,7 +475,7 @@
 
     .links li{
         list-style-type: none;
-        margin-left: 15px;
+        margin-left: 10px;
     }
 
     .links a{
@@ -583,13 +497,4 @@
         text-align: center;
         color: darkblue;
     }
-}
-
-
-
-
-
-
-
-@media(max-width: 360px){
 }

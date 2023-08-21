@@ -1,24 +1,16 @@
 @media screen and (min-width: 500px) and (min-height: 790px) {
-    p{
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    color: #000;
-    margin-top: 100px;
+    *{
+        padding: 0;
+        outline: none;
+        text-decoration: none;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
-    /* a #home en bas de la page à gauche*/
-    a#home{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        margin-bottom: 20px;
-        margin-left: 20px;
-        font-size: 20px;
-        font-weight: bold;
-        color: green;
+    body{
+        background-color: #f5f5f5;
+        background-size: cover;
     }
-
+     
     nav{
         position: absolute;
         top: 0;
@@ -69,7 +61,53 @@
         color: red;   
     }
 
-        /*FOOTER*/
+      /*NAV mobile*/
+      .header-mobile {
+        display: none;
+    }
+
+    /*Partie MAIN CONTENT*/
+    .ErrorURL{
+        background: url(./branchement.png) no-repeat center;
+        background-size: cover;
+        margin: auto auto  0 20%;
+        margin-top: 7%;
+        width: 70%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ErrorURL p{
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        color: #000;
+        margin-top: 100px;
+    }
+
+    .ErrorURL #ERROR{
+        font-size: 50px;
+        font-weight: bold;
+        color: red;
+        margin-bottom: 12%;
+    }
+
+    .ErrorURL a {
+        color: darkblue;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    a#home:hover {
+        text-decoration: underline;
+        color: darkblue;
+    }
+
+
+    /*FOOTER*/
     footer{
         height: 9px;
         width: 100%;
@@ -94,59 +132,59 @@
         align-items: center;
     }
 
-    .links h2{
-        margin-left: 30px;
-    }
-
-    .links a:visited{
-        color: #000;
-    }
-    .links li:hover{
-        text-decoration: underline;
+    .about p{
         color: darkblue;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-        /*FOOTER*/
-    footer{
-        height: 9px;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-        position: absolute; 
-        bottom: 0; 
-        right: 0;
-        margin: 0 auto;
-        padding-top: 10px;
-        font-size: 15px;
+        font-size: 20px;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
-
-    .footer-content{
-        margin: 0 auto;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
+        text-align: center;
     }
 
     .links h2{
         margin-left: 30px;
     }
 
+    .links li:hover{
+        color: darkblue;
+        border-radius: 5px;
+    }
+
+    .links li{
+        list-style-type: none;
+        margin-left: 10px;
+    }
+
+    .links a{
+        text-decoration: underline;
+        text-decoration: none;
+    }
+
     .links a:visited{
         color: #000;
     }
-    .links li:hover{
+
+    .links a:hover{
         text-decoration: underline;
         color: darkblue;
         border-radius: 5px;
-        cursor: pointer;
+    }
+
+    .footer p {
+        text-align: center;
+        color: darkblue;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -166,15 +204,6 @@
         background-size: cover;
     }
 
-
-    main{
-        margin: 0 auto;
-        margin-top: 2%;
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-        overflow: hidden;
-    }
 
     /*Partie NAVBAR*/
     nav{
@@ -228,10 +257,27 @@
         color: red;   
     }
 
+      /*NAV mobile*/
+      .header-mobile {
+        display: none;
+    }
+
     /*Partie MAIN CONTENT*/
-    .errorURL{
+
+    main{
         margin: 0 auto;
+        margin-top: 2%;
+        display: flex;
+        flex-direction: column;
         width: 100%;
+        overflow: hidden;
+    }
+    .ErrorURL{
+        background: url(./branchement.png) no-repeat center;
+        background-size: cover;
+        margin: auto auto  0 20%;
+        margin-top: 5%;
+        width: 70%;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -239,30 +285,34 @@
         align-items: center;
     }
 
-    .errorURL p {
-        font-size: 20px;
+    .ErrorURL p{
+        text-align: center;
+        font-size: 30px;
         font-weight: bold;
+        color: #000;
     }
 
-    .errorURL #ERREUR{
+
+    .ErrorURL #ERROR{
         font-size: 50px;
         font-weight: bold;
         color: red;
-    }
+        margin-bottom: 15%;
+        }
 
-    .errorURL a {
+    .ErrorURL a {
         color: darkblue;
         font-size: 20px;
         font-weight: bold;
     }
-
-    #home a:hover {
+ 
+    a#home:hover {
         text-decoration: underline;
         color: darkblue;
     }
 
-     /*FOOTER*/
-     footer{
+    /*FOOTER*/
+    footer{
         height: 9px;
         width: 100%;
         bottom: 0;
@@ -276,11 +326,205 @@
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
-    footer p{
+    .footer-content{
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .about p{
         color: darkblue;
         font-size: 20px;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         text-align: center;
+    }
+
+    .links h2{
+        margin-left: 30px;
+    }
+
+    .links li:hover{
+        color: darkblue;
+        border-radius: 5px;
+    }
+
+    .links li{
+        list-style-type: none;
+        margin-left: 10px;
+    }
+
+    .links a{
+        text-decoration: underline;
+        text-decoration: none;
+    }
+
+    .links a:visited{
+        color: #000;
+    }
+
+    .links a:hover{
+        text-decoration: underline;
+        color: darkblue;
+        border-radius: 5px;
+    }
+
+    .footer p {
+        text-align: center;
+        color: darkblue;
+    }
+}
+
+
+
+
+
+
+
+
+
+@media(max-width: 490px){
+    *{
+        padding: 0;
+        outline: none;
+        text-decoration: none;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    body{
+        background-color: #f5f5f5;
+        background-size: cover;
+    }
+
+    #body-content {
+        display: none;
+    }
+    
+    /*Partie NAVBAR*/
+    .header-computer {
+        display: none;
+    }   
+
+    .top-nav{
+        display: none;
+    }
+
+    .li-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 50%;
+    }
+
+    .top-nav li {
+        list-style-type: none;
+    }
+
+    .top-nav li a {
+        color: #000;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      
+    .top-nav li a span {
+        vertical-align: middle;
+    }
+
+    .header-mobile img {
+        height: 30px;
+        margin-left: 40%;
+    }
+
+    .top-nav a:hover {
+        color: darkblue;
+    }
+
+    nav a{
+        position: relative;
+        font-size: 14px;
+        display: table;
+        width: 100px;
+        padding: 10px;
+    }
+
+
+    li.actual a{
+        color: red;   
+    }
+
+    #checknav{
+        display: none;
+
+    }
+
+    .left-li {
+        width: 50%;
+        margin-left: 15%;
+    }
+
+    .right-li{
+        width: 50%;
+        margin-left: 70%;
+    }
+
+    #checknav:checked ~ .top-nav{
+        display: block;
+    }
+
+    /*Partie MAIN et erreur*/
+    .ErrorURL{
+        background: url(./branchement.png) no-repeat center;
+        width: 100%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 45%;
+    }
+
+    .ErrorURL p{
+        text-align: center;
+        font-size: 30px;
+        margin-top: 40%;
+        font-weight: bold;
+        color: #000;
+    }
+
+
+    .ErrorURL #ERROR{
+        font-size: 50px;
+        font-weight: bold;
+        color: red;
+        margin-bottom: 15%;
+        }
+
+    .ErrorURL a {
+        color: darkblue;
+        font-size: 20px;
+        font-weight: bold;
+    }
+ 
+    a#home:hover {
+        text-decoration: underline;
+        color: darkblue;
+    }
+
+     /*partie FOOTER*/
+     .footer{
+        height: 9px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        bottom: 0; 
+        right: 0;
+        margin: 0 auto;
+        padding-top: 10px;
+        font-size: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
 
@@ -294,22 +538,58 @@
         align-items: center;
     }
 
+    .about p{
+        color: darkblue;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: center;
+    }
+
+    .footer-content {
+        margin-top: 20%;
+    }
+
+    .contact-numero{
+        width: 90%;
+    }
+
+    .links{
+        margin-left: 10%;
+    }
+
     .links h2{
         margin-left: 30px;
+    }
+
+    .links li:hover{
+        color: darkblue;
+        border-radius: 5px;
+    }
+
+    .links li{
+        list-style-type: none;
+        margin-left: 15px;
+    }
+
+    .links a{
+        text-decoration: underline;
+        text-decoration: none;
     }
 
     .links a:visited{
         color: #000;
     }
 
-    .links li:hover{
+    .links a:hover{
         text-decoration: underline;
         color: darkblue;
         border-radius: 5px;
-        cursor: pointer;
     }
 
-
+    .footer p {
+        text-align: center;
+        color: darkblue;
+    }
 }
 
 
@@ -318,7 +598,220 @@
 
 
 
-@media(max-width: 490px){
+@media(max-width: 360px){
+}
+
+
+
+
+
+
+
+
+@media(max-width: 490px) and (max-height: 700px){
+    *{
+        padding: 0;
+        outline: none;
+        text-decoration: none;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    body{
+        background-color: #f5f5f5;
+        background-size: cover;
+    }
+
+    #body-content {
+        display: none;
+    }
+    
+    /*Partie NAVBAR*/
+    .header-computer {
+        display: none;
+    }   
+
+    .top-nav{
+        display: none;
+    }
+
+    .li-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 50%;
+    }
+
+    .top-nav li {
+        list-style-type: none;
+    }
+
+    .top-nav li a {
+        color: #000;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      
+    .top-nav li a span {
+        vertical-align: middle;
+    }
+
+    .header-mobile img {
+        height: 30px;
+        margin-left: 40%;
+    }
+
+    .top-nav a:hover {
+        color: darkblue;
+    }
+
+    nav a{
+        position: relative;
+        font-size: 14px;
+        display: table;
+        width: 100px;
+        padding: 10px;
+    }
+
+
+    li.actual a{
+        color: red;   
+    }
+
+    #checknav{
+        display: none;
+
+    }
+
+    .left-li {
+        width: 50%;
+        margin-left: 15%;
+    }
+
+    .right-li{
+        width: 50%;
+        margin-left: 70%;
+    }
+
+    #checknav:checked ~ .top-nav{
+        display: block;
+    }
+
+    /*Partie MAIN et erreur*/
+    .ErrorURL{
+        background: url(./branchement.png) no-repeat center;
+        width: 100%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 45%;
+    }
+
+    .ErrorURL p{
+        text-align: center;
+        font-size: 30px;
+        margin-top: 40%;
+        font-weight: bold;
+        color: #000;
+    }
+
+
+    .ErrorURL #ERREUR{
+        font-size: 50px;
+        font-weight: bold;
+        color: red;
+        margin-bottom: 15%;
+        }
+
+    .ErrorURL a {
+        color: darkblue;
+        font-size: 20px;
+        font-weight: bold;
+    }
+ 
+    a#home:hover {
+        text-decoration: underline;
+        color: darkblue;
+    }
+
+     /*partie FOOTER*/
+     .footer{
+        height: 9px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        bottom: 0; 
+        right: 0;
+        margin: 0 auto;
+        padding-top: 10px;
+        font-size: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+
+    .footer-content{
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .about p{
+        color: darkblue;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: center;
+    }
+
+    .footer-content {
+        margin-top: 20%;
+    }
+
+    .contact-numero{
+        width: 90%;
+    }
+
+    .links{
+        margin-left: 10%;
+    }
+
+    .links h2{
+        margin-left: 30px;
+    }
+
+    .links li:hover{
+        color: darkblue;
+        border-radius: 5px;
+    }
+
+    .links li{
+        list-style-type: none;
+        margin-left: 15px;
+    }
+
+    .links a{
+        text-decoration: underline;
+        text-decoration: none;
+    }
+
+    .links a:visited{
+        color: #000;
+    }
+
+    .links a:hover{
+        text-decoration: underline;
+        color: darkblue;
+        border-radius: 5px;
+    }
+
+    .footer p {
+        text-align: center;
+        color: darkblue;
+    }
 }
 
 

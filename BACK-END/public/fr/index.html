@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/css/fr/index.css">
+    <link rel="stylesheet" href="/style/css/fr/navigation.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="style/js/fr/home.js" defer></script>
     <title>chatBOT</title>
 </head>
 <body id="body-content">
     <nav>
-        <div class="header">
+        <div class="header-computer">
             <ul class="left-nav">
                 <li class="actual"><a href="">
                     <i class="transi home"></i>
@@ -28,23 +29,63 @@
                     <span class="material-symbols-outlined">help</span>
                    FAQ</a></li>
             </ul>
+            <div class="bottom-nav">
+                <ul>
+                    <li>pays :
+                        <br> 
+                        <select name="changer_pays" id="changer_pays">
+                            <optgroup label="pays Francophone" id="langs">
+                                <option value="de France">France</option>
+                                <option value="de Belgique">Belgique</option>
+                                <option value="de la partie du Canada Français">Canada (parlant français)</option>
+                                <option value="du Luxembourg">Luxembourg</option>
+                                <option value="de Monaco">Monaco</option>
+                                <option value="de Suisse">Suisse</option>
+                            </optgroup>
+                        </select>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="bottom-nav">
-            <ul>
-                <li>pays :
-                    <br> 
-                    <select name="changer_pays" id="changer_pays">
-                        <optgroup label="pays Francophone" id="langs">
-                            <option value="de France">France</option>
-                            <option value="de Belgique">Belgique</option>
-                            <option value="de la partie du Canada Français">Canada (parlant français)</option>
-                            <option value="du Luxembourg">Luxembourg</option>
-                            <option value="de Monaco">Monaco</option>
-                            <option value="de Suisse">Suisse</option>
-                        </optgroup>
-                    </select>
-                </li>
+        <div class="header-mobile">
+            <input type="checkbox" name="checkbox-nav" id="checknav"><label for="checknav"><span class="material-symbols-outlined">menu</span><img src="style/assets/img/logoChatLawBOT.jpeg" alt="logo-CHATLawBOT"></label>
+            <ul class="top-nav">
+                <div class="li-container">
+                    <div class="left-li">
+                        <li class="actual"><a href="#">
+                            <span class="material-symbols-outlined">home</span>
+                            Accueil</a></li>
+                        <li><a href="/About">
+                            <span class="material-symbols-outlined">account_circle</span>
+                            A propos</a></li>
+                    </div>
+                    <div class="right-li">
+                        <li><a href="/Contact">
+                            <span class="material-symbols-outlined">mail</span>
+                            Contact</a></li>
+                        <li><a href="#">
+                            <span class="material-symbols-outlined">help</span>
+                        FAQ</a></li>
+                    </div>
+                </div>
+                <div class="bottom-nav">
+                    <ul>
+                        <li>pays :
+                            <select name="changer_pays" id="changer_pays">
+                                <optgroup label="pays Francophone" id="langs">
+                                    <option value="de France">France</option>
+                                    <option value="de Belgique">Belgique</option>
+                                    <option value="de la partie du Canada Français">Canada (parlant français)</option>
+                                    <option value="du Luxembourg">Luxembourg</option>
+                                    <option value="de Monaco">Monaco</option>
+                                    <option value="de Suisse">Suisse</option>
+                                </optgroup>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
             </ul>
+            <hr>    
         </div>
     </nav>
     <main>
@@ -60,7 +101,7 @@
         </div>
         <div class="langage_Popup_container" >
             <div class="popup">
-                <p>Hey, de quel pays francophone viens-tu ?</p>
+                <p>Hey, de quels pays francophone viens-tu ?</p>
                 <div class="lang_choix">
                     <select name="french_loc" id="french_loc">
                         <optgroup label="pays Francophone" id="langs">
@@ -77,12 +118,12 @@
                 <input type="submit" id="submitP" value="Close">
             </div>
         </div>
-        <h1>Bienvenue sur le chatBOT Juridique !!!</h1>
+        <h1>Bienvenue sur chatLawBOT !!!</h1>
         <article>
             <div class="chatbot-section">
                    <ul class="chatbot-reponse">
                      <li class="chat reponse-BOT">
-                        <span class="material-symbols-outlined">account_circle</span> 
+                        <span class="material-symbols-outlined">smart_toy</span> 
                         <p>Je suis le chatBOT Juridique, comment puis-je vous aider ?</p>
                      </li>
                    </ul>
@@ -92,13 +133,21 @@
                 </div>
             </div>
         </article>
+        <div class="consultante-popup">
+            <div class="texte_popup">
+                <p class="information_proposition">Besoin d'une consultation téléphonique avec une experte ?</p>
+            </div>
+            <div class="img-consultante">
+                <a href="" target="_blank"><img src="style/assets/img/logo-consultante.png" alt="consultante_logo"></a>
+            </div>
+        </div>
     </main>
     <footer>
         <hr>
         <div class="footer">
             <br>
             <div class="footer-section about">
-                <p>Le chatBOT Juridique est un outil d'aide à la décision pour les entreprises et les particuliers.</p>
+                <p>Le chatBOT chatLawBOT est un outil d'aide à la décision pour les entreprises et les particuliers.</p>
             </div>
             <div class="footer-content">
                     <div class="contact-numero">
@@ -109,8 +158,8 @@
                     <div class="footer-section links">
                         <h2>Liens utiles</h2>
                         <ul>
-                            <li><a href="/About">Equipe</a></li>
-                            <li>Politique de confidentialité<a href="#"></a></li>
+                            <li><a href="/Contact">Nous contacter</a></li>
+                            <li><a href="/Privacy-Policy">Politique de confidentialité</a> | <a href="/CookiePolicy">Politique de cookies</a></li>
                         </ul>
                     </div>
             </div>

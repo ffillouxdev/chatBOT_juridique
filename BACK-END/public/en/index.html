@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
 </head>
 <body id="body-content">
     <nav>
-        <div class="header">
+        <div class="header-computer">
             <ul class="left-nav">
                 <li class="actual"><a href="">
                     <i class="transi home"></i>
@@ -27,27 +27,74 @@
                     <span class="material-symbols-outlined">help</span>
                    FAQ</a></li>
             </ul>
-        </div>
-        <div class="bottom-nav">
-            <ul>
-                <li>country :
-                    <br> 
-                    <select name="switch_country" id="switch_country">
-                        <optgroup label="English countries" id="langs">
-                            <option value="Australia">Australia</option>
-                            <option value="Canada">Canada</option>
-                            <option value="England">England</option>
-                            <option value="India">India</option>
-                            <option value="Ireland">Ireland</option>
-                            <option value="New_Zealand">New Zealand</option>
-                            <option value="Scotland">Scotland</option>
-                            <option value="South_Africa">South Africa</option>
-                            <option value="USA">USA</option>
-                            <option value="Wales">Wales</option>
-                        </optgroup>
-                    </select>
-                </li>
+            <div class="bottom-nav">
+                <ul>
+                    <li>country :
+                        <select name="switch_country" id="switch_country">
+                            <optgroup label="English countries" id="langs">
+                                <option value="Australia">Australia</option>
+                                <option value="Canada">Canada</option>
+                                <option value="England">England</option>
+                                <option value="India">India</option>
+                                <option value="Ireland">Ireland</option>
+                                <option value="New_Zealand">New Zealand</option>
+                                <option value="Scotland">Scotland</option>
+                                <option value="South_Africa">South Africa</option>
+                                <option value="USA">USA</option>
+                                <option value="Wales">Wales</option>
+                            </optgroup>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </div>  
+        <div class="header-mobile">
+            <input type="checkbox" name="checkbox-nav" id="checknav"><label for="checknav"><span class="material-symbols-outlined">menu</span><img src="style/assets/img/linkedin.png" alt="logo-CHATLawBOT"></label>
+            <ul class="top-nav">
+                <div class="li-container">
+                    <div class="left-li">
+                        <li class="actual"><a href="">
+                            <i class="transi home"></i>
+                            <span class="material-symbols-outlined">home</span>
+                            Home</a></li>
+                        <li><a href="/About">
+                            <i class="transi about"></i>
+                            <span class="material-symbols-outlined">account_circle</span>
+                            About-us</a></li>
+                    </div>
+                    <div class="right-li">
+                        <li><a href="/Contact">
+                            <i class="transi contact"></i>
+                            <span class="material-symbols-outlined">mail</span>
+                            Contact</a></li>
+                        <li><a href="">
+                            <span class="material-symbols-outlined">help</span>
+                           FAQ</a></li>
+                    </div>
+                </div>
+                <div class="bottom-nav">
+                    <ul>
+                        <li>country :
+                            <br> 
+                            <select name="switch_country" id="switch_country">
+                                <optgroup label="English countries" id="langs">
+                                    <option value="Australia">Australia</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="England">England</option>
+                                    <option value="India">India</option>
+                                    <option value="Ireland">Ireland</option>
+                                    <option value="New_Zealand">New Zealand</option>
+                                    <option value="Scotland">Scotland</option>
+                                    <option value="South_Africa">South Africa</option>
+                                    <option value="USA">USA</option>
+                                    <option value="Wales">Wales</option>
+                                </optgroup>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
             </ul>
+            <hr>    
         </div>
     </nav>
     <main>
@@ -89,7 +136,7 @@
             <div class="chatbot-section">
                    <ul class="chatbot-reponse">
                      <li class="chat reponse-BOT">
-                        <span class="material-symbols-outlined">account_circle</span> 
+                        <span class="material-symbols-outlined">smart_toy</span> 
                         <p>I am the Legal chatBOT, how can I help you?</p>
                      </li>
                    </ul>
@@ -99,13 +146,21 @@
                 </div>
             </div>
         </article>
+        <div class="consultant-popup">
+            <div class="text_popup">
+                <p class="information_proposition">Need a telephone consultation with an expert?</p>
+            </div>
+            <div class="img-consultant">
+                <a href="" target="_blank"><img src="style/assets/img/logo-consultante.png" alt="consultante_logo"></a>
+            </div>
+        </div>
     </main>
     <footer>
         <hr>
         <div class="footer">
             <br>
             <div class="footer-section about">
-                <p>The legal chatBOT is a decision support tool for businesses and individuals.</p>
+                <p>The chatLawBOT chatBOT is a decision support tool for businesses and individuals.</p>
             </div>
             <div class="footer-content">
                     <div class="contact-numero">
@@ -116,8 +171,8 @@
                     <div class="footer-section links">
                         <h2>Useful links</h2>
                         <ul>
-                            <li><a href="/About">Team</a></li>
-                            <li>Privacy Policy<a href="#"></a></li>
+                            <li><a href="/Contact">Contact Us</a></li>
+                            <li><a href="/Privacy-Policy">Privacy Policy</a> | <a href="/CookiePolicy">Cookies Policy</a></li>
                         </ul>
                     </div>
             </div>

@@ -60,79 +60,44 @@
         color: red;
     }
 
-     /*NAV mobile*/
-     .header-mobile {
-        display: none;
-    }
 
-    /*Partie MAIN*/
-    main{
-        width: 85%;
-        margin-left: 14%;
-        margin-top: 8%;
+     /*Partie MAIN*/
+     main{
+        margin: 0 auto;
+        margin-top: 2%;
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        overflow: hidden;
     }
-
-    .formulaire {
-        padding: 20px 30px;
-        border-radius: 5px;
-        margin-top: 20px;
-        margin-left: 2%;
-        width: 80%;
-    }
-
-    .formulaire h1{
+    
+    main h1{
+        margin: 0 auto;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        font-size: 1.8em;
         text-align: center;
-        font-size: 30px;
+    }
+    
+    main h1:hover{
+        color: darkblue;
+        text-shadow: 0 0 10px #2f2f2f;
     }
 
-    .formulaire h1:hover{
+    main a:hover {
+        color: red; 
+        text-decoration: underline;
+    }
+
+    main a{
+        color: #000;
+        text-decoration: underline;
+    }
+
+    main i {
         color: darkblue;
     }
 
-    .formulaire form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .formulaire form input{
-        height: 35px;
-    }
-
-    .formulaire form .yourself{
-        width: 50%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .formulaire form .yourself input{
-        width: 48%;
-    }
-
-    .formulaire form #Email{
-        margin-top: 10px;
-        width: 50%;
-    }
-
-    .formulaire form #Message{
-        margin-top: 10px;
-        width: 50%;
-        resize: none;
-        font-size: 13px;
-    }
-
-    .formulaire form #submit{
-        margin-top: 5px;
-        width: 50%;
-    }
-
-    .formulaire form #submit:hover{
-        background-color: darkblue;
-        color: #fff;
-    }
     
     /*Partie Footer*/
     footer{
@@ -170,7 +135,7 @@
     .links h2{
         margin-left: 30px;
     }
-    
+
     .links li:hover{
         color: darkblue;
         border-radius: 5px;
@@ -200,7 +165,13 @@
         text-align: center;
         color: darkblue;
     }
+
 }
+
+
+
+
+
 
 
 
@@ -230,14 +201,6 @@
         background-color: #f5f5f5;
         background-size: cover;
     }
-
-    p{
-        color: darkblue;
-        font-size: 20px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        text-align: center;
-    }
-
    
     nav{
         position: absolute;
@@ -289,15 +252,11 @@
         color: red;   
     }
 
-     /*NAV mobile*/
-     .header-mobile {
-        display: none;
-    }
    
     /*Partie MAIN*/
     main{
-        width: 85%;
-        margin-left: 14%;
+        width: 83%;
+        margin-left: 16%;
         padding: 0px 10px;
         overflow: hidden;
         margin-bottom: 4.5%;
@@ -313,66 +272,22 @@
         text-shadow: 0 0 10px #2f2f2f;
     }
 
-    .formulaire {
-        padding: 20px 30px;
-        border-radius: 5px;
-        margin-top: 20px;
-        margin-left: 2%;
-        width: 80%;
+    main p{
+        font-size: 15px;
     }
 
-    .formulaire h1{
-        text-align: center;
-        font-size: 30px;
+    main a:hover {
+        color: red; 
+        text-decoration: underline;
     }
 
-    .formulaire h1:hover{
+    main a{
+        color: #000;
+        text-decoration: underline;
+    }
+
+    main i{
         color: darkblue;
-    }
-
-    .formulaire form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .formulaire form input{
-        height: 35px;
-    }
-
-    .formulaire form .yourself{
-        width: 40%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .formulaire form .yourself input{
-        width: 48%;
-    }
-
-    .formulaire form #Email{
-        margin-top: 10px;
-        width: 40%;
-    }
-
-    .formulaire form #Message{
-        margin-top: 10px;
-        width: 40%;
-        resize: none;
-        font-size: 13px;
-    }
-
-    .formulaire form #submit{
-        margin-top: 5px;
-        width: 40%;
-    }
-
-    .formulaire form #submit:hover{
-        background-color: darkblue;
-        color: #fff;
     }
 
     /*Partie Footer*/
@@ -411,7 +326,7 @@
     .links h2{
         margin-left: 30px;
     }
-    
+
     .links li:hover{
         color: darkblue;
         border-radius: 5px;
@@ -453,11 +368,8 @@
 
 
 
-
-
-
-
 @media(max-width: 490px){
+
     *{
         padding: 0;
         outline: none;
@@ -473,7 +385,7 @@
     #body-content {
         display: none;
     }
-    
+
     /*Partie NAVBAR*/
     .header-computer {
         display: none;
@@ -545,78 +457,42 @@
         display: block;
     }
 
-    /*Partie MAIN et formulaire*/
+    /*partie MAIN et texte*/
     main h1{
+        margin: 0 auto;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        font-size: 1.8em;
         text-align: center;
-        font-size: 30px;
     }
-
+    
     main h1:hover{
         color: darkblue;
         text-shadow: 0 0 10px #2f2f2f;
     }
 
-    .formulaire {
-        padding: 20px 30px;
-        border-radius: 5px;
-        margin-top: 18%;
-        margin-left: 2%;
-        margin-bottom: 15%;
-        width: 80%;
+    main p{
+        font-size: 18px;
+        text-align: justify;
     }
 
-    .formulaire h1{
-        text-align: center;
-        font-size: 30px;
+
+    main a{
+        color: #000;
+        text-decoration: underline;
     }
 
-    .formulaire h1:hover{
+    main a:hover {
+        color: red; 
+        text-decoration: underline;
+    }
+
+    main i {
         color: darkblue;
     }
 
-    .formulaire form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .formulaire form input{
-        height: 35px;
-    }
-
-    .formulaire form .yourself{
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .formulaire form #Email{
-        margin-top: 10px;
-        width: 100%;
-    }
-
-    .formulaire form #Message{
-        margin-top: 10px;
-        width: 100%;
-        resize: none;
-        font-size: 13px;
-    }
-
-    .formulaire form #submit{
-        margin-top: 5px;
-        width: 100%;
-    }
-
-    .formulaire form #submit:hover{
-        background-color: darkblue;
-        color: #fff;
-    }
-
-    /*partie FOOTER*/
-    .footer{
+     /*partie FOOTER*/
+     .footer{
         height: 9px;
         width: 100%;
         bottom: 0;
@@ -693,13 +569,6 @@
         color: darkblue;
     }
 }
-
-
-
-
-
-
-
 
 
 
@@ -707,6 +576,7 @@
 
 
 @media(max-width: 490px) and (max-height: 700px){
+
     *{
         padding: 0;
         outline: none;
@@ -722,7 +592,7 @@
     #body-content {
         display: none;
     }
-    
+
     /*Partie NAVBAR*/
     .header-computer {
         display: none;
@@ -793,79 +663,43 @@
     #checknav:checked ~ .top-nav{
         display: block;
     }
-
-    /*Partie MAIN et formulaire*/
+    
+    /*partie MAIN et texte*/
     main h1{
+        margin: 0 auto;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        font-size: 1.8em;
         text-align: center;
-        font-size: 30px;
     }
-
+    
     main h1:hover{
         color: darkblue;
         text-shadow: 0 0 10px #2f2f2f;
     }
 
-    .formulaire {
-        padding: 20px 30px;
-        border-radius: 5px;
-        margin-top: 16%;
-        margin-left: 2%;
-        margin-bottom: 45%;
-        width: 80%;
+    main p{
+        font-size: 18px;
+        text-align: justify;
     }
 
-    .formulaire h1{
-        text-align: center;
-        font-size: 30px;
+
+    main a{
+        color: #000;
+        text-decoration: underline;
     }
 
-    .formulaire h1:hover{
+    main a:hover {
+        color: red; 
+        text-decoration: underline;
+    }
+
+    main i {
         color: darkblue;
     }
 
-    .formulaire form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .formulaire form input{
-        height: 35px;
-    }
-
-    .formulaire form .yourself{
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .formulaire form #Email{
-        margin-top: 10px;
-        width: 100%;
-    }
-
-    .formulaire form #Message{
-        margin-top: 10px;
-        width: 100%;
-        resize: none;
-        font-size: 13px;
-    }
-
-    .formulaire form #submit{
-        margin-top: 5px;
-        width: 100%;
-    }
-
-    .formulaire form #submit:hover{
-        background-color: darkblue;
-        color: #fff;
-    }
-
-    /*partie FOOTER*/
-    .footer{
+     /*partie FOOTER*/
+     .footer{
         height: 9px;
         width: 100%;
         bottom: 0;
@@ -942,4 +776,3 @@
         color: darkblue;
     }
 }
-

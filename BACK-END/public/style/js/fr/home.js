@@ -26,7 +26,11 @@ accepterCookies.addEventListener("click", function () {
         checkLocalStorage();
     } , 2000);
 
-});
+});       
+
+
+/*localStorage.setItem("cookies", "null");
+localStorage.setItem("country", "null");*/
 
 // Fonction pour vérifier les cookies
 function checkCookies() {
@@ -41,6 +45,7 @@ function checkCookies() {
 
 // Appeler la fonction pour vérifier le localStorage
 checkCookies();
+
 
 /***************************PARTIE POPUP****************************/
 const language_Popup_container = document.querySelector(".langage_Popup_container")
@@ -169,14 +174,12 @@ const responseGeneration = (nextChatLi, country) => {
     }).finally(() => {chat.scrollTo(0, chat.scrollHeight);});
 }
 
-
-
 // Fonction pour créer un li avec la réponse de l'utilisateur
 const createReponseLi = (question, nameClass) => {
     // Création d'un li
     const li = document.createElement('li');
     li.classList.add("chat", nameClass);
-    let contentChat = (nameClass === "reponse-User") ? '<p></p>' : '<span class="material-symbols-outlined">account_circle</span><p></p>';
+    let contentChat = (nameClass === "reponse-User") ? '<p></p>' : '<span class="material-symbols-outlined">smart_toy</span><p></p>';
     li.innerHTML = contentChat;
     li.querySelector('p').textContent = question;
     return li;

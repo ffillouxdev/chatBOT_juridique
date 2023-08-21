@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/css/fr/contacter.css">
+    <link rel="stylesheet" href="/style/css/fr/navigation.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://smtpjs.com/v3/smtp.js"></script>    
     <title>Nous contacter</title>
 </head>
 <body>
     <nav>
-        <div class="header">
+        <div class="header-computer">
             <ul class="left-nav">
                 <li><a href="/">
                     <span class="material-symbols-outlined">home</span>
@@ -25,6 +26,30 @@
                     <span class="material-symbols-outlined">help</span>
                    FAQ</a></li>
             </ul>
+        </div>
+           <div class="header-mobile">
+            <input type="checkbox" name="checkbox-nav" id="checknav"><label for="checknav"><span class="material-symbols-outlined">menu</span><img src="style/assets/img/logoChatLawBOT.jpeg" alt="logo-CHATLawBOT"></label>
+            <ul class="top-nav">
+                <div class="li-container">
+                    <div class="left-li">
+                        <li><a href="/">
+                            <span class="material-symbols-outlined">home</span>
+                            Accueil</a></li>
+                        <li><a href="/About">
+                            <span class="material-symbols-outlined">account_circle</span>
+                            A propos</a></li>
+                    </div>
+                    <div class="right-li">
+                        <li class="actual"><a href="/Contact">
+                            <span class="material-symbols-outlined">mail</span>
+                            Contact</a></li>
+                        <li><a href="#">
+                            <span class="material-symbols-outlined">help</span>
+                           FAQ</a></li>
+                    </div>
+                </div>
+            </ul>
+            <hr>    
         </div>
     </nav>
     <main>
@@ -47,19 +72,19 @@
             <hr>
             <br>
             <div class="footer-section about">
-                <p>Le chatBOT Juridique est un outil d'aide à la décision pour les entreprises et les particuliers.</p>
+                <p>Le chatBOT chatLawBOT est un outil d'aide à la décision pour les entreprises et les particuliers.</p>
             </div>
             <div class="footer-content">
                     <div class="contact-numero">
                         <span class="material-symbols-outlined">phone</span> &nbsp; 06 88 03 97 00
                         <br>
-                        <span class="material-symbols-outlined">mail</span> &nbsp; fillouxflorian56@gmail.com
+                        <span class="material-symbols-outlined">mail</span> &nbsp; forum.lyon1@gmail.com
                     </div>
                     <div class="footer-section links">
                         <h2>Liens utiles</h2>
                         <ul>
-                            <li><a href="/About">Equipe</a></li>
-                            <li>Politique de confidentialité<a href="#"></a></li>
+                            <li><a href="">Nous contacter</a></li>
+                            <li><a href="/Privacy-Policy">Politique de confidentialité</a> | <a href="/CookiePolicy">Politique de cookies</a></li>
                         </ul>
                     </div>
             </div>

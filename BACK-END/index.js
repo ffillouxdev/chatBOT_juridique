@@ -12,7 +12,8 @@
     // Indique quel port utiliser
     const PORT = 8080;
 
-    const lang = process.env.LANG.slice(0, 2);//"en" ; 
+    const lang = "en"/*process.env.LANG.slice(0, 2);*/ 
+
 
     // Permet d'utiliser les fichiers statiques (css, js, images, etc...)
     app_juridique.use(express.static(__dirname + "/public"));
@@ -65,6 +66,7 @@
         res.send(contactHTML)
     })
 
+
     app_juridique.get("/About", (_, res) => {
         let aboutHTML;
 
@@ -89,6 +91,54 @@
     })
 
 
+    app_juridique.get("/CookiePolicy", (_, res) => {
+        let cookiePolicyHTML;
+
+        // On vérifie la langue de l'utilisateur et on lui envoie la page html correspondante à sa langue
+        switch (lang) {
+            case "fr":
+                // Si l'utilisateur est français, on lui envoie la page html en français
+                cookiePolicyHTML = fs.readFileSync(__dirname + "/public/fr/politique-de-cookie.html", "utf8")
+                break;
+
+            case "en":
+                // if the user is english, we send him the html page in english
+                cookiePolicyHTML = fs.readFileSync(__dirname + "/public/en/cookie-policy.html", "utf8")
+                break;
+
+            default:
+                // par défaut, on envoie la page html en français
+                cookiePolicyHTML = fs.readFileSync(__dirname + "/public/fr/politique-de-cookie.html", "utf8")
+                break;
+        }
+        res.send(cookiePolicyHTML)
+    })
+
+
+    app_juridique.get("/Privacy-Policy", (_, res) => {
+        let privacyPolicyHTML;
+
+        // On vérifie la langue de l'utilisateur et on lui envoie la page html correspondante à sa langue
+        switch (lang) {
+            case "fr":
+                // Si l'utilisateur est français, on lui envoie la page html en français
+                privacyPolicyHTML = fs.readFileSync(__dirname + "/public/fr/politique-confidentialite.html", "utf8")
+                break;
+
+            case "en":
+                // if the user is english, we send him the html page in english
+                privacyPolicyHTML = fs.readFileSync(__dirname + "/public/en/privacy-policy.html", "utf8")
+                break;
+
+            default:
+                // par défaut, on envoie la page html en français
+                privacyPolicyHTML = fs.readFileSync(__dirname + "/public/fr/politique-de-confidentialite.html", "utf8")
+                break;
+        }
+        res.send(privacyPolicyHTML)
+    })
+
+
     // Permet d'envoyer une page d'erreur 404 si la page demandée n'existe pas selon la langue
     app_juridique.get("/*", (_, res) => { 
         let  errorHTML;
@@ -110,12 +160,12 @@
     })
 
     // Définition des routes de l'app_juridiquelication et indique que le serveur est lancé
-    app_juridique.listen(PORT, () => {
-        console.log(`Le serveur est lancé sur le ${PORT}...`)
+   app_juridique.listen(PORT, () => {
+    console.log(`Le serveur est lancé sur le ${PORT}...`)
     });
 
     //on écrit en console le contenu envoyé par l'utilisateur dans l'input d'index.html
     app_juridique.get("/chatbot", (req, res) => {
-        console.log(req.query)
-        res.send("ok")
-    });
+    console.log(req.query)
+    res.send("ok")
+});

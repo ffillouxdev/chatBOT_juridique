@@ -99,7 +99,7 @@ function  selectLangAndClosePopup(){
         language_Popup_container.classList.remove("show");
     }
 
-   
+
 };
 submitToClosePopup.addEventListener("click", selectLangAndClosePopup);
 
@@ -173,14 +173,12 @@ const responseGeneration = (nextChatLi, enCountry) => {
     }).finally(() => {chat.scrollTo(0, chat.scrollHeight);});
 }
 
-
-
 // Function to create a li with the user's response
 const createReponseLi = (question, nameClass) => {
     // li creation
     const li = document.createElement('li');
     li.classList.add("chat", nameClass);
-    let contentChat = (nameClass === "reponse-User") ? '<p></p>' : '<span class="material-symbols-outlined">account_circle</span><p></p>';
+    let contentChat = (nameClass === "reponse-User") ? '<p></p>' : '<span class="material-symbols-outlined">smart_toy</span><p></p>';
     li.innerHTML = contentChat;
     li.querySelector('p').textContent = question;
     return li;
