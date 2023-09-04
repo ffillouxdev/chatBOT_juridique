@@ -1,6 +1,7 @@
 /*******************************PARTIE WEBSITE BACK-END *******************************/
 
 // Importation des modules
+const fetch = require("node-fetch");
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
@@ -44,8 +45,6 @@ function authenticateToken(req, res, next) {
 
 app_juridique.post('/api/retrieve-answer', (req, res) => {
     
-    console.log(req.body)
-
     const question = req.body.question;
     const country = req.body.country;
 

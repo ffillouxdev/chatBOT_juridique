@@ -13,7 +13,7 @@ refuseCookies.addEventListener("click", function () {
     // call  the language popup to appear with a delay of 2 seconds
     setTimeout(function () {
         checkLocalStorage();
-    } , 2000);
+    }, 2000);
 });
 
 // Function to accept cookies
@@ -26,7 +26,7 @@ acceptCookies.addEventListener("click", function () {
     // call  the language popup to appear with a delay of 2 seconds
     setTimeout(function () {
         checkLocalStorage();
-    } , 2000);
+    }, 2000);
 
 });
 
@@ -53,7 +53,7 @@ const language_Popup_container = document.querySelector(".language_Popup_contain
 /*
  * A popup who ask the english localisation, to be specific on the laws for each english country and appear only for the first connection of the user,
  *if I navigate on the website and I come back on the home page the popup will not appear again.
-*/ 
+*/
 function checkLocalStorage() {
 
     // If the country is not found in localStorage or it is set to "null", show the popup
@@ -72,12 +72,12 @@ checkLocalStorage();
 
 const submitToClosePopup = document.getElementById("submitP");
 
-function  selectLangAndClosePopup(){
+function selectLangAndClosePopup() {
     //recup the country of the user from the <select> 
-    const recupCountry  = document.getElementById("english_loc").value;
+    const recupCountry = document.getElementById("english_loc").value;
 
     //register the country in the local storage 
-    if(recupCountry == "null"){
+    if (recupCountry == "null") {
         language_Popup_container.classList.add("show");
 
         //add a <p> in red to say to the user to select a country one time only 
@@ -107,16 +107,16 @@ submitToClosePopup.addEventListener("click", selectLangAndClosePopup);
 
 
 // Function to make the country chosen  selected in the <select> in the nav bar
-function synchronizeSelectCountry(){
+function synchronizeSelectCountry() {
     const recupCountry = localStorage.getItem("country");
     const selectCountry = document.getElementById("switch_country");
     selectCountry.value = recupCountry;
 };
 
 // Function to change the english country which is in the local storage
-function changeCountry(){
+function changeCountry() {
     //recup the country of the user from the <select>
-    const recupCountry  = document.getElementById("switch_country").value;
+    const recupCountry = document.getElementById("switch_country").value;
 
     //register the country in the local storage
     localStorage.setItem("country", recupCountry);
@@ -126,15 +126,15 @@ document.getElementById("switch_country").addEventListener("change", changeCount
 
 
 //When loading the DOM, wait 2 seconds, then display the main content
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const mainContent = document.getElementById('body-content');
-    setTimeout(function() {
-      mainContent.style.display = 'block';
+    setTimeout(function () {
+        mainContent.style.display = 'block';
     }, 350); // Set timeout in milliseconds (2 seconds in this example)
-  });
+});
 
 
-/******************************PART CHATBOT****************************/  
+/******************************PART CHATBOT****************************/
 // Récupération des éléments HTML
 const userInput = document.getElementById('userInput');
 const buttonUser = document.getElementById('buttonUser');
@@ -150,28 +150,22 @@ const API_KEY = process.env.API_KEY;
 let question;
 
 const responseGeneration = (nextChatLi, enCountry) => {
-    // Retrieving the response from the API
-    const API_URL = "https://api.openai.com/v1/chat/completions";
 
-    //  The text that will be sent to the API
-    const legalText = "Which law "+ country + " is related to this question and explains the foundations of this law (answers only if the question asked has something to do with the legal otherwise just answers 'It's not a question legal.'): " + question;    
-    const requestOptions = {
-        method: 'POST',
-        headers : {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${API_KEY}`
-        },
-        body: JSON.stringify({
-            model: 'gpt-3.5-turbo',
-            messages: [ { role: 'user', content: legalText} ],
+    axios.post('/api/retrieve-answer',
+        {
+            question: question,
+            country: enCountry
         })
-    }
-    fetch(API_URL, requestOptions).then(response => response.json()).then(data => {
-        nextChatLi.querySelector('p').textContent = data.choices[0].message.content;
-    }).catch(error =>{
-        nextChatLi.classList.add("error");
-        nextChatLi.querySelector('p').textContent = "An error has occurred, please try again later.";
-    }).finally(() => {chat.scrollTo(0, chat.scrollHeight);});
+        .then(e => {
+            nextChatLi.querySelector('p').textContent = e.data.response;
+        })
+        .catch(error => {
+            nextChatLi.classList.add("error");
+            nextChatLi.querySelector('p').textContent = "An error spawned, retry later.";
+        })
+        .finally(() => {
+            chat.scrollTo(0, chat.scrollHeight);
+        });
 }
 
 // Function to create a li with the user's response
@@ -183,17 +177,17 @@ const createReponseLi = (question, nameClass) => {
     li.innerHTML = contentChat;
     li.querySelector('p').textContent = question;
     return li;
-}   
+}
 
 
 // Function to send the user's question
 const sendQuestion = () => {
-// Retrieve the user's question
+    // Retrieve the user's question
     question = userInput.value;
 
-// Display the user's question
+    // Display the user's question
     console.log(question);
-    if(! question) return;
+    if (!question) return;
 
     setTimeout(() => {
         const nextChatLi = createReponseLi("I'm thinking...", "reponse-BOT");
@@ -212,7 +206,7 @@ const sendQuestion = () => {
 buttonUser.addEventListener('click', sendQuestion); // we add an event to the click on the button
 
 //Allows you to enlarge the input control according to the number of lines upwards without leaving the window
-    userInput.addEventListener('keyup', e => {
+userInput.addEventListener('keyup', e => {
     userInput.style.height = "30px";
     let newHeight = e.target.scrollHeight;
     console.log(newHeight);
@@ -221,7 +215,7 @@ buttonUser.addEventListener('click', sendQuestion); // we add an event to the cl
 
 //allows if the enter button is pressed and the popup is closed to send the question
 userInput.addEventListener('keydown', e => {
-    if(e.key === "Enter"){
+    if (e.key === "Enter") {
         e.preventDefault();
         sendQuestion();
     }
