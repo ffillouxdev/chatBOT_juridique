@@ -2,7 +2,6 @@
 const refuseCookies = document.getElementById("refuse_cookies");
 const acceptCookies = document.getElementById("accept_cookies");
 const cookiesContainer = document.querySelector(".cookies_container");
-require('dotenv').config();
 
 
 // Function to refuse cookies
@@ -142,9 +141,6 @@ const chat = document.querySelector('.chatbot-reponse');
 
 // Declaration of the heightInput variable
 let heightInput = userInput.offsetHeight;
-
-// Declaration of the API_KEY variable
-const API_KEY = process.env.API_KEY;
 
 // Declaring the question variable
 let question;
