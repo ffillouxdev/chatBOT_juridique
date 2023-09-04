@@ -11,7 +11,7 @@ refuserCookies.addEventListener("click", function () {
     // appeler la popup de langue pour apparaître avec un délai de 2 secondes
     setTimeout(function () {
         checkLocalStorage();
-    } , 2000);
+    }, 2000);
 });
 
 // Fonction pour accepter les cookies
@@ -24,9 +24,9 @@ accepterCookies.addEventListener("click", function () {
     // appeler la popup de langue pour apparaître avec un délai de 2 secondes
     setTimeout(function () {
         checkLocalStorage();
-    } , 2000);
+    }, 2000);
 
-});       
+});
 
 
 /*localStorage.setItem("cookies", "null");
@@ -73,12 +73,12 @@ checkLocalStorage();
 
 const submitToClosePopup = document.getElementById("submitP");
 
-function  selectLangAndClosePopup(){
+function selectLangAndClosePopup() {
     //recuperer le pays de l'utilisateur depuis le <select>
-    const recupCountry  = document.getElementById("french_loc").value;
+    const recupCountry = document.getElementById("french_loc").value;
 
     //enregistrer le pays dans le local storage
-    if(recupCountry == "null"){
+    if (recupCountry == "null") {
         language_Popup_container.classList.add("show");
 
         //ajoouter un <p> en rouge pour dire à l'utilisateur de sélectionner un pays une seule fois
@@ -101,22 +101,22 @@ function  selectLangAndClosePopup(){
         language_Popup_container.classList.remove("show");
     }
 
-   
+
 };
 submitToClosePopup.addEventListener("click", selectLangAndClosePopup);
 
 
 // Fonction pour rendre le pays choisi sélectionné dans le <select> de la barre de navigation
-function synchronizeSelectCountry(){
+function synchronizeSelectCountry() {
     const recupCountry = localStorage.getItem("country");
     const selectCountry = document.getElementById("changer_pays");
     selectCountry.value = recupCountry;
 };
 
 // Fonction pour changer le pays anglais qui est dans le stockage local
-function changeCountry(){
+function changeCountry() {
     //recupere le pays de l'utilisateur depuis le <select>
-    const recupCountry  = document.getElementById("changer_pays").value;
+    const recupCountry = document.getElementById("changer_pays").value;
 
     //enregistrer le pays dans le local storage
     localStorage.setItem("country", recupCountry);
@@ -124,12 +124,12 @@ function changeCountry(){
 document.getElementById("changer_pays").addEventListener("change", changeCountry);
 
 // Au chargement du DOM, attendez 2 secondes, puis affichez le contenu principal
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const mainContent = document.getElementById('body-content');
-    setTimeout(function() {
-      mainContent.style.display = 'block';
+    setTimeout(function () {
+        mainContent.style.display = 'block';
     }, 350); // Définir le délai d'attente en millisecondes (2 secondes dans cet exemple)
-  });
+});
 
 
 
@@ -143,35 +143,28 @@ const chat = document.querySelector('.chatbot-reponse');
 // Déclaration de la variable heightInput
 let heightInput = userInput.offsetHeight;
 
-// Déclaration de la variable API_KEY
-const API_KEY = "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"; 
-
 // Déclaration de la variable question
 let question;
 
 
 const responseGeneration = (nextChatLi, country) => {
-    // Récupération de la réponse de l'API
-    const API_URL = "https://api.openai.com/v1/chat/completions";
-    //const ElementOfMessage = nextChatLi.querySelector('p');
-    const texteJurdique = "Quelle loi "+ country + " est en lien avec cette question (répond seulement si la question posé à quelque chose à voir avec le juridique sinon répond juste 'Ce n'est pas une question juridique.') : " + question;
-    const requestOptions = {
-        method: 'POST',
-        headers : {
-            'Content-Type': 'application/json',
-            'Aurhorization': `Bearer ${API_KEY}`
-        },
-        body: JSON.stringify({
-            model: 'gpt-3.5-turbo',
-            messages: [ { role: 'user', content: texteJurdique } ],
+    console.log(country);
+    // Récupération de la clé API
+    axios.post('/api/retrieve-answer',
+        {
+            question: question,
+            country: country
         })
-    }
-    fetch(API_URL, requestOptions).then(response => response.json()).then(data => {
-        nextChatLi.querySelector('p').textContent = data.choices[0].message.content;
-    }).catch(error =>{
-        nextChatLi.classList.add("error");
-        nextChatLi.querySelector('p').textContent = "Une erreur est survenue, veuillez réessayer plus tard.";
-    }).finally(() => {chat.scrollTo(0, chat.scrollHeight);});
+        .then(e => {
+            nextChatLi.querySelector('p').textContent = e.data.response;
+        })
+        .catch(error => {
+            nextChatLi.classList.add("error");
+            nextChatLi.querySelector('p').textContent = "Une erreur est survenue, veuillez réessayer plus tard.";
+        })
+        .finally(() => {
+            chat.scrollTo(0, chat.scrollHeight);
+        });
 }
 
 // Fonction pour créer un li avec la réponse de l'utilisateur
@@ -183,7 +176,7 @@ const createReponseLi = (question, nameClass) => {
     li.innerHTML = contentChat;
     li.querySelector('p').textContent = question;
     return li;
-}   
+}
 
 
 // Fonction pour envoyer la question de l'utilisateur
@@ -192,7 +185,7 @@ const sendQuestion = () => {
     question = userInput.value;
 
     // Affichage de la question de l'utilisateur
-    if(! question) return;
+    if (!question) return;
 
     setTimeout(() => {
         const nextChatLi = createReponseLi("Je réfléchis...", "reponse-BOT");
@@ -220,7 +213,7 @@ userInput.addEventListener('keyup', e => {
 
 //allows if the enter button is pressed and the popup is closed to send the question
 userInput.addEventListener('keydown', e => {
-    if(e.key === "Enter"){
+    if (e.key === "Enter") {
         e.preventDefault();
         sendQuestion();
     }
@@ -230,3 +223,4 @@ const setCursorTextOnTextarea = () => {
     console.log("ok");
     userInput.focus();
 }
+

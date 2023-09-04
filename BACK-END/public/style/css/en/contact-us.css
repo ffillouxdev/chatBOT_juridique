@@ -65,6 +65,12 @@
         display: none;
     }
 
+    #logoChatLawBOT {
+        width: 77px;
+        height: 77px;
+        margin-left: 12px;
+    }
+
     /*Partie MAIN*/
     main{
         width: 85%;
@@ -287,6 +293,12 @@
 
     li.actual a{
         color: red;   
+    }
+
+    #logoChatLawBOT {
+        width: 77px;
+        height: 77px;
+        margin-left: 12px;
     }
 
      /*NAV mobile*/

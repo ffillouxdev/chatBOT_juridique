@@ -10,21 +10,35 @@ const recupCountryUser = localStorage.getItem("country");
 
 // When the user clicks on the "Send" button, the message is sent to the expert's mailbox
 formen.addEventListener('submit', (e)=>{
-    e.preventDefault();
+  e.preventDefault();
+    
+  let formDatafr = {
+    lastname : lastNameInputfr.value,
+    firstname : firstNameInputfr.value,
+    email : emailInputfr.value,
+    message : messageInputfr.value,
+    country : recupCountryUser
+  }
 
-    Email.send({
-        SecureToken : "cff18f15-44fc-42b5-b267-b878e79434ec",
-        To : 'forum.lyon1@gmail.com',
-        From : emailInputen.value,
-        Subject : 'Message from ' + lastNameInputen.value + ' ' + firstNameInputen.value + " who comes from " + recupCountryUser, 
-        Body : messageInputen.value
-    }).then(
-      message => alert("The email has been sent successfully!")
-    ); 
-  
-    // Reset the form
-    lastNameInputen.value = '';
-    firstNameInputen.value = '';
-    emailInputen.value = '';
-    messageInputen.value = '';
-});
+  // Send the form data to the expert
+  let xhr = new XMLHttpRequest();
+  xhr.open('POST', '/Contact', true);
+  xhr.setRequestHeader('content-type', 'application/json');
+  xhr.onload = function(){
+    console.log(xhr.responseText);
+    if(xhr.responseText == 'success'){
+      alert("L'email a bien été envoyé");
+
+      // Reset the form
+      lastNameInputfr.value = '';
+      firstNameInputfr.value = '';
+      emailInputfr.value = '';
+      messageInputfr.value = '';
+    } else {
+      alert("Aie, l'email n'a pas pu être envoyé");
+    }
+  }
+
+  xhr.send(JSON.stringify(formDatafr));
+ 
+})

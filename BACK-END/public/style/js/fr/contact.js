@@ -1,4 +1,6 @@
 /* RECUPERE LES INFORMATIONS DU FORMULAIRE ET LES ENVOIE A L'EXPERT */
+
+// Récupère les éléments du formulaire
 const lastNameInputfr = document.getElementById("Nom");
 const firstNameInputfr = document.getElementById("Prénom"); 
 const emailInputfr = document.getElementById("Email"); 
@@ -10,25 +12,38 @@ const recupCountryUser = localStorage.getItem("country");
 
 // Lorsque l'utilisateur clique sur le bouton "Envoyer", le message est envoyé dans la boite mail de l'expert
 formfr.addEventListener('submit', (e)=>{
-    e.preventDefault();
+  e.preventDefault();
+    
+  let formDatafr = {
+    lastname : lastNameInputfr.value,
+    firstname : firstNameInputfr.value,
+    email : emailInputfr.value,
+    message : messageInputfr.value,
+    country : recupCountryUser
+  }
 
-    Email.send({
-      SecureToken : "cff18f15-44fc-42b5-b267-b878e79434ec",
-      To : "forum.lyon1@gmail.com",
-      From : emailInputfr.value,
-      Subject : 'Message de ' + lastNameInputfr.value + ' ' + firstNameInputfr.value + " qui vient " + recupCountryUser,
-      Body : messageInputfr.value
-  }).then(
-    message => alert("L'email a bien était envoyé !"),
-  );
+  // Envoie les données du formulaire à l'expert
+  let xhr = new XMLHttpRequest();
+  xhr.open('POST', '/Contact', true);
+  xhr.setRequestHeader('content-type', 'application/json');
+  xhr.onload = function(){
+    console.log(xhr.responseText);
+    if(xhr.responseText == 'success'){
+      alert("L'email a bien été envoyé");
 
-  // Réinitialise le formulaire
-  lastNameInputfr.value = '';
-  firstNameInputfr.value = '';
-  emailInputfr.value = '';
-  messageInputfr.value = '';
-});
+      // Réinitialise le formulaire
+      lastNameInputfr.value = '';
+      firstNameInputfr.value = '';
+      emailInputfr.value = '';
+      messageInputfr.value = '';
+    } else {
+      alert("Aie, l'email n'a pas pu être envoyé");
+    }
+  }
 
+  xhr.send(JSON.stringify(formDatafr));
+ 
+})
 
 
 

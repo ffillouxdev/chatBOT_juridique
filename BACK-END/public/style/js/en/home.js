@@ -2,6 +2,8 @@
 const refuseCookies = document.getElementById("refuse_cookies");
 const acceptCookies = document.getElementById("accept_cookies");
 const cookiesContainer = document.querySelector(".cookies_container");
+require('dotenv').config();
+
 
 // Function to refuse cookies
 refuseCookies.addEventListener("click", function () {
@@ -142,7 +144,7 @@ const chat = document.querySelector('.chatbot-reponse');
 let heightInput = userInput.offsetHeight;
 
 // Declaration of the API_KEY variable
-const API_KEY = "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"; 
+const API_KEY = process.env.API_KEY;
 
 // Declaring the question variable
 let question;
@@ -152,13 +154,12 @@ const responseGeneration = (nextChatLi, enCountry) => {
     const API_URL = "https://api.openai.com/v1/chat/completions";
 
     //  The text that will be sent to the API
-    const legalText = "Which law from "+ enCountry +" is related to this question (answers only if the question asked has something to do with the legal otherwise just answers 'It is not a legal question.'): " + question; 
-    console.log(legalText);
+    const legalText = "Which law "+ country + " is related to this question and explains the foundations of this law (answers only if the question asked has something to do with the legal otherwise just answers 'It's not a question legal.'): " + question;    
     const requestOptions = {
         method: 'POST',
         headers : {
             'Content-Type': 'application/json',
-            'Aurhorization': `Bearer ${API_KEY}`
+            'Authorization': `Bearer ${API_KEY}`
         },
         body: JSON.stringify({
             model: 'gpt-3.5-turbo',

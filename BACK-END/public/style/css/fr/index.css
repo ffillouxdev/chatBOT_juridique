@@ -78,9 +78,11 @@
         box-shadow: 0 0 10px #ccc;
         color: #000;
     }
+    
     .bottom-nav li {
         text-align: center;
     }
+
     .bottom-nav select{
         width: 90px;
     }
@@ -105,6 +107,7 @@
     .cookies_container.close{
         opacity: 0;
         pointer-events: none;
+        transition: opacity 0.2s ease;
     }
 
     .cookies{
@@ -226,6 +229,26 @@
         text-shadow: 0 0 10px #2f2f2f;
     }
 
+    main #h3{
+        text-align: center;
+        color: darkblue;
+        font-size: 11px;
+        margin-top: -0.8%;
+        font-style: italic;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+
+    main #h3:hover{
+        color: darkblue;
+        text-shadow: 0 0 10px #2f2f2f;
+    }
+
+    #logoChatLawBOT {
+        width: 77px;
+        height: 77px;
+        margin-left: 12px;
+    }
+    
     /*Partie chatbot*/
     article{
         display: flex;
@@ -364,6 +387,79 @@
         resize: none;
     }
 
+     /*Popup consultante*/
+     .consultante-popup{
+        position: absolute;
+        top: 60%;
+        left: 84%;
+    }
+
+    .img-consultante {
+        margin-top: 15%;
+        width: 70px;
+        height: 70px;
+        border-radius: 35px;
+        border: 1.5px solid black;
+        background-color: lightgray;
+        text-align: center;
+    }
+
+    .img-consultante:hover {
+        border: 2px solid darkblue;
+        cursor: pointer;
+        border-radius: 35.5px;
+    } 
+
+    .img-consultante img {
+        width: 60px;
+        margin-top: 2px;
+    }
+
+    .texte_popup {
+        position: relative;
+        background: #ffffff;
+        color: #000000;
+        width: 90px;
+        height: 80px;
+        border-radius: 5%;
+        border: #000000 solid 1px;
+    }
+
+    .texte_popup:after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 0;
+        z-index: 1;
+        border-style: solid;
+        border-color: #ffffff transparent;
+        border-width: 20px 8px 0;
+        bottom: -20px;
+        left: 70%;
+        margin-left: -8px;
+    }
+
+    .texte_popup:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        z-index: 0;
+        border-style: solid;
+        border-color: #000000 transparent;
+        border-width: 21px 9px 0;
+        bottom: -21.5px;
+        left: 70%;
+        margin-left: -9px;
+        display: block;
+    }
+
+    .texte_popup .information_proposition {
+        font-size: 12px;
+        color: black;
+        text-align: center;
+    }
+
+
     /*FOOTER*/
     footer{
         height: 9px;
@@ -428,6 +524,10 @@
     .footer p {
         text-align: center;
         color: darkblue;
+    }
+
+    .contact-numero span {
+        font-size: 20px;
     }
 }
 
@@ -564,6 +664,7 @@
     .cookies_container.close{
         opacity: 0;
         pointer-events: none;
+        transition: opacity 0.2s ease;
     }
 
     .cookies{
@@ -690,6 +791,26 @@
     main h1:hover{
         color: darkblue;
         text-shadow: 0 0 10px #2f2f2f;
+    }
+
+    main #h3{
+        text-align: center;
+        color: darkblue;
+        font-size: 11px;
+        margin-top: -0.8%;
+        font-style: italic;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+
+    main #h3:hover{
+        color: darkblue;
+        text-shadow: 0 0 10px #2f2f2f;
+    }
+
+    #logoChatLawBOT {
+        width: 77px;
+        height: 77px;
+        margin-left: 12px;
     }
 
     /*Partie chatbot*/
@@ -1112,6 +1233,7 @@
     .cookies_container.close{
         opacity: 0;
         pointer-events: none;
+        transition: opacity 0.2s ease;
     }
 
     .cookies{
@@ -1224,6 +1346,20 @@
     /*PARTIE MAIN et chatBOT*/
     main h1{
         text-align: center;
+    }
+
+    main #h3{
+        text-align: center;
+        color: darkblue;
+        font-size: 11px;
+        margin-top: -4%;
+        font-style: italic;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+
+    main #h3:hover{
+        color: darkblue;
+        text-shadow: 0 0 10px #2f2f2f;
     }
 
     article{
@@ -1433,79 +1569,6 @@
         text-align: center;
     }
 
-    /*PARTIE FOOTER*/
-    .footer{
-        height: 9px;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-        bottom: 0; 
-        right: 0;
-        margin: 0 auto;
-        padding-top: 10px;
-        font-size: 15px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
-
-
-    .footer-content{
-        margin: 0 auto;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .about p{
-        color: darkblue;
-        font-size: 20px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        text-align: center;
-    }
-
-    .footer-content {
-        margin-top: 20%;
-    }
-
-    .contact-numero{
-        width: 90%;
-    }
-
-    .links{
-        margin-left: 10%;
-    }
-
-    .links h2{
-        margin-left: 30px;
-    }
-
-    .links li:hover{
-        color: darkblue;
-        border-radius: 5px;
-    }
-
-    .links li{
-        list-style-type: none;
-        margin-left: 15px;
-    }
-
-    .links a{
-        text-decoration: underline;
-        text-decoration: none;
-    }
-
-    .links a:visited{
-        color: #000;
-    }
-
-    .links a:hover{
-        text-decoration: underline;
-        color: darkblue;
-        border-radius: 5px;
-    }
-
     /*partie FOOTER*/
     .footer{
         height: 9px;
@@ -1583,6 +1646,11 @@
         text-align: center;
         color: darkblue;
     }
+
+    .contact-numero span {
+        font-size: 20px;
+    }
+
 }
 
 
@@ -1715,6 +1783,7 @@
     .cookies_container.close{
         opacity: 0;
         pointer-events: none;
+        transition: opacity 0.2s ease;
     }
 
     .cookies{
@@ -1833,6 +1902,20 @@
     /*PARTIE MAIN et chatBOT*/
     main h1{
         text-align: center;
+    }
+
+    main #h3{
+        text-align: center;
+        color: darkblue;
+        font-size: 11px;
+        margin-top: -2%;
+        font-style: italic;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+
+    main #h3:hover{
+        color: darkblue;
+        text-shadow: 0 0 10px #2f2f2f;
     }
 
     article{
@@ -2042,79 +2125,6 @@
             text-align: center;
         }
 
-    /*PARTIE FOOTER*/
-    .footer{
-        height: 9px;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-        bottom: 0; 
-        right: 0;
-        margin: 0 auto;
-        padding-top: 10px;
-        font-size: 15px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
-
-
-    .footer-content{
-        margin: 0 auto;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .about p{
-        color: darkblue;
-        font-size: 20px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        text-align: center;
-    }
-
-    .footer-content {
-        margin-top: 20%;
-    }
-
-    .contact-numero{
-        width: 90%;
-    }
-
-    .links{
-        margin-left: 10%;
-    }
-
-    .links h2{
-        margin-left: 30px;
-    }
-
-    .links li:hover{
-        color: darkblue;
-        border-radius: 5px;
-    }
-
-    .links li{
-        list-style-type: none;
-        margin-left: 15px;
-    }
-
-    .links a{
-        text-decoration: underline;
-        text-decoration: none;
-    }
-
-    .links a:visited{
-        color: #000;
-    }
-
-    .links a:hover{
-        text-decoration: underline;
-        color: darkblue;
-        border-radius: 5px;
-    }
-
     /*partie FOOTER*/
     .footer{
         height: 9px;
@@ -2192,6 +2202,11 @@
         text-align: center;
         color: darkblue;
     }
+
+    .contact-numero span {
+        font-size: 20px;
+    }
+
 }
 
 
@@ -2348,6 +2363,7 @@
     .cookies_container.close{
         opacity: 0;
         pointer-events: none;
+        transition: opacity 0.2s ease;
     }
 
     .cookies{
@@ -2457,6 +2473,20 @@
     /*PARTIE MAIN et chatBOT*/
     main h1{
         text-align: center;
+    }
+
+    main #h3{
+        text-align: center;
+        color: darkblue;
+        font-size: 11px;
+        margin-top: -0.8%;
+        font-style: italic;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+
+    main #h3:hover{
+        color: darkblue;
+        text-shadow: 0 0 10px #2f2f2f;
     }
 
     article{
@@ -2594,80 +2624,6 @@
         width: 250px;
         resize: none;
     }
-    
-
-    /*PARTIE FOOTER*/
-    .footer{
-        height: 9px;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-        bottom: 0; 
-        right: 0;
-        margin: 0 auto;
-        padding-top: 10px;
-        font-size: 15px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
-
-
-    .footer-content{
-        margin: 0 auto;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .about p{
-        color: darkblue;
-        font-size: 20px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        text-align: center;
-    }
-
-    .footer-content {
-        margin-top: 20%;
-    }
-
-    .contact-numero{
-        width: 90%;
-    }
-
-    .links{
-        margin-left: 10%;
-    }
-
-    .links h2{
-        margin-left: 30px;
-    }
-
-    .links li:hover{
-        color: darkblue;
-        border-radius: 5px;
-    }
-
-    .links li{
-        list-style-type: none;
-        margin-left: 15px;
-    }
-
-    .links a{
-        text-decoration: underline;
-        text-decoration: none;
-    }
-
-    .links a:visited{
-        color: #000;
-    }
-
-    .links a:hover{
-        text-decoration: underline;
-        color: darkblue;
-        border-radius: 5px;
-    }
 
     /*partie FOOTER*/
     .footer{
@@ -2746,6 +2702,11 @@
         text-align: center;
         color: darkblue;
     }
+
+    .contact-numero span {
+        font-size: 20px;
+    }
+
 }
 
 
@@ -2778,12 +2739,19 @@
         margin-bottom: 1%;
     }
 
+    main #h3{
+        text-align: center;
+        color: darkblue;
+        font-size: 11px;
+        margin-top: -0.8%;
+        font-style: italic;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
 
-
-
-
-
-
+    main #h3:hover{
+        color: darkblue;
+        text-shadow: 0 0 10px #2f2f2f;
+    }
 
     article{
         margin-top: 2%;
@@ -2940,6 +2908,11 @@
     .links a:visited{
         color: #000;
     }
+
+    .contact-numero span {
+        font-size: 20px;
+    }
+
 }
 
 

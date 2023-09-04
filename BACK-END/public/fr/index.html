@@ -6,13 +6,24 @@
     <link rel="stylesheet" href="style/css/fr/index.css">
     <link rel="stylesheet" href="/style/css/fr/navigation.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="style/js/fr/home.js" defer></script>
-    <title>chatBOT</title>
+    <link rel="shortcut icon" href="style/assets/img/logoChatLawBOT-arrondi.ico" type="image/x-icon">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KC2GJPWR');</script>
+    <!-- End Google Tag Manager -->
+    <title>LawTchat</title>
+
 </head>
 <body id="body-content">
     <nav>
         <div class="header-computer">
             <ul class="left-nav">
+                <li><img src="style/assets/img/logoChatLawBOT.jpeg" alt="logoChatLawBOT" id="logoChatLawBOT"></li>
                 <li class="actual"><a href="">
                     <i class="transi home"></i>
                     <span class="material-symbols-outlined">home</span>
@@ -32,7 +43,6 @@
             <div class="bottom-nav">
                 <ul>
                     <li>pays :
-                        <br> 
                         <select name="changer_pays" id="changer_pays">
                             <optgroup label="pays Francophone" id="langs">
                                 <option value="de France">France</option>
@@ -106,19 +116,20 @@
                     <select name="french_loc" id="french_loc">
                         <optgroup label="pays Francophone" id="langs">
                             <option value="null">null</option>
-                            <option value="de France">France</option>
-                            <option value="de Belgique">Belgique</option>
-                            <option value="de la partie du Canada Français">Canada (parlant français)</option>
+                            <option value="en France">France</option>
+                            <option value="en Belgique">Belgique</option>
+                            <option value="en la partie du Canada Français">Canada (parlant français)</option>
                             <option value="du Luxembourg">Luxembourg</option>
                             <option value="de Monaco">Monaco</option>
-                            <option value="de Suisse">Suisse</option>
+                            <option value="en Suisse">Suisse</option>
                         </optgroup>
                     </select>
                 </div>
                 <input type="submit" id="submitP" value="Close">
             </div>
         </div>
-        <h1>Bienvenue sur chatLawBOT !!!</h1>
+        <h1>Bienvenue sur LAWTCHAT</h1>
+        <p id="h3">"La justice entre vos mains"</p>
         <article>
             <div class="chatbot-section">
                    <ul class="chatbot-reponse">
@@ -128,7 +139,7 @@
                      </li>
                    </ul>
                 <div class="user-question">
-                    <textarea type="text"  id="userInput" placeholder="Posez votre question ici" maxlength="400" required></textarea>
+                    <textarea type="text"  id="userInput" placeholder="Posez votre question ici" maxlength="200" required></textarea>
                     <button id="buttonUser" class="material-icons"><span class="material-symbols-outlined">send</span></button>
                 </div>
             </div>
@@ -138,7 +149,7 @@
                 <p class="information_proposition">Besoin d'une consultation téléphonique avec une experte ?</p>
             </div>
             <div class="img-consultante">
-                <a href="" target="_blank"><img src="style/assets/img/logo-consultante.png" alt="consultante_logo"></a>
+                <a href="https://lajuristeindependante.com/" target="_blank"><img src="style/assets/img/logo-consultante.png" alt="consultante_logo"></a>
             </div>
         </div>
     </main>
@@ -147,13 +158,13 @@
         <div class="footer">
             <br>
             <div class="footer-section about">
-                <p>Le chatBOT chatLawBOT est un outil d'aide à la décision pour les entreprises et les particuliers.</p>
+                <p>Le chatBOT LawTchat est un outil d'aide à la décision pour les entreprises et les particuliers.</p>
             </div>
             <div class="footer-content">
                     <div class="contact-numero">
-                        <span class="material-symbols-outlined">phone</span> &nbsp; 06 88 03 97 00
+                        <span class="material-symbols-outlined">copyright</span> &nbsp; Lawtchat - tous droits réservés
                         <br>
-                        <span class="material-symbols-outlined">mail</span> &nbsp;  forum.lyon1@gmail.com
+                        <span class="material-symbols-outlined">mail</span> &nbsp; contactlawtchat@gmail.com
                     </div>
                     <div class="footer-section links">
                         <h2>Liens utiles</h2>

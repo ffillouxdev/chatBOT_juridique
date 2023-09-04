@@ -60,7 +60,13 @@
         color: red;
     }
 
-      /*NAV mobile*/
+    #logoChatLawBOT {
+        width: 77px;
+        height: 77px;
+        margin-left: 12px;
+    }
+
+    /*NAV mobile*/
       .header-mobile {
         display: none;
     }
@@ -254,7 +260,13 @@
         color: red;   
     }
 
-      /*NAV mobile*/
+    #logoChatLawBOT {
+        width: 77px;
+        height: 77px;
+        margin-left: 12px;
+    }
+    
+    /*NAV mobile*/
       .header-mobile {
         display: none;
     }

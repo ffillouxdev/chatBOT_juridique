@@ -60,6 +60,12 @@
         color: red;
     }
 
+    #logoChatLawBOT {
+        width: 77px;
+        height: 77px;
+        margin-left: 12px;
+    }
+
      /*NAV mobile*/
      .header-mobile {
         display: none;
@@ -287,6 +293,12 @@
 
     li.actual a{
         color: red;   
+    }
+
+    #logoChatLawBOT {
+        width: 77px;
+        height: 77px;
+        margin-left: 12px;
     }
 
      /*NAV mobile*/

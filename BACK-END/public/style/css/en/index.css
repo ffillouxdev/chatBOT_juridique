@@ -132,6 +132,7 @@
     .cookies_container.close{
         opacity: 0;
         pointer-events: none;
+        transition: opacity 0.2s ease;
     }
 
     .cookies{
@@ -216,23 +217,28 @@
         margin-top: 20%; 
     }
  
-     .popup p {
+    .popup p {
          font-size: 17px;
-     }
+    }
  
-     .lang_choice{
+    .lang_choice{
          margin-bottom: 3%;
-     }
+    }
  
      .lang_choice select {
          width: 50%;
-     }
+    }
      
-     .errorLang {
+    .errorLang {
         color: red;
         font-size: 0.8rem;
-      }
+    }
 
+    #logoChatLawBOT {
+        width: 77px;
+        height: 77px;
+        margin-left: 12px;
+    }
 
     /*Chatbot part*/
     article{
@@ -625,6 +631,12 @@
         width: 90px;
     }
 
+    #logoChatLawBOT {
+        width: 77px;
+        height: 77px;
+        margin-left: 12px;
+    }
+
     /*NAV mobile*/
     .header-mobile {
         display: none;
@@ -645,6 +657,7 @@
     .cookies_container.close{
         opacity: 0;
         pointer-events: none;
+        transition: opacity 0.2s ease;
     }
     
     .cookies{
@@ -716,6 +729,12 @@
     main h1:hover{
         color: darkblue;
         text-shadow: 0 0 10px #2f2f2f;
+    }
+
+     #logoChatLawBOT {
+        width: 77px;
+        height: 77px;
+        margin-left: 12px;
     }
     
     .language_Popup_container {
@@ -1193,6 +1212,7 @@
     .cookies_container.close{
         opacity: 0;
         pointer-events: none;
+        transition: opacity 0.2s ease;
     }
 
     .cookies{
@@ -1713,6 +1733,7 @@
     .cookies_container.close{
         opacity: 0;
         pointer-events: none;
+        transition: opacity 0.2s ease;
     }
 
     .cookies{
@@ -2228,6 +2249,7 @@
     .cookies_container.close{
         opacity: 0;
         pointer-events: none;
+        transition: opacity 0.2s ease;
     }
 
     .cookies{
