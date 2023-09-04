@@ -44,6 +44,7 @@ function authenticateToken(req, res, next) {
 
 
 app_juridique.post('/api/retrieve-answer', (req, res) => {
+
     
     const question = req.body.question;
     const country = req.body.country;
