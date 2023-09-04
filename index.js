@@ -22,7 +22,7 @@ app_juridique.use(express.json())
 // Indique quel port utiliser
 const PORT = 8080;
 
-const lang = /*"en"*/process.env.LANG.slice(0, 2);
+const lang = /*"en"*/process.env.LANG;
 
 // Fonction pour vérifier l'authentification via un token
 function authenticateToken(req, res, next) {
