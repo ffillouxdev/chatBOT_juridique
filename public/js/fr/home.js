@@ -29,8 +29,8 @@ accepterCookies.addEventListener("click", function () {
 });
 
 
-/*localStorage.setItem("cookies", "null");
-localStorage.setItem("country", "null");*/
+localStorage.setItem("cookies", "null");
+localStorage.setItem("country", "null");
 
 // Fonction pour vérifier les cookies
 function checkCookies() {

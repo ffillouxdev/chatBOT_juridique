@@ -24,6 +24,13 @@ const PORT = 8080;
 
 const lang = /*"en"*/process.env.LANG;
 
+// Permet d'utiliser les fichiers statiques (css, js, images, etc...)
+app_juridique.use(express.static(__dirname + "/public"));
+
+// Permet de récupérer les données du formulaire
+app_juridique.use(express.json());
+
+
 // Fonction pour vérifier l'authentification via un token
 function authenticateToken(req, res, next) {
     const token = req.headers['authorization'];
@@ -41,49 +48,40 @@ function authenticateToken(req, res, next) {
     });
 }
 
-
-
+// Permet de récupérer les données du formulaire
 app_juridique.post('/api/retrieve-answer', (req, res) => {
 
-    
     const question = req.body.question;
     const country = req.body.country;
 
     const API_KEY = process.env.API_KEY;
 
      const API_URL = "https://api.openai.com/v1/chat/completions";
-            //const ElementOfMessage = nextChatLi.querySelector('p');
-            const texteJurdique = "Quelle loi "+ country + " est en lien avec cette question et explique les fondements de cette loi (répond seulement si la question posé à quelque chose à voir avec le juridique sinon répond juste 'Ce n'est pas une question juridique.') : " + question;
-            const requestOptions = {
-                method: 'POST',
-                headers : {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${API_KEY}`
-                },
-                body: JSON.stringify({
-                    model: 'gpt-3.5-turbo',
-                    messages: [ { role: 'user', content: texteJurdique } ],
-                })
-            }
-            fetch(API_URL, requestOptions)
-                .then(response => response.json()).then(data => {
-                    res.status(200).json({ response:  data.choices[0].message.content });
-                })
-                .catch(error =>{
-                    res.status(400).json({ error: "Une erreur est survenue"})    
-                })
+    
+     //const ElementOfMessage = nextChatLi.querySelector('p');
+    const texteJurdique = "Quelle loi "+ country + " est en lien avec cette question et explique les fondements de cette loi (répond seulement si la question posé à quelque chose à voir avec le juridique sinon répond juste 'Ce n'est pas une question juridique.') : " + question;
+    const requestOptions = {
+        method: 'POST',
+        headers : {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${API_KEY}`
+        },
+        body: JSON.stringify({
+            model: 'gpt-3.5-turbo',
+            messages: [ { role: 'user', content: texteJurdique } ],
+        })
+    }
+    fetch(API_URL, requestOptions)
+        .then(response => response.json()).then(data => {
+            res.status(200).json({ response:  data.choices[0].message.content });
+        })
+        .catch(error =>{
+            res.status(400).json({ error: "Une erreur est survenue"})    
+        })
 });
-
-// Permet d'utiliser les fichiers statiques (css, js, images, etc...)
-app_juridique.use(express.static(__dirname + "/public"));
-
-// Permet de récupérer les données du formulaire
-app_juridique.use(express.json());
 
 // on définit la route du fichier index.html qui est la page d'accueil du site
 app_juridique.get('/', (req, res) => {
-
-    const API_KEY = process.env.API_KEY;
 
     let indexHTML;
 
@@ -106,7 +104,7 @@ app_juridique.get('/', (req, res) => {
     }
     // on envoie le contenu de la page html index.html
     res.send(indexHTML)
-})
+});
 
 app_juridique.get("/Contact", (req, res) => {
     let contactHTML;
@@ -129,7 +127,7 @@ app_juridique.get("/Contact", (req, res) => {
             break;
     }
     res.send(contactHTML)
-})
+});
 
 app_juridique.post("/Contact", (req, res) => {
     console.log(req.body);
@@ -182,8 +180,11 @@ app_juridique.get("/About", (req, res) => {
             break;
     }
     res.send(aboutHTML)
-})
+});
 
+app_juridique.get("/FAQ", (req, res) => {
+    let faqHTML;
+});
 
 app_juridique.get("/CookiePolicy", (req, res) => {
     let cookiePolicyHTML;
@@ -231,6 +232,16 @@ app_juridique.get("/Privacy-Policy", (req, res) => {
     }
     res.send(privacyPolicyHTML)
 })
+
+
+// on définit les routes des cookies 
+app_juridique.get("/set-cookie", (req, res) => {});
+
+app_juridique.get("/get-cookie", (req, res) => {});
+
+app_juridique.get("/delete-cookie", (req, res) => {});
+
+
 
 
 // Permet d'envoyer une page d'erreur 404 si la page demandée n'existe pas selon la langue
