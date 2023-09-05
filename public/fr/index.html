@@ -43,7 +43,7 @@
             <div class="bottom-nav">
                 <ul>
                     <li>pays :
-                        <select name="changer_pays" id="changer_pays">
+                        <select name="changer_pays" onchange="setCountry('computer')" id="computer_changer_pays">
                             <optgroup label="pays Francophone" id="langs">
                                 <option value="de France">France</option>
                                 <option value="de Belgique">Belgique</option>
@@ -81,7 +81,7 @@
                 <div class="bottom-nav">
                     <ul>
                         <li>pays :
-                            <select name="changer_pays" id="changer_pays">
+                            <select name="changer_pays" onchange="setCountry()" id="changer_pays">
                                 <optgroup label="pays Francophone" id="langs">
                                     <option value="de France">France</option>
                                     <option value="de Belgique">Belgique</option>
@@ -104,8 +104,8 @@
                 <h1>Avant de commencer</h1>
                 <p>Nous utilisons des cookies et d'autres données pour le fonctionnement du site et pour améliorer votre expérience. En cliquant sur "Accepter", vous acceptez l'utilisation des cookies et autres données sinon cliquez sur "Refuser" mais le site n'utilisera que les cookies nécessaires.</p>
                 <div class="decision-button">
-                    <button id="refuser_cookies">Refuser</button>
-                    <button id="accepter_cookies">Accepter</button>
+                    <button onclick="refuseCookie()" id="refuser_cookies">Refuser</button>
+                    <button onclick="acceptCookie()" id="accepter_cookies">Accepter</button>
                 </div>
             </div>
         </div>
@@ -113,7 +113,7 @@
             <div class="popup">
                 <p>Hey, de quels pays francophone viens-tu ?</p>
                 <div class="lang_choix">
-                    <select name="french_loc" id="french_loc">
+                    <select name="french_loc" onchange="setCountry()" id="french_loc">
                         <optgroup label="pays Francophone" id="langs">
                             <option value="null">null</option>
                             <option value="en France">France</option>

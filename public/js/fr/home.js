@@ -28,24 +28,50 @@ accepterCookies.addEventListener("click", function () {
 
 });
 
-
-localStorage.setItem("cookies", "null");
-localStorage.setItem("country", "null");
-
-// Fonction pour vérifier les cookies
-function checkCookies() {
-    // Si les cookies ne sont pas trouvés dans localStorage ou s'il est défini sur "null", affichez la popup
-    if (localStorage.getItem("cookies") === "null") {
-        cookiesContainer.classList.add("show");
-    } else {
-        // Si les cookies sont trouvés dans localStorage, masquez la popup
-        cookiesContainer.classList.add("close");
-    }
+const cookieAccepted = () => {
+    axios.get("/api/accept-cookie")
+        .then(e => {
+            if(e.data.acceptCookie){
+                cookiesContainer.classList.remove("show");
+                cookiesContainer.classList.add("close");
+            }else{
+                cookiesContainer.classList.add("show");
+                cookiesContainer.classList.remove("close");
+            }
+        })
+        .catch(err => {
+            console.error(err)
+        })
 }
 
-// Appeler la fonction pour vérifier le localStorage
-checkCookies();
+cookieAccepted();
 
+
+// verif du pays selectionné
+
+const getCountry = () => {
+    axios.get("/api/get-country")
+        .then(e => {
+            if (!e.data) {
+                language_Popup_container.classList.add("show");
+            } else {
+                if (e.data.country == null) {
+                    language_Popup_container.classList.add("show");
+                } else {
+                    language_Popup_container.classList.remove("show");
+                    language_Popup_container.classList.add("close");
+                    document.getElementById("computer_changer_pays").value = e.data.country;
+                    document.getElementById("changer_pays").value = e.data.country;
+                }
+            }
+
+        })
+        .catch(err => {
+            console.error(err)
+        })
+}
+
+getCountry();
 
 /***************************PARTIE POPUP****************************/
 const language_Popup_container = document.querySelector(".langage_Popup_container")
@@ -55,20 +81,6 @@ const language_Popup_container = document.querySelector(".langage_Popup_containe
  * Une popup qui demande la localisation en anglais, précise les lois de chaque pays anglais et n'apparaît qu'à la première connexion de l'utilisateur,
  *si je navigue sur le site et que je reviens sur la page d'accueil la popup n'apparaîtra plus.
 */
-function checkLocalStorage() {
-
-    // Si le pays n'est pas trouvé dans localStorage ou s'il est défini sur "null", affiche le popup
-    if (localStorage.getItem("country") === "null") {
-        language_Popup_container.classList.add("show");
-    } else {
-        // If the country is found in localStorage, hide the popup
-        language_Popup_container.classList.add("close");
-        synchronizeSelectCountry();
-    }
-}
-
-// Appel de fonction
-checkLocalStorage();
 
 
 const submitToClosePopup = document.getElementById("submitP");
@@ -148,7 +160,6 @@ let question;
 
 
 const responseGeneration = (nextChatLi, country) => {
-    console.log(country);
     // Récupération de la clé API
     axios.post('/api/retrieve-answer',
         {
@@ -220,7 +231,55 @@ userInput.addEventListener('keydown', e => {
 });
 
 const setCursorTextOnTextarea = () => {
-    console.log("ok");
     userInput.focus();
 }
 
+const setCountry = (mode) => {
+    let value = "none"
+    if (mode == "computer") {
+        const select = document.getElementById("computer_changer_pays");
+        value = select.value;
+    } else if(mode == "phone"){
+        const select = document.getElementById("changer_pays");
+        value = select.value;
+    }else{
+        const select = document.getElementById("french_loc");
+        value = select.value; 
+
+        const popup = document.querySelector(".langage_Popup_container")
+        popup.classList.remove("show");
+    }
+
+    axios.post("/api/set-country", {
+        country: value
+    })
+        .then(e => {
+            console.log(e.data)
+        })
+        .catch(err => {
+            console.error(err);
+        })
+
+}
+
+
+const refuseCookie = () => {
+    axios.delete("/api/accept-cookie")
+        .then(e => {
+            console.log("cookie refusé")
+            window.location.href = "https://google.com"
+        })
+        .catch(err => {
+            console.error(err)
+        })
+}
+
+const acceptCookie = () => {
+    axios.post("/api/accept-cookie")
+        .then(e => {
+            console.log("cookie accepté")
+        })
+        .catch(err => {
+            console.error(err)
+        })
+}
