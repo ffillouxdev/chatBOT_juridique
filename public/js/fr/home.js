@@ -4,7 +4,7 @@ const accepterCookies = document.getElementById("accepter_cookies");
 const cookiesContainer = document.querySelector(".cookies_container");
 
 // Fonction pour refuser les cookies
-refuserCookies.addEventListener("click", function () {
+const refuserCookie = () => {
     axios.get("/api/delete-accept-cookie")
     .then(e => {
         console.log("cookie refusé")
@@ -13,11 +13,11 @@ refuserCookies.addEventListener("click", function () {
     .catch(err => {
         console.error(err)
     })
-});
+}
 
 
 // Fonction pour accepter les cookies
-accepterCookies.addEventListener("click", function () {
+const accepterCookie = () => {
     axios.post("/api/accept-cookie")
     .then(e => {
         console.log("cookie accepté")
@@ -32,7 +32,7 @@ accepterCookies.addEventListener("click", function () {
     .catch(err => {
         console.error(err)
     })
-});
+}
 
 // Fonction pour vérifier si l'utilisateur a déjà accepté les cookies
 const checkCookie = () => {
@@ -158,7 +158,6 @@ getCountry();
 
 // variable globale pour le pays
 let country;
-console.log(country)
 
 // Fonction pour rendre le pays choisi sélectionné dans le <select> de la barre de navigation
 function synchronizeSelectCountry() {
@@ -173,6 +172,7 @@ function synchronizeSelectCountry() {
                 } else {
                     // on recupere le pays trouvée dans les cookies
                     country = e.data.country; 
+                    console.log(country)
 
                     language_Popup_container.classList.remove("show");
                     language_Popup_container.classList.add("close");
@@ -187,7 +187,6 @@ function synchronizeSelectCountry() {
         })
     
     
-    console.log(country)
     // on recupere le select dans la navbar
     const select = document.getElementById("changer_pays");
 
@@ -232,6 +231,7 @@ const sendQuestion = () => {
         //on simule la reflexion du chatbot (on ameliorera cette partie pour que le chatbot ecrive . puis . puis . puis la reponse  )
         chat.appendChild(nextChatLi);
         chat.scrollTo(0, chat.scrollHeight);
+        console.log(country)
         responseGeneration(nextChatLi, country);
     }, 600);
 
