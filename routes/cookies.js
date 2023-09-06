@@ -1,13 +1,15 @@
 const express = require("express");
 const router = express.Router();
 
-
+// Permet d'enregistrer le pays de l'utilisateur dans un cookie
 router.post("/api/set-country", (req, res) => {
     const country = req.body.country;
     res.cookie('country', country, { httpOnly: true });
     res.status(200).json({ country: country });
 })
 
+
+// Permet d'obtenir le pays de l'utilisateur depuis le cookie
 router.get("/api/get-country", (req, res) => {
     const cookies = req.cookies;
     if(cookies){
@@ -22,18 +24,20 @@ router.get("/api/get-country", (req, res) => {
     }
 })
 
+// Permet de supprimer le cookie pays
 router.get("/api/delete-country", (req, res) => {
     res.clearCookie('country');
     res.status(200).json({ country: null });
 });
 
+
+// Permet d'accepter les cookies
 router.post("/api/accept-cookie", (req, res) => {
     res.cookie('acceptCookie', true, { httpOnly: true });
     res.status(200).json({ acceptCookie: true });
 })
 
-
-
+// Permet de savoir si l'utilisateur a accepté les cookies
 router.get("/api/accept-cookie", (req, res) => {
     const cookies = req.cookies;
     if(cookies){
@@ -47,6 +51,14 @@ router.get("/api/accept-cookie", (req, res) => {
     }
 })
 
+// Permet de supprimer le cookie acceptCookie
+router.get("/api/delete-accept-cookie", (req, res) => {
+    res.clearCookie('acceptCookie');
+    res.status(200).json({ acceptCookie: false });
+});
+
+
+// Permet de suppimer le cookie acceptCookie
 router.delete("/api/delete-accept-cookie", (req, res) => {
     res.clearCookie('acceptCookie');
     res.status(200).json({ acceptCookie: false });

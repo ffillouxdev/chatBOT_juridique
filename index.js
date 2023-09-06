@@ -4,9 +4,10 @@ const express = require('express');
 require('dotenv').config();
 const jwt = require('jsonwebtoken'); // Ajout de jsonwebtoken
 require('dotenv').config();
+const cookieParser = require("cookie-parser");
+
 
 // Importation des routes
-const cookieParser = require("cookie-parser");
 const cookieRoutes = require("./routes/cookies");
 const chatbotRoutes = require("./routes/chatbot");
 const pagesRoutes = require("./routes/pages");
@@ -31,7 +32,6 @@ app_juridique.use(cookieParser());
 app_juridique.use("/", chatbotRoutes);
 app_juridique.use("/", cookieRoutes);
 app_juridique.use("/", pagesRoutes);
-
 
 // Fonction pour vérifier l'authentification via un token
 function authenticateToken(req, res, next) {

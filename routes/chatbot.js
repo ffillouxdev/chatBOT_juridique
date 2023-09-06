@@ -13,8 +13,8 @@ router.post('/api/retrieve-answer', (req, res) => {
      const API_URL = "https://api.openai.com/v1/chat/completions";
     
      //const ElementOfMessage = nextChatLi.querySelector('p');
-    const texteJurdique = "Quelle loi " 
-    + country + " est en lien avec cette question et explique les fondements de cette loi (répond seulement si la question posé à quelque chose à voir avec le juridique sinon répond juste 'Ce n'est pas une question juridique.') : " + question;
+    const texteJurdique = "Quelle loi " + country + " est en lien avec cette question et explique les fondements de cette loi (répond seulement si la question posé à quelque chose à voir avec le juridique sinon répond juste 'Ce n'est pas une question juridique.') : " + question;
+        
     const requestOptions = {
         method: 'POST',
         headers : {
@@ -33,6 +33,7 @@ router.post('/api/retrieve-answer', (req, res) => {
         .catch(error =>{
             res.status(400).json({ error: "Une erreur est survenue"})    
         })
+
 });
 
 module.exports = router;

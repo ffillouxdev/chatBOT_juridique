@@ -1,7 +1,6 @@
 {
   "name": "chatbot_juridique",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index",
@@ -22,5 +21,7 @@
   "devDependencies": {
     "dotenv-webpack": "^8.0.1",
     "nodemon": "^2.0.22"
-  }
+  },
+  "keywords": [],
+  "description": ""
 }
