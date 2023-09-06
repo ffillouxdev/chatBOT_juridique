@@ -5,68 +5,55 @@ const cookiesContainer = document.querySelector(".cookies_container");
 
 // Fonction pour refuser les cookies
 refuserCookies.addEventListener("click", function () {
-    localStorage.setItem("cookies", "refuser");
-    cookiesContainer.classList.add("close");
-
-    // appeler la popup de langue pour apparaître avec un délai de 2 secondes
-    setTimeout(function () {
-        checkLocalStorage();
-    }, 2000);
+    axios.get("/api/delete-accept-cookie")
+    .then(e => {
+        console.log("cookie refusé")
+        window.location.href = "https://google.com"
+    })
+    .catch(err => {
+        console.error(err)
+    })
 });
+
 
 // Fonction pour accepter les cookies
 accepterCookies.addEventListener("click", function () {
-    localStorage.setItem("cookies", "accepter");
-
-    // Si l'utilisateur accepte les cookies, la popup n'apparaîtra plus
-    cookiesContainer.classList.add("close");
-
-    // appeler la popup de langue pour apparaître avec un délai de 2 secondes
-    setTimeout(function () {
-        checkLocalStorage();
-    }, 2000);
-
+    axios.post("/api/accept-cookie")
+    .then(e => {
+        console.log("cookie accepté")
+        if (e.data.acceptCookie) {
+            cookiesContainer.classList.remove("show");
+            cookiesContainer.classList.add("close");
+        } else {
+            cookiesContainer.classList.add("show");
+            cookiesContainer.classList.remove("close");
+        }
+    })
+    .catch(err => {
+        console.error(err)
+    })
 });
 
-const cookieAccepted = () => {
+// Fonction pour vérifier si l'utilisateur a déjà accepté les cookies
+const checkCookie = () => {
     axios.get("/api/accept-cookie")
-        .then(e => {
-            if(e.data.acceptCookie){
-                cookiesContainer.classList.remove("show");
-                cookiesContainer.classList.add("close");
-            }else{
-                cookiesContainer.classList.add("show");
-                cookiesContainer.classList.remove("close");
-            }
-        })
-        .catch(err => {
-            console.error(err)
-        })
+    .then(e => {
+        if (e.data.acceptCookie) {
+            cookiesContainer.classList.remove("show");
+            cookiesContainer.classList.add("close");
+        } else {
+            cookiesContainer.classList.add("show");
+            cookiesContainer.classList.remove("close");
+        }
+    })
+    .catch(err => {
+        console.error(err)
+    })
 }
 
-cookieAccepted();
+checkCookie();
 
 
-const refuseCookie = () => {
-    axios.delete("/api/accept-cookie")
-        .then(e => {
-            console.log("cookie refusé")
-            window.location.href = "https://google.com"
-        })
-        .catch(err => {
-            console.error(err)
-        })
-}
-
-const acceptCookie = () => {
-    axios.post("/api/accept-cookie")
-        .then(e => {
-            console.log("cookie accepté")
-        })
-        .catch(err => {
-            console.error(err)
-        })
-}
 /***************************PARTIE LANG POPUP****************************/
 const language_Popup_container = document.querySelector(".langage_Popup_container")
 const submitToClosePopup = document.getElementById("submitP");
