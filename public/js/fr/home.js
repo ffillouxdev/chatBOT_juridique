@@ -74,9 +74,7 @@ const changeCountry = () => {
     // On recupere le select dans la navbar
     const recupCountry = document.getElementById("changer_pays").value;
 
-    //On change le cookies pays et le localstorage de la personne en fonction de la nouvelle valeur du select
-    localStorage.setItem("country", recupCountry);
-
+    //On change le cookies pays de la personne en fonction de la nouvelle valeur du select
     axios.post('/api/set-country', {
         country: recupCountry
     })
@@ -93,7 +91,7 @@ const changeCountry = () => {
 document.getElementById("changer_pays").addEventListener("change", changeCountry);
 
 
-// Fonction qui permet d'enregistrer le pays de l'utilisateur dans le localstorage et les cookies
+// Fonction qui permet d'enregistrer le pays de l'utilisateur dans les cookies
 const setCountry = () => {
     // On recupere le pays de l'utilisateur dans le select
     const recupCountry = document.getElementById("french_loc");
@@ -110,8 +108,6 @@ const setCountry = () => {
             selectElement.insertAdjacentHTML('afterend', '<p class="errorLang">' + erreurMessage + '</p>');
         }
     } else {
-        // On enregistre le pays de l'utilisateur dans le localstorage
-        localStorage.setItem("country", recupCountry.value);
 
         // On enregistre le pays de l'utilisateur dans le cookie
         axios.post('/api/set-country', {
@@ -160,12 +156,37 @@ const getCountry = () => {
 
 getCountry();
 
-
+// variable globale pour le pays
+let country;
+console.log(country)
 
 // Fonction pour rendre le pays choisi sélectionné dans le <select> de la barre de navigation
 function synchronizeSelectCountry() {
     // on recupere le cookie pays enregistrer par setCountry()
-    const country = localStorage.getItem("country");
+    axios.get("/api/get-country")
+        .then(e => {
+            if (!e.data) {
+                language_Popup_container.classList.add("show");
+            } else {
+                if (e.data.country == null) {
+                    language_Popup_container.classList.add("show");
+                } else {
+                    // on recupere le pays trouvée dans les cookies
+                    country = e.data.country; 
+
+                    language_Popup_container.classList.remove("show");
+                    language_Popup_container.classList.add("close");
+                    document.getElementById("changer_pays").value = e.data.country;
+                    document.getElementById("changer_pays").value = e.data.country;
+                }
+            }
+        
+        })
+        .catch(err => {
+            console.error(err)
+        })
+    
+    
     console.log(country)
     // on recupere le select dans la navbar
     const select = document.getElementById("changer_pays");
@@ -211,7 +232,7 @@ const sendQuestion = () => {
         //on simule la reflexion du chatbot (on ameliorera cette partie pour que le chatbot ecrive . puis . puis . puis la reponse  )
         chat.appendChild(nextChatLi);
         chat.scrollTo(0, chat.scrollHeight);
-        responseGeneration(nextChatLi, localStorage.getItem("country"));
+        responseGeneration(nextChatLi, country);
     }, 600);
 
     //on affiche la question de l'utilisateur dans un nouveau bloc qui appartient au li de class "reponse-User"
