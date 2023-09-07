@@ -92,7 +92,20 @@
 
 
 
-
+    /*Partie Main*/
+    main {
+        margin-left: 100px;
+        margin-top: 50px;
+        margin-right: 100px;
+        margin-bottom: 50px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #ccc;
+    }
+    .EnCours {
+        font-size: 30px;
+        text-align: center;
+    }
 
 
 
