@@ -13,6 +13,7 @@ const formfr = document.getElementsByClassName("form")[0];
 const recupCountryUser = () => {
   axios.get("/api/get-country")
   .then(e => {
+    console.log(e.data);
     return e.data;
   })
   .catch(err => {
@@ -21,7 +22,7 @@ const recupCountryUser = () => {
 }
 
 
-
+// La fonction qui envoie
 const submitMessage = () => {
   e.preventDefault();
     
@@ -35,7 +36,7 @@ const submitMessage = () => {
 
   // Envoie les données du formulaire à l'expert
   let xhr = new XMLHttpRequest();
-  //xhr.open('POST', '/Contact', true);
+  xhr.open('POST', '/Contact', true);
   xhr.setRequestHeader('content-type', 'application/json');
   xhr.onload = function(){
     console.log(xhr.responseText);
