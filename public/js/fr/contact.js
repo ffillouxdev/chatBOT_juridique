@@ -60,11 +60,11 @@ const submitMessage = () => {
 // Lorsque l'utilisateur clique sur le bouton "Envoyer", le message est envoyé dans la boite mail de l'expert
 sendBtnfr.addEventListener('click', submitMessage);
 
-// Lorsque l'utilisateur appuie sur la touche "Entrée", le message est envoyé dans la boite mail de l'expert
-sendBtnfr.addEventListener('keypress', (e) => {
-   if(e.key === 'Enter'){
-      submitMessage();
-    }
-});
+// // Lorsque l'utilisateur appuie sur la touche "Entrée", le message est envoyé dans la boite mail de l'expert
+// sendBtnfr.addEventListener('keypress', (e) => {
+//    if(e.key === 'Enter'){
+//       submitMessage();
+//     }
+// });
 
 
