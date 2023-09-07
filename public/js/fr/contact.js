@@ -8,8 +8,17 @@ const messageInputfr = document.getElementById("Message");
 const sendBtnfr = document.getElementById("submit");
 const formfr = document.getElementsByClassName("form")[0];  
 
+
 // On recupere le cookie qui contient le pays de l'utilisateur
-const recupCountryUser = document.cookie.split('; ').find(row => row.startsWith('country')).split('=')[1];
+const recupCountryUser = () => {
+  axios.get("/api/get-country")
+  .then(e => {
+    return e.data;
+  })
+  .catch(err => {
+    console.log(err);
+  })
+}
 
 
 
@@ -21,7 +30,7 @@ const submitMessage = () => {
     firstname : firstNameInputfr.value,
     email : emailInputfr.value,
     message : messageInputfr.value,
-    country : recupCountryUser
+    country : recupCountryUser()
   }
 
   // Envoie les données du formulaire à l'expert
