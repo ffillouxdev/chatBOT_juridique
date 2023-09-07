@@ -1,6 +1,7 @@
+const { default: axios } = require("axios");
 const express = require("express");
 const router = express.Router();
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 
 // Permet de récupérer les données du chatbot
 router.post('/api/retrieve-answer', (req, res) => {
@@ -26,13 +27,20 @@ router.post('/api/retrieve-answer', (req, res) => {
             messages: [ { role: 'user', content: texteJurdique } ],
         })
     }
-    fetch(API_URL, requestOptions)
-        .then(response => response.json()).then(data => {
-            res.status(200).json({ response:  data.choices[0].message.content });
-        })
-        .catch(error =>{
-            res.status(400).json({ error: "Une erreur est survenue"})    
-        })
+    axios.post(API_URL, requestOptions)
+    .then(response => {
+        res.status(200).json({ response:  response.data.choices[0].text });
+    })
+    .catch(error =>{
+        res.status(400).json({ error: "Une erreur est survenue"})
+    })
+    // fetch(API_URL, requestOptions)
+    //     .then(response => response.json()).then(data => {
+    //         res.status(200).json({ response:  data.choices[0].message.content });
+    //     })
+    //     .catch(error =>{
+    //         res.status(400).json({ error: "Une erreur est survenue"})    
+    //     })
 
 });
 
