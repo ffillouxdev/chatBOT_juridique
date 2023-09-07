@@ -26,11 +26,35 @@
   // La fonction qui envoie
   const submitMessage = (e) => {
     e.preventDefault();
-    // On recupere le pays de l'utilisateur
-    const countryUser = recupCountryUser();
+      
+    let formDatafr = {
+      lastname : lastNameInputfr.value,
+      firstname : firstNameInputfr.value,
+      email : emailInputfr.value,
+      message : messageInputfr.value,
+      country : recupCountryUser()
+    }
 
+    // Envoie les données du formulaire à l'expert
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', '/Contact', true);
+    xhr.setRequestHeader('content-type', 'application/json');
+    xhr.onload = function(){
+      if(xhr.responseText == 'success'){
+        alert("L'email a bien été envoyé");
 
+        // Réinitialise le formulaire
+        lastNameInputfr.value = '';
+        firstNameInputfr.value = '';
+        emailInputfr.value = '';
+        messageInputfr.value = '';
+      } else {
+        alert("Aie, l'email n'a pas pu être envoyé");
+        console.log(xhr.responseText);
+      }
+    }
 
+    xhr.send(JSON.stringify(formDatafr));
   
   }
 
