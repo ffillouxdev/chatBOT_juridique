@@ -1,0 +1,704 @@
+@media screen and (min-width: 500px) and (min-height: 790px) {
+    *{
+        padding: 0;
+        outline: none;
+        text-decoration: none;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    body{
+        background-color: #f5f5f5;
+    }
+
+    nav{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100px;
+        overflow: hidden;
+        transition: width 0.2s linear;
+        box-shadow: 0 0 10px #ccc;
+    }
+
+    .left-nav li a {
+        color: #000;
+        display: inline-block;
+        vertical-align: middle;
+        text-decoration: none;
+      }
+      
+      .left-nav li a span {
+        vertical-align: middle;
+      }
+
+    .left-nav a:hover {
+        color: darkblue;
+    }
+
+    nav a{
+        position: relative;
+        font-size: 14px;
+        display: table;
+        width: 300px;
+        padding: 10px;
+    }
+
+    .transi {
+        position: relative;
+        width: 70px;
+        height: 40px;
+        top: 14px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    nav:hover{
+        width: 200px;
+    }   
+
+    li.actual a{
+        color: red;   
+    }
+
+    .bottom-nav{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        transition: height 0.2s linear;
+        box-shadow: 0 0 10px #ccc;
+        color: #000;
+    }
+    .bottom-nav li {
+        text-align: center;
+    }
+
+    .bottom-nav select{
+        width: 90px;
+    }
+
+    #logoChatLawBOT {
+        width: 77px;
+        height: 77px;
+        margin-left: 12px;
+    }
+
+    /*NAV mobile*/
+    .header-mobile {
+        display: none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     /*Partie Footer*/
+     footer{
+        height: 9px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        position: absolute; 
+        bottom: 0; 
+        right: 0;
+        margin: 0 auto;
+        padding-top: 10px;
+        font-size: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .footer-content{
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .about p{
+        color: darkblue;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: center;
+    }
+
+    .links h2{
+        margin-left: 30px;
+    }
+    
+    .links li:hover{
+        color: darkblue;
+        border-radius: 5px;
+    }
+
+    .links li{
+        list-style-type: none;
+        margin-left: 10px;
+    }
+
+    .links a{
+        text-decoration: underline;
+        text-decoration: none;
+    }
+
+    .links a:visited{
+        color: #000;
+    }
+
+    .links a:hover{
+        text-decoration: underline;
+        color: darkblue;
+        border-radius: 5px;
+    }
+
+    .footer p {
+        text-align: center;
+        color: darkblue;
+    }
+}
+
+
+
+
+
+
+@media screen and (min-width: 500px) and (max-height: 820px){
+    *{
+        padding: 0;
+        outline: none;
+        text-decoration: none;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    body{
+        background-color: #f5f5f5;
+        background-size: cover;
+    }
+
+    p{
+        color: darkblue;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: center;
+    }
+
+   
+    nav{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100px;
+        overflow: hidden;
+        transition: width 0.2s linear;
+        box-shadow: 0 0 10px #ccc;
+    }
+
+    .left-nav li a {
+        color: #000;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      
+      .left-nav li a span {
+        vertical-align: middle;
+      }
+
+    .left-nav a:hover {
+        color: darkblue;
+    }
+
+    nav a{
+        position: relative;
+        font-size: 14px;
+        display: table;
+        width: 300px;
+        padding: 10px;
+    }
+
+    .transi {
+        position: relative;
+        width: 70px;
+        height: 40px;
+        top: 14px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    nav:hover{
+        width: 200px;
+    }   
+
+    li.actual a{
+        color: red;   
+    }
+
+    #logoChatLawBOT {
+        width: 77px;
+        height: 77px;
+        margin-left: 12px;
+    }
+
+     /*NAV mobile*/
+     .header-mobile {
+        display: none;
+    }
+
+    /*Partie Main*/
+
+    /*Partie Footer*/
+    /*Partie Footer*/
+    footer{
+        height: 9px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        position: absolute; 
+        bottom: 0; 
+        right: 0;
+        margin: 0 auto;
+        padding-top: 10px;
+        font-size: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .footer-content{
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .about p{
+        color: darkblue;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: center;
+    }
+
+    .links h2{
+        margin-left: 30px;
+    }
+    
+    .links li:hover{
+        color: darkblue;
+        border-radius: 5px;
+    }
+
+    .links li{
+        list-style-type: none;
+        margin-left: 10px;
+    }
+
+    .links a{
+        text-decoration: underline;
+        text-decoration: none;
+    }
+
+    .links a:visited{
+        color: #000;
+    }
+
+    .links a:hover{
+        text-decoration: underline;
+        color: darkblue;
+        border-radius: 5px;
+    }
+
+    .footer p {
+        text-align: center;
+        color: darkblue;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 490px){
+    *{
+        padding: 0;
+        outline: none;
+        text-decoration: none;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    body{
+        background-color: #f5f5f5;
+        background-size: cover;
+    }
+
+    #body-content {
+        display: none;
+    }
+    
+    /*Partie NAVBAR*/
+    .header-computer {
+        display: none;
+    }   
+
+    .top-nav{
+        display: none;
+    }
+
+    .li-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 50%;
+    }
+
+    .top-nav li {
+        list-style-type: none;
+    }
+
+    .top-nav li a {
+        color: #000;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      
+    .top-nav li a span {
+        vertical-align: middle;
+    }
+
+    .header-mobile img {
+        height: 30px;
+        margin-left: 40%;
+    }
+
+    .top-nav a:hover {
+        color: darkblue;
+    }
+
+    nav a{
+        position: relative;
+        font-size: 14px;
+        display: table;
+        width: 100px;
+        padding: 10px;
+    }
+
+
+    li.actual a{
+        color: red;   
+    }
+
+    #checknav{
+        display: none;
+
+    }
+
+    .left-li {
+        width: 50%;
+        margin-left: 15%;
+    }
+
+    .right-li{
+        width: 50%;
+        margin-left: 70%;
+    }
+
+    #checknav:checked ~ .top-nav{
+        display: block;
+    }
+
+     /*partie FOOTER*/
+     .footer{
+        height: 9px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        bottom: 0; 
+        right: 0;
+        margin: 0 auto;
+        padding-top: 10px;
+        font-size: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+
+    .footer-content{
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .about p{
+        color: darkblue;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: center;
+    }
+
+    .footer-content {
+        margin-top: 20%;
+    }
+
+    .contact-numero{
+        width: 90%;
+    }
+
+    .links{
+        margin-left: 10%;
+    }
+
+    .links h2{
+        margin-left: 30px;
+    }
+
+    .links li:hover{
+        color: darkblue;
+        border-radius: 5px;
+    }
+
+    .links li{
+        list-style-type: none;
+        margin-left: 15px;
+    }
+
+    .links a{
+        text-decoration: underline;
+        text-decoration: none;
+    }
+
+    .links a:visited{
+        color: #000;
+    }
+
+    .links a:hover{
+        text-decoration: underline;
+        color: darkblue;
+        border-radius: 5px;
+    }
+
+    .footer p {
+        text-align: center;
+        color: darkblue;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 490px) and (max-height: 700px){
+    *{
+        padding: 0;
+        outline: none;
+        text-decoration: none;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    body{
+        background-color: #f5f5f5;
+        background-size: cover;
+    }
+
+    #body-content {
+        display: none;
+    }
+    
+    /*Partie NAVBAR*/
+    .header-computer {
+        display: none;
+    }   
+
+    .top-nav{
+        display: none;
+    }
+
+    .li-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 50%;
+    }
+
+    .top-nav li {
+        list-style-type: none;
+    }
+
+    .top-nav li a {
+        color: #000;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      
+    .top-nav li a span {
+        vertical-align: middle;
+    }
+
+    .header-mobile img {
+        height: 30px;
+        margin-left: 40%;
+    }
+
+    .top-nav a:hover {
+        color: darkblue;
+    }
+
+    nav a{
+        position: relative;
+        font-size: 14px;
+        display: table;
+        width: 100px;
+        padding: 10px;
+    }
+
+
+    li.actual a{
+        color: red;   
+    }
+
+    #checknav{
+        display: none;
+
+    }
+
+    .left-li {
+        width: 50%;
+        margin-left: 15%;
+    }
+
+    .right-li{
+        width: 50%;
+        margin-left: 70%;
+    }
+
+    #checknav:checked ~ .top-nav{
+        display: block;
+    }
+
+    /*partie MAIN*/
+
+    /*partie FOOTER*/
+    .footer{
+        height: 9px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        bottom: 0; 
+        right: 0;
+        margin: 0 auto;
+        padding-top: 10px;
+        font-size: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+
+    .footer-content{
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .about p{
+        color: darkblue;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: center;
+    }
+
+    .footer-content {
+        margin-top: 20%;
+    }
+
+    .contact-numero{
+        width: 90%;
+    }
+
+    .links{
+        margin-left: 10%;
+    }
+
+    .links h2{
+        margin-left: 30px;
+    }
+
+    .links li:hover{
+        color: darkblue;
+        border-radius: 5px;
+    }
+
+    .links li{
+        list-style-type: none;
+        margin-left: 15px;
+    }
+
+    .links a{
+        text-decoration: underline;
+        text-decoration: none;
+    }
+
+    .links a:visited{
+        color: #000;
+    }
+
+    .links a:hover{
+        text-decoration: underline;
+        color: darkblue;
+        border-radius: 5px;
+    }
+
+    .footer p {
+        text-align: center;
+        color: darkblue;
+    }
+}
+

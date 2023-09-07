@@ -150,10 +150,6 @@ router.get("/About", (req, res) => {
     res.send(aboutHTML)
 });
 
-router.get("/FAQ", (req, res) => {
-    let faqHTML;
-});
-
 router.get("/CookiePolicy", (req, res) => {
     let cookiePolicyHTML;
     const lang = res.locals.language;
@@ -221,6 +217,35 @@ router.get("/Privacy-Policy", (req, res) => {
             break;
     }
     res.send(privacyPolicyHTML)
+})
+
+
+router.get("/FAQ", (req, res) => {
+    let faqHTML;
+    const lang = res.locals.language;
+    
+    switch(lang){
+        case "fr" :
+            faqHTML = fs.readFileSync(__dirname + "/../public/fr/FAQ.html", "utf8")
+            break;
+
+        case "fr-FR":
+            faqHTML = fs.readFileSync(__dirname + "/../public/fr/FAQ.html", "utf8")
+            break;
+
+        case "en" :
+            faqHTML = fs.readFileSync(__dirname + "/../public/en/FAQ.html", "utf8")
+            break;
+
+        case 'en-US':
+            faqHTML = fs.readFileSync(__dirname + "/../public/en/FAQ.html", "utf8")
+            break;
+
+        default :
+            faqHTML = fs.readFileSync(__dirname + "/../public/fr/FAQ.html", "utf8")
+            break;
+    }
+    res.send(faqHTML)
 })
 
 
