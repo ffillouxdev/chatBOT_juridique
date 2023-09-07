@@ -7,7 +7,9 @@ const emailInputfr = document.getElementById("Email");
 const messageInputfr = document.getElementById("Message");
 const sendBtnfr = document.getElementById("submit");
 const formfr = document.getElementsByClassName("form")[0];  
-const recupCountryUser = localStorage.getItem("country");
+
+// On recupere le cookie qui contient le pays de l'utilisateur
+const recupCountryUser = document.cookie.split('; ').find(row => row.startsWith('country')).split('=')[1];
 
 
 // Lorsque l'utilisateur clique sur le bouton "Envoyer", le message est envoyé dans la boite mail de l'expert
