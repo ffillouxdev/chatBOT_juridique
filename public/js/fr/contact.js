@@ -9,11 +9,12 @@ const sendBtnfr = document.getElementById("submit");
 const formfr = document.getElementsByClassName("form")[0];  
 
 
+
+
 // On recupere le cookie qui contient le pays de l'utilisateur
 const recupCountryUser = () => {
   axios.get("/api/get-country")
   .then(e => {
-    console.log(e.data);
     return e.data;
   })
   .catch(err => {
@@ -23,7 +24,7 @@ const recupCountryUser = () => {
 
 
 // La fonction qui envoie
-const submitMessage = () => {
+const submitMessage = (e) => {
   e.preventDefault();
     
   let formDatafr = {
@@ -39,7 +40,6 @@ const submitMessage = () => {
   xhr.open('POST', '/Contact', true);
   xhr.setRequestHeader('content-type', 'application/json');
   xhr.onload = function(){
-    console.log(xhr.responseText);
     if(xhr.responseText == 'success'){
       alert("L'email a bien été envoyé");
 
@@ -64,6 +64,7 @@ sendBtnfr.addEventListener('click', submitMessage);
 // Lorsque l'utilisateur appuie sur la touche "Entrée", le message est envoyé dans la boite mail de l'expert
 sendBtnfr.addEventListener('keypress', (e) => {
    if(e.key === 'Enter'){
+      e.preventDefault();  
       submitMessage();
     }
 });
