@@ -12,8 +12,8 @@ const formfr = document.getElementsByClassName("form")[0];
 const recupCountryUser = document.cookie.split('; ').find(row => row.startsWith('country')).split('=')[1];
 
 
-// Lorsque l'utilisateur clique sur le bouton "Envoyer", le message est envoyé dans la boite mail de l'expert
-formfr.addEventListener('submit', (e)=>{
+
+const submitMessage = () => {
   e.preventDefault();
     
   let formDatafr = {
@@ -45,8 +45,17 @@ formfr.addEventListener('submit', (e)=>{
 
   xhr.send(JSON.stringify(formDatafr));
  
-})
+}
 
 
+// Lorsque l'utilisateur clique sur le bouton "Envoyer", le message est envoyé dans la boite mail de l'expert
+sendBtnfr.addEventListener('click', submitMessage);
+
+// Lorsque l'utilisateur appuie sur la touche "Entrée", le message est envoyé dans la boite mail de l'expert
+sendBtnfr.addEventListener('keypress', (e) => {
+   if(e.key === 'Enter'){
+      submitMessage();
+    }
+});
 
 
