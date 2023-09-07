@@ -3,13 +3,12 @@
 const express = require('express');
 require('dotenv').config();
 const jwt = require('jsonwebtoken'); // Ajout de jsonwebtoken
-require('dotenv').config();
 const cookieParser = require("cookie-parser");
 
 
 // Importation des routes
 const cookieRoutes = require("./routes/cookies");
-const chatbotRoutes = require("./routes/chatbot");
+const tchatbotRoutes = require("./routes/tchatbot");
 const pagesRoutes = require("./routes/pages");
 
 // Création de l'application express qui va gérer le serveur
@@ -29,7 +28,7 @@ app_juridique.use(express.static(__dirname + "/public"));
 // Permet de récupérer les données du chatbot, des routes aussi
 app_juridique.use(express.json());
 app_juridique.use(cookieParser());
-app_juridique.use("/", chatbotRoutes);
+app_juridique.use("/", tchatbotRoutes);
 app_juridique.use("/", cookieRoutes);
 app_juridique.use("/", pagesRoutes);
 
