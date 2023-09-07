@@ -50,6 +50,7 @@ const submitMessage = (e) => {
       messageInputfr.value = '';
     } else {
       alert("Aie, l'email n'a pas pu être envoyé");
+      console.log(xhr.responseText);
     }
   }
 
