@@ -35,7 +35,7 @@ const submitMessage = () => {
 
   // Envoie les données du formulaire à l'expert
   let xhr = new XMLHttpRequest();
-  xhr.open('POST', '/Contact', true);
+  //xhr.open('POST', '/Contact', true);
   xhr.setRequestHeader('content-type', 'application/json');
   xhr.onload = function(){
     console.log(xhr.responseText);
@@ -57,14 +57,14 @@ const submitMessage = () => {
 }
 
 
-// Lorsque l'utilisateur clique sur le bouton "Envoyer", le message est envoyé dans la boite mail de l'expert
-sendBtnfr.addEventListener('click', submitMessage);
+// // Lorsque l'utilisateur clique sur le bouton "Envoyer", le message est envoyé dans la boite mail de l'expert
+// sendBtnfr.addEventListener('click', submitMessage);
 
-// // Lorsque l'utilisateur appuie sur la touche "Entrée", le message est envoyé dans la boite mail de l'expert
-// sendBtnfr.addEventListener('keypress', (e) => {
-//    if(e.key === 'Enter'){
-//       submitMessage();
-//     }
-// });
+// Lorsque l'utilisateur appuie sur la touche "Entrée", le message est envoyé dans la boite mail de l'expert
+sendBtnfr.addEventListener('keypress', (e) => {
+   if(e.key === 'Enter'){
+      submitMessage();
+    }
+});
 
 
