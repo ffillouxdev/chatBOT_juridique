@@ -1,11 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
-
-router.get('/api/retrieve-answer', (req, res) => {
-    res.status(200).json({ response: "Hello World" });
-});
-
+const fetch = require('node-fetch');
 
 // Permet de récupérer les données du chatbot
 router.post('/api/retrieve-answer', (req, res) => {
