@@ -27,12 +27,13 @@ router.post('/api/retrieve-answer', (req, res) => {
         })
     }
     fetch(API_URL, requestOptions)
-        .then(response => response.json()).then(data => {
+        .then(response => response.json())
+        .then(data => {
             res.status(200).json({ response:  data.choices[0].message.content });
         })
-        .catch(error =>{
-            res.status(400).json({ error: "Une erreur est survenue"})    
-        });
+        .catch(error => {
+            res.status(400).json({ error: "Une erreur est survenue" });
+    });
 });
 
 module.exports = router;
