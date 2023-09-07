@@ -31,7 +31,7 @@ router.post('/api/retrieve-answer', (req, res) => {
             res.status(200).json({ response:  data.choices[0].message.content });
         })
         .catch(error =>{
-            res.status(400).json({ error: "Une erreur est survenue"})    
+            res.status(400).json({ error: "Une erreur est survenue : ", error})    
         });
 });
 
