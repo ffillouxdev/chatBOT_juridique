@@ -254,6 +254,7 @@ const responseGeneration = (nextChatLi, country) => {
             nextChatLi.querySelector('p').textContent = e.data.response;
         })
         .catch(error => {
+            console.error(error);
             nextChatLi.classList.add("error");
             nextChatLi.querySelector('p').textContent = "Une erreur est survenue, veuillez réessayer plus tard.";
         })
