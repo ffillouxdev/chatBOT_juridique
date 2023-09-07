@@ -1,5 +1,4 @@
   /* RECUPERE LES INFORMATIONS DU FORMULAIRE ET LES ENVOIE A L'EXPERT */
-
   // Récupère les éléments du formulaire
   const lastNameInputfr = document.getElementById("Nom");
   const firstNameInputfr = document.getElementById("Prénom"); 
@@ -8,19 +7,21 @@
   const sendBtnfr = document.getElementById("submit");
   const formfr = document.getElementsByClassName("form")[0];  
 
-
+  let countryUser;
 
 
   // On recupere le cookie qui contient le pays de l'utilisateur
   const recupCountryUser = () => {
     axios.get("/api/get-country")
     .then(e => {
-      return e.data;
+      countryUser = e.data;
+      console.log(countryUser);
     })
     .catch(err => {
       console.log(err);
     })
   }
+
 
 
   // La fonction qui envoie
@@ -32,7 +33,7 @@
       firstname : firstNameInputfr.value,
       email : emailInputfr.value,
       message : messageInputfr.value,
-      country : recupCountryUser()
+      country : countryUser
     }
 
     // Envoie les données du formulaire à l'expert
