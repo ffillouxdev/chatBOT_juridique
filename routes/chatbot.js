@@ -9,6 +9,7 @@ router.post('/api/retrieve-answer', (req, res) => {
     const country = req.body.country;
 
     const API_KEY = process.env.API_KEY;
+    console.log(API_KEY);
 
      const API_URL = "https://api.openai.com/v1/chat/completions";
     
