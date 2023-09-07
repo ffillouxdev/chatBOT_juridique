@@ -74,7 +74,7 @@ const changeCountry = () => {
     // On recupere le select dans la navbar
     const recupCountry = document.getElementById("changer_pays").value;
 
-    //On change le cookies pays de la personne en fonction de la nouvelle valeur du select
+    //  On change le cookies pays de la personne en fonction de la nouvelle valeur du select
     axios.post('/api/set-country', {
         country: recupCountry
     })
@@ -100,7 +100,7 @@ const setCountry = () => {
     if (recupCountry.value === "null") {
         language_Popup_container.classList.add("show");
 
-        //ajoute un <p> en rouge pour dire à l'utilisateur de sélectionner un pays une seule fois
+        // Ajoute un <p> en rouge pour dire à l'utilisateur de sélectionner un pays une seule fois
         if (document.querySelector(".errorLang")) {
         } else {
             const erreurMessage = "Veuillez sélectionner un pays.";
@@ -120,18 +120,23 @@ const setCountry = () => {
                 console.error(err)
             })
 
-        // On appelle la methode pour synchroniser le select de la navbar avec le select de la popup
-        synchronizeSelectCountry();
-
         // On ferme la popup
         language_Popup_container.classList.remove("show");
         language_Popup_container.classList.add("close");
+
+
+        // on recupere le select dans la navbar
+        const select = document.getElementById("changer_pays");
+
+        // On met la valeur du select dans la navbar 
+        select.value = recupCountry.value;
+
     }
 }
 submitToClosePopup.addEventListener("click", setCountry);
 
 
-// verification des cookies pays pour savoir si il faut afficher la popup
+// Verification des cookies pays pour savoir si il faut afficher la popup
 const getCountry = () => {
     axios.get("/api/get-country")
         .then(e => {
@@ -156,7 +161,7 @@ const getCountry = () => {
 
 getCountry();
 
-// variable globale pour le pays
+// Variable globale pour le pays
 let country;
 
 // Fonction pour rendre le pays choisi sélectionné dans le <select> de la barre de navigation
@@ -172,8 +177,7 @@ function synchronizeSelectCountry() {
                 } else {
                     // on recupere le pays trouvée dans les cookies
                     country = e.data.country; 
-                    console.log(country)
-
+                    
                     language_Popup_container.classList.remove("show");
                     language_Popup_container.classList.add("close");
                     document.getElementById("changer_pays").value = e.data.country;
@@ -185,13 +189,6 @@ function synchronizeSelectCountry() {
         .catch(err => {
             console.error(err)
         })
-    
-    
-    // on recupere le select dans la navbar
-    const select = document.getElementById("changer_pays");
-
-    // On met la valeur du select dans la navbar 
-    select.value = country;
 };
 
 // On appelle la fonction pour synchroniser le select de la navbar avec le select de la popup
@@ -231,7 +228,6 @@ const sendQuestion = () => {
         //on simule la reflexion du chatbot (on ameliorera cette partie pour que le chatbot ecrive . puis . puis . puis la reponse  )
         chat.appendChild(nextChatLi);
         chat.scrollTo(0, chat.scrollHeight);
-        console.log(country)
         responseGeneration(nextChatLi, country);
     }, 600);
 
@@ -241,13 +237,13 @@ const sendQuestion = () => {
     //on vide le champ de saisie
     userInput.value = "";
 }
-//on ajoute un evenement au click sur le bouton
+// On ajoute un evenement au click sur le bouton
 buttonUser.addEventListener('click', sendQuestion);
 
 
 // Fonction pour générer la réponse du chatbot
 const responseGeneration = (nextChatLi, country) => {
-    // Récupération de la clé API
+        // Récupération de la clé API
     axios.post('/api/retrieve-answer',
         {
             question: question,
@@ -277,14 +273,14 @@ const createReponseLi = (question, nameClass) => {
     return li;
 }
 
-//Permet d'agrandir le champ de saisie en fonction du nombre de ligne vers le haut sans que cela sorte de la fenetre
+// Permet d'agrandir le champ de saisie en fonction du nombre de ligne vers le haut sans que cela sorte de la fenetre
 userInput.addEventListener('keyup', e => {
     userInput.style.height = "30px";
     let newHeight = e.target.scrollHeight;
     userInput.style.height = newHeight + "px";
 });
 
-//allows if the enter button is pressed and the popup is closed to send the question
+// Permet si le bouton Entrée est enfoncé et que la fenêtre contextuelle est fermée pour envoyer la question
 userInput.addEventListener('keydown', e => {
     if (e.key === "Enter") {
         e.preventDefault();
