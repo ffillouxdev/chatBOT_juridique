@@ -23,5 +23,13 @@
     "nodemon": "^2.0.22"
   },
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffillouxdev/chatBOT_juridique.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ffillouxdev/chatBOT_juridique/issues"
+  },
+  "homepage": "https://github.com/ffillouxdev/chatBOT_juridique#readme",
   "description": ""
 }

@@ -4,7 +4,7 @@ const router = express.Router();
 // Permet d'enregistrer le pays de l'utilisateur dans un cookie
 router.post("/api/set-country", (req, res) => {
     const country = req.body.country;
-    res.cookie('country', country, { httpOnly: true });
+    res.cookie('country', country, { maxAge: 86400 * 365, httpOnly: true });
     res.status(200).json({ country: country });
 })
 
@@ -33,7 +33,7 @@ router.get("/api/delete-country", (req, res) => {
 
 // Permet d'accepter les cookies
 router.post("/api/accept-cookie", (req, res) => {
-    res.cookie('acceptCookie', true, { httpOnly: true });
+    res.cookie('acceptCookie', true, { maxAge: 86400 * 365, httpOnly: true });
     res.status(200).json({ acceptCookie: true });
 })
 
