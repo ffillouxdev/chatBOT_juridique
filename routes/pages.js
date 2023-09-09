@@ -5,23 +5,38 @@ const fetch = require("node-fetch");
 const { deflate } = require('zlib');
 const exp = require('constants');
 const nodemailer = require('nodemailer');
+const { default: axios } = require("axios");
 
 
 const router = express.Router();
 
-// indique la langue du navigateur de l'user
-router.use((req, res, next) => {
-    const acceptLanguage = req.headers["accept-language"];
-    res.locals.language = acceptLanguage;
-    next();
-  });
 
+// Variable globale pour la langue de l'utilisateur
+let lang;
+
+// Fonction qui trouve la langue du navigateur de l'utilisateur
+const findLanguage = (req, res, next) => {
+    const acceptLanguage =  ["fr", "en", "fr-FR", "en-US"];
+    const language = req.headers["accept-language"];
+    
+    // on fait une boucle dans req.locals.language pour s'arreter à la premiere ',' et on récupère la langue de l'utilisateur
+    for(let i = 0; i < language.length; i++){
+        if(language[i] === ','){
+            lang = language.slice(0, i);
+            break;
+        }
+    }
+    next();
+}
+
+// On utilise la fonction findLanguage pour trouver la langue de l'utilisateur
+router.use(findLanguage);
 
 // on définit la route du fichier index.html qui est la page d'accueil du site
 router.get('/', (req, res) => {
-    const lang = res.locals.language[0] + res.locals.language[1];
     let indexHTML;
     // On vérifie la langue de l'utilisateur et on lui envoie la page html correspondante à sa langue
+    
     switch (lang) {
         case "fr":
             // Si l'utilisateur est français, on lui envoie la page html en français
@@ -53,8 +68,6 @@ router.get('/', (req, res) => {
 
 router.get("/Contact", (req, res) => {
     let contactHTML;
-    const lang = res.locals.language[0] + res.locals.language[1];
-    console.log(lang);
 
     // On vérifie la langue de l'utilisateur et on lui envoie la page html correspondante à sa langue
     switch (lang) {
@@ -119,8 +132,7 @@ router.post("/Contact", (req, res) => {
 
 router.get("/About", (req, res) => {
     let aboutHTML;
-    const lang = res.locals.language[0] + res.locals.language[1];
-
+   
     // On vérifie la langue de l'utilisateur et on lui envoie la page html correspondante à sa langue
     switch (lang) {
         case "fr":
@@ -153,7 +165,6 @@ router.get("/About", (req, res) => {
 
 router.get("/CookiePolicy", (req, res) => {
     let cookiePolicyHTML;
-    const lang = res.locals.language[0] + res.locals.language[1];
 
     // On vérifie la langue de l'utilisateur et on lui envoie la page html correspondante à sa langue
     switch (lang) {
@@ -188,7 +199,6 @@ router.get("/CookiePolicy", (req, res) => {
 
 router.get("/Privacy-Policy", (req, res) => {
     let privacyPolicyHTML;
-    const lang = res.locals.language[0] + res.locals.language[1];
 
     // On vérifie la langue de l'utilisateur et on lui envoie la page html correspondante à sa langue
     switch (lang) {
@@ -223,7 +233,6 @@ router.get("/Privacy-Policy", (req, res) => {
 
 router.get("/FAQ", (req, res) => {
     let faqHTML;
-    const lang = res.locals.language[0] + res.locals.language[1];
     
     switch(lang){
         case "fr" :
@@ -253,7 +262,6 @@ router.get("/FAQ", (req, res) => {
 // Permet d'envoyer une page d'erreur 404 si la page demandée n'existe pas selon la langue
 router.get("/*", (req, res) => { 
     let  errorHTML;
-    const lang = res.locals.language;
 
     switch(lang){
         case "fr" : 
