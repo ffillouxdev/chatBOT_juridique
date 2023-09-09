@@ -5,39 +5,50 @@ const cookiesContainer = document.querySelector(".cookies_container");
 
 
 // Function to refuse cookies
-refuseCookies.addEventListener("click", function () {
-    localStorage.setItem("cookies", "refuse");
-    cookiesContainer.classList.add("close");
-
-    // call  the language popup to appear with a delay of 2 seconds
-    setTimeout(function () {
-        checkLocalStorage();
-    }, 2000);
-});
+const refuserCookie = () => {
+    axios.get("/api/delete-accept-cookie")
+    .then(e => {
+        console.log("cookie refusé")
+        window.location.href = "https://google.com"
+    })
+    .catch(err => {
+        console.error(err)
+    })
+}
 
 // Function to accept cookies
-acceptCookies.addEventListener("click", function () {
-    localStorage.setItem("cookies", "accept");
-
-    // If the user accepts cookies, the popup will not appear again
-    cookiesContainer.classList.add("close");
-
-    // call  the language popup to appear with a delay of 2 seconds
-    setTimeout(function () {
-        checkLocalStorage();
-    }, 2000);
-
-});
+const accepterCookie = () => {
+    axios.post("/api/accept-cookie")
+    .then(e => {
+        console.log("cookie accepté")
+        if (e.data.acceptCookie) {
+            cookiesContainer.classList.remove("show");
+            cookiesContainer.classList.add("close");
+        } else {
+            cookiesContainer.classList.add("show");
+            cookiesContainer.classList.remove("close");
+        }
+    })
+    .catch(err => {
+        console.error(err)
+    })
+}
 
 // Function to check the cookies
-function checkCookies() {
-    // If the cookies are not found in localStorage or it is set to "null", show the popup
-    if (localStorage.getItem("cookies") === "null") {
-        cookiesContainer.classList.add("show");
-    } else {
-        // If the cookies are found in localStorage, hide the popup
-        cookiesContainer.classList.add("close");
-    }
+const checkCookies = () => {
+    axios.get("/api/accept-cookie")
+    .then(e => {
+        if (e.data.acceptCookie) {
+            cookiesContainer.classList.remove("show");
+            cookiesContainer.classList.add("close");
+        } else {
+            cookiesContainer.classList.add("show");
+            cookiesContainer.classList.remove("close");
+        }
+    })
+    .catch(err => {
+        console.error(err)
+    })
 }
 
 // Call the function to check the localStorage
@@ -45,84 +56,134 @@ checkCookies();
 
 
 /******************************POPUP PART****************************/
-
-// recup the <select> in the nav bar
 const language_Popup_container = document.querySelector(".language_Popup_container")
+const submitToClosePopup = document.getElementById("submitP");
 
 /*
  * A popup who ask the english localisation, to be specific on the laws for each english country and appear only for the first connection of the user,
  *if I navigate on the website and I come back on the home page the popup will not appear again.
 */
-function checkLocalStorage() {
 
-    // If the country is not found in localStorage or it is set to "null", show the popup
-    console.log(localStorage.getItem("country"));
-    if (localStorage.getItem("country") === "null") {
-        language_Popup_container.classList.add("show");
-    } else {
-        // If the country is found in localStorage, hide the popup
-        language_Popup_container.classList.add("close");
-        synchronizeSelectCountry();
-    }
+// Function to change the country with the select in the bottom of the navbar
+const changeCountry = () => {
+    // On recupere le select dans la navbar
+    const recupCountry = document.getElementById("switch_country").value;
+
+    //  On change le cookies pays de la personne en fonction de la nouvelle valeur du select
+    axios.post('/api/set-country', {
+        country: recupCountry
+    })
+        .then(e => {
+            console.log(e.data)
+        })
+        .catch(err => {
+            console.error(err)
+        })
+
+    // On recharge la page pour que le chatbot puisse prendre en compte le nouveau pays
+    window.location.reload();
 }
+document.getElementById("switch_country").addEventListener("change", changeCountry)
 
-// Call the function to check the localStorage
-checkLocalStorage();
+// Function to save the country in the cookies
+const setCountry = () => {
+    // we recup the value of the select
+    const recupCountry = document.getElementById("english_loc");
 
-const submitToClosePopup = document.getElementById("submitP");
-
-function selectLangAndClosePopup() {
-    //recup the country of the user from the <select> 
-    const recupCountry = document.getElementById("english_loc").value;
-
-    //register the country in the local storage 
-    if (recupCountry == "null") {
+    // if the value is null we show the popup
+    if (recupCountry.value === "null") {
         language_Popup_container.classList.add("show");
 
-        //add a <p> in red to say to the user to select a country one time only 
+        // Add an error message if the user don't select a country
         if (document.querySelector(".errorLang")) {
         } else {
-            const errorMessage = "Please select a country.";
+            const errorMessage = "Please select a country";
             const selectElement = document.getElementById("english_loc");
             selectElement.insertAdjacentHTML('afterend', '<p class="errorLang">' + errorMessage + '</p>');
         }
     } else {
 
-        //we put the country in the local storage
-        localStorage.setItem("country", recupCountry);
-        console.log(localStorage.getItem("country"));
+        // save the country in the cookies
+        axios.post('/api/set-country', {
+            country: recupCountry.value
+        })
+            .then(e => {
+                console.log(e.data)
+            })
+            .catch(err => {
+                console.error(err)
+            })
 
-        //We call the function to synchronize the <select> with the local storage
-        synchronizeSelectCountry();
-
-        //Add a div name close and this div have for effect "opacity: 0;" so the popup is close 
-        language_Popup_container.classList.add("close");
+        // close the popup
         language_Popup_container.classList.remove("show");
+        language_Popup_container.classList.add("close");
+
+
+        // we recup the select in the navbar
+        const select = document.getElementById("switch_country");
+
+        // we put the value of the select in the navbar to the value of the select in the popup
+        select.value = recupCountry.value;
+
     }
+}
+submitToClosePopup.addEventListener("click", setCountry);
 
+// Function to verify if a country is select in the cookies, else we show the popup
+const getCountry = () => {
+    axios.get("/api/get-country")
+        .then(e => {
+            if (!e.data) {
+                language_Popup_container.classList.add("show");
+            } else {
+                if (e.data.country == null) {
+                    language_Popup_container.classList.add("show");
+                } else {
+                    language_Popup_container.classList.remove("show");
+                    language_Popup_container.classList.add("close");
+                    document.getElementById("switch_country").value = e.data.country;
+                    document.getElementById("switch_country").value = e.data.country;
+                }
+            }
 
-};
-submitToClosePopup.addEventListener("click", selectLangAndClosePopup);
+        })
+        .catch(err => {
+            console.error(err)
+        })
+}
 
+getCountry();
 
-// Function to make the country chosen  selected in the <select> in the nav bar
+// Global variable for the country
+let country;
+
+// Function to synchronize the country select and the one in the navbar
 function synchronizeSelectCountry() {
-    const recupCountry = localStorage.getItem("country");
-    const selectCountry = document.getElementById("switch_country");
-    selectCountry.value = recupCountry;
+    // we recup the cookie save by setCountry()
+    axios.get("/api/get-country")
+        .then(e => {
+            if(!e.data){
+                language_Popup_container.classList.add("show");
+            }else{
+                if(e.data.country == null){
+                    language_Popup_container.classList.add("show");
+                }else{
+                    // we recup the found country in the cookies
+                    country = e.data.country;
+
+                    language_Popup_container.classList.remove("show");
+                    language_Popup_container.classList.add("close");
+                    document.getElementById("switch_country").value = country;
+                }
+            }
+        })
+        .catch(err => {
+            console.error(err)
+        })
 };
 
-// Function to change the english country which is in the local storage
-function changeCountry() {
-    //recup the country of the user from the <select>
-    const recupCountry = document.getElementById("switch_country").value;
-
-    //register the country in the local storage
-    localStorage.setItem("country", recupCountry);
-    console.log(localStorage.getItem("country"));
-};
-document.getElementById("switch_country").addEventListener("change", changeCountry);
-
+// we call the function to synchronize the select in the navbar and the one in the popup
+synchronizeSelectCountry();
 
 //When loading the DOM, wait 2 seconds, then display the main content
 document.addEventListener('DOMContentLoaded', function () {
@@ -145,8 +206,36 @@ let heightInput = userInput.offsetHeight;
 // Declaring the question variable
 let question;
 
-const responseGeneration = (nextChatLi, enCountry) => {
 
+// Function to send the user's question
+const sendQuestion = () => {
+    // Retrieve the user's question
+    question = userInput.value;
+
+    // Display the user's question
+    console.log(question);
+    if (!question) return;
+
+    setTimeout(() => {
+        const nextChatLi = createReponseLi("I'm thinking...", "reponse-BOT");
+        //we simulate the reflection of the chatbot (we will improve this part so that the chatbot writes . then . then . then the answer )
+        chat.appendChild(nextChatLi);
+        chat.scrollTo(0, chat.scrollHeight);
+        responseGeneration(nextChatLi, country);
+    }, 600);
+
+    //we display the user's question in a new block that belongs to the "response-User" class li
+    chat.appendChild(createReponseLi(question, "reponse-User"));
+
+    // we empty the input field
+    userInput.value = "";
+}
+buttonUser.addEventListener('click', sendQuestion); // we add an event to the click on the button
+
+
+// Function to generate the chatbot's response
+const responseGeneration = (nextChatLi, enCountry) => {
+    console.log(enCountry);
     axios.post('/api/retrieve-answer',
         {
             question: question,
@@ -175,32 +264,6 @@ const createReponseLi = (question, nameClass) => {
     return li;
 }
 
-
-// Function to send the user's question
-const sendQuestion = () => {
-    // Retrieve the user's question
-    question = userInput.value;
-
-    // Display the user's question
-    console.log(question);
-    if (!question) return;
-
-    setTimeout(() => {
-        const nextChatLi = createReponseLi("I'm thinking...", "reponse-BOT");
-        //we simulate the reflection of the chatbot (we will improve this part so that the chatbot writes . then . then . then the answer )
-        chat.appendChild(nextChatLi);
-        chat.scrollTo(0, chat.scrollHeight);
-        responseGeneration(nextChatLi, localStorage.getItem("country"));
-    }, 600);
-
-    //we display the user's question in a new block that belongs to the "response-User" class li
-    chat.appendChild(createReponseLi(question, "reponse-User"));
-
-    // we empty the input field
-    userInput.value = "";
-}
-buttonUser.addEventListener('click', sendQuestion); // we add an event to the click on the button
-
 //Allows you to enlarge the input control according to the number of lines upwards without leaving the window
 userInput.addEventListener('keyup', e => {
     userInput.style.height = "30px";
@@ -216,3 +279,7 @@ userInput.addEventListener('keydown', e => {
         sendQuestion();
     }
 });
+
+const setCursorTextOnTextarea = () => {
+    userInput.focus();
+}

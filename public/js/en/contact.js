@@ -4,20 +4,34 @@ const firstNameInputen = document.getElementById("Firstname");
 const emailInputen = document.getElementById("Email");
 const messageInputen = document.getElementById("Message");
 const sendBtnen = document.getElementById("submit");
-const formen = document.getElementsByClassName("form")[0];
-const recupCountryUser = localStorage.getItem("country");
+
+
+// Global variable for the country
+let countryUser;
+
+// function to recup the country cookie
+const recupCountryUser = () => {
+  axios.get("/api/get-country")
+  .then(e => {
+    countryUser = e.data;
+    console.log(countryUser);
+  })
+  .catch(err => {
+    console.log(err);
+  })
+}
 
 
 // When the user clicks on the "Send" button, the message is sent to the expert's mailbox
-formen.addEventListener('submit', (e)=>{
+const submitMessage = (e) => {
   e.preventDefault();
     
-  let formDatafr = {
-    lastname : lastNameInputfr.value,
-    firstname : firstNameInputfr.value,
-    email : emailInputfr.value,
-    message : messageInputfr.value,
-    country : recupCountryUser
+  let formDataen = {
+    lastname : lastNameInputen.value,
+    firstname : firstNameInputen.value,
+    email : emailInputen.value,
+    message : messageInputen.value,
+    country : countryUser
   }
 
   // Send the form data to the expert
@@ -25,20 +39,33 @@ formen.addEventListener('submit', (e)=>{
   xhr.open('POST', '/Contact', true);
   xhr.setRequestHeader('content-type', 'application/json');
   xhr.onload = function(){
-    console.log(xhr.responseText);
     if(xhr.responseText == 'success'){
-      alert("L'email a bien été envoyé");
+      alert("The email has been sent");
 
       // Reset the form
-      lastNameInputfr.value = '';
-      firstNameInputfr.value = '';
-      emailInputfr.value = '';
-      messageInputfr.value = '';
+      lastNameInputen.value = '';
+      firstNameInputen.value = '';
+      emailInputen.value = '';
+      messageInputen.value = '';
+
     } else {
-      alert("Aie, l'email n'a pas pu être envoyé");
+      alert("Oops, the email couldn't be sent");
+      console.log(xhr.responseText);
     }
   }
 
   xhr.send(JSON.stringify(formDatafr));
- 
-})
+
+}
+
+
+// When the user clicks on the "Send" button, the message is sent to the expert's mailbox
+sendBtnen.addEventListener('click', submitMessage);
+
+// When the user presses the "Enter" key, the message is sent to the expert's mailbox
+sendBtnen.addEventListener('keypress', (e) => {
+  if(e.key === 'Enter'){
+      e.preventDefault();  
+      submitMessage();
+    }
+});

@@ -117,6 +117,21 @@
         text-shadow: 0 0 10px #2f2f2f;
     }
 
+    main #h3{
+        text-align: center;
+        color: darkblue;
+        font-size: 11px;
+        margin-top: -0.8%;
+        font-style: italic;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+
+    main #h3:hover{
+        color: darkblue;
+        text-shadow: 0 0 10px #2f2f2f;
+    }
+
+
     /* cookies */
     .cookies_container{
         background-color: #72727285;
@@ -252,7 +267,7 @@
         margin: 0 auto;
         margin-top: 1%;
         padding: 30px 20px 70px;
-        width: 50vw;
+        width: 55vw;
         height: 70vh;
         background-color: #f5f5f5;
         border-radius: 10px;
@@ -260,7 +275,8 @@
     } 
 
     .chatbot-section .chatbot-reponse{
-        height: 70%;
+        height: 80%;
+        width: 95%;
         overflow-y: auto;
         padding: 30px 20px 75px;
     }
@@ -731,6 +747,21 @@
         text-shadow: 0 0 10px #2f2f2f;
     }
 
+    main #h3{
+        text-align: center;
+        color: darkblue;
+        font-size: 11px;
+        margin-top: -0.8%;
+        font-style: italic;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+
+    main #h3:hover{
+        color: darkblue;
+        text-shadow: 0 0 10px #2f2f2f;
+    }
+
+
      #logoChatLawBOT {
         width: 77px;
         height: 77px;
@@ -798,16 +829,17 @@
         margin: 0 auto;
         margin-top: 1%;
         padding: 30px 20px 30px;
-        width: 40vw;
+        width: 45vw;
         height: 70vh;
         max-height: 100vh;
         background-color: #f5f5f5;
         border-radius: 10px;
         box-shadow: 0 0 10px #ccc;
-    } 
+    }  
 
     .chatbot-section .chatbot-reponse{
-        height: 230px;
+        height: 60%;
+        width: 95%;
         overflow-y: auto;
         padding: 30px 20px 75px;
     }
@@ -1263,8 +1295,8 @@
         background-color: #000;
         height: 31px;
     }
+    
     /*Popup and MAIN part*/
-
     .language_Popup_container {
        background-color: #72727285;
        position: fixed;
@@ -1319,6 +1351,21 @@
         text-align: center;
     }
 
+    main #h3{
+        text-align: center;
+        color: darkblue;
+        font-size: 11px;
+        margin-top: -0.8%;
+        font-style: italic;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+
+    main #h3:hover{
+        color: darkblue;
+        text-shadow: 0 0 10px #2f2f2f;
+    }
+
+
     article{
         display: flex;
         flex-direction: row;
@@ -1337,9 +1384,11 @@
 
     .chatbot-section .chatbot-reponse{
         height: 420px;
+        width: 95%;
         overflow-y: auto;
         padding: 30px 20px 75px;
     }
+
     .chatbot-section .chat{
         display: flex;
     }
@@ -1839,6 +1888,21 @@
     main h1{
         text-align: center;
     }
+
+    main #h3{
+        text-align: center;
+        color: darkblue;
+        font-size: 11px;
+        margin-top: -0.8%;
+        font-style: italic;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+
+    main #h3:hover{
+        color: darkblue;
+        text-shadow: 0 0 10px #2f2f2f;
+    }
+
 
     article{
         display: flex;
@@ -2356,6 +2420,21 @@
         text-align: center;
     }
 
+    main #h3{
+        text-align: center;
+        color: darkblue;
+        font-size: 11px;
+        margin-top: -0.8%;
+        font-style: italic;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+
+    main #h3:hover{
+        color: darkblue;
+        text-shadow: 0 0 10px #2f2f2f;
+    }
+
+
     article{
         display: flex;
         flex-direction: row;
@@ -2580,32 +2659,276 @@
 
 @media(max-width: 360px){
     *{
+        padding: 0;
+        outline: none;
+        text-decoration: none;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
-    h1{
-        color: white;
-        font-size: 25px;
+    body{
+        background-color: #f5f5f5;
+        background-size: cover;
+    }
+
+    #body-content {
+        display: none;
+    }
+
+    p{
+        color: darkblue;
+        font-size: 20px;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         text-align: center;
-        text-shadow: 2px 2px 2px black;
     }
-    article{
+
+    /* NAVBAR*/
+    .header-computer {
+        display: none;
+    }   
+
+    .top-nav{
+        display: none;
+    }
+
+    .li-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 50%;
+    }
+
+    .top-nav li {
+        list-style-type: none;
+    }
+
+    .top-nav li a {
+        color: #000;
+        display: inline-block;
+        vertical-align: middle;
+    }
+      
+    .top-nav li a span {
+        vertical-align: middle;
+    }
+
+    .header-mobile img {
+        height: 30px;
+        margin-left: 40%;
+    }
+
+    .top-nav a:hover {
+        color: darkblue;
+    }
+
+    nav a{
+        position: relative;
+        font-size: 14px;
+        display: table;
+        width: 100px;
+        padding: 10px;
+    }
+
+
+    li.actual a{
+        color: red;   
+    }
+
+    #checknav{
+        display: none;
+    }
+
+    .left-li {
+        width: 50%;
+        margin-left: 15%;
+    }
+
+    .right-li{
+        width: 50%;
+        margin-left: 70%;
+    }
+
+    #checknav:checked ~ .top-nav{
+        display: block;
+    }
+
+    .bottom-nav{
         margin-top: 2%;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        transition: height 0.2s linear;
+        color: #000;
+    }
+
+    .bottom-nav li {
+        text-align: center;
+    }
+
+    .bottom-nav select{
+        width: 90px;
+    }
+
+    /*Cookies part*/
+    .cookies_container{
+        background-color: #72727285;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        opacity: 1;
+        z-index: 1000;
+    }
+
+    .cookies_container.close{
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+    }
+
+    .cookies{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 170px;
+        background-color: #f5f5f5;
+        box-shadow: 0 0 10px #ccc;
+    }
+
+    .cookies h1 {
+        margin-top: 2%;
+    }
+
+    .cookies p {
+        font-size: 15px;
+        color: darkblue;
+    }
+    
+    .decision-button {
+        width: 30%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .decision-button button {
+        width: 150px;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        background-color: darkblue;
+        color: #fff;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .decision-button button:hover {
+        background-color: #000;
+        height: 31px;
+    }
+
+    .decision-button button:active {
+        background-color: #000;
+        height: 31px;
+    }
+    
+    /*Popup and MAIN part*/
+    .language_Popup_container {
+       background-color: #72727285;
+       position: fixed;
+       top: 0;
+       left: 0;
+       height: 100vh;
+       width: 100vw;
+       opacity: 1;
+       transition: opacity 0.2s ease;
+    }
+
+    /*Allows you to hide the popup with the opacity at 0*/
+    .language_Popup_container.close{
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    /*Allows you to show the popup with the opacity at 1*/
+    .language_Popup_container.show{
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .popup {
+        text-align: center;
+        background-color: #fff;
+        box-shadow: 0 0 10px #ccc;
+        width: 40%;
+        margin: 0 auto;
+        margin-top: 20%; 
+    }
+
+    .popup p {
+        font-size: 17px;
+    }
+
+    .lang_choice{
+        margin-bottom: 3%;
+    }
+
+    .lang_choice select {
+        width: 50%;
+    }
+
+    .errorLang {
+        color: red;
+        font-size: 0.8rem;
+    } 
+
+    /*MAIN and chatBOT part*/
+    main h1{
+        text-align: center;
+    }
+
+    main #h3{
+        text-align: center;
+        color: darkblue;
+        font-size: 11px;
+        margin-top: -0.8%;
+        font-style: italic;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+
+    main #h3:hover{
+        color: darkblue;
+        text-shadow: 0 0 10px #2f2f2f;
+    }
+
+
+    article{
         display: flex;
         flex-direction: row;
         width: 100%;
         background-color: #f5f5f5;
         overflow: hidden;   
     }
+
+    .chatbot-section{
+        margin: 0 auto;
+        margin-top: 1%;
+        height: 70%;
+        padding: 30px 20px 30px;
+        border-radius: 10px;
+    } 
+
     .chatbot-section .chatbot-reponse{
+        height: 320px;
+        overflow-y: auto;
         padding: 30px 20px 75px;
     }
     .chatbot-section .chat{
         display: flex;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
-    
 
     .chatbot-section .chat p{
         color: #000;
@@ -2633,7 +2956,7 @@
     li.chat.reponse-BOT.error span{
         background-color: lightcoral;
     }
-
+    
     .chatbot-section .reponse-User p {
         margin: 20px 0;
         justify-content: flex-end;
@@ -2642,7 +2965,6 @@
         padding: 12px 16px;
         font-size : 0.95em;
         border-radius: 10px 10px 0 10px;
-        max-width: 250px;
 
     }
 
@@ -2658,24 +2980,25 @@
         flex-direction: row;
         margin-left: auto;
         margin-right: auto;
-        width: 300px;
+        width: 95%;
         background-color: #f5f5f5;
         box-shadow: 0 0 10px #ccc;
         overflow: hidden;   
     }
 
+    /*button part*/
     .user-question textarea{
-        max-height: 70px;  
         margin-top: 1%;
+        margin-bottom: 1%;
         margin-left: 1%;
-        width: 250px;
-        height: 30px;
+        width: 90%;
+        height: 40px;
         border-radius: 10px;
         border: none;
         outline: none;
         font-size: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         padding-left: 10px;
-        max-width: 250px;
         word-wrap: break-word;
         resize: none;
     }
@@ -2686,6 +3009,7 @@
     }
 
     .user-question button[type="submit"]{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         margin-left: 3%;
         height: 40px;
         width: 70px;    
@@ -2693,18 +3017,116 @@
         border-color: #fff;
     }
 
-    /*Footer part*/
-    footer{
-        background-color: #f5f5f5;
-        height: 50px;
+    .chatbot-section .reponse-User p {
+        margin: 20px 0;
+        justify-content: flex-end;
+        background-color: darkblue;
+        color: #fff;
+        padding: 12px 16px;
+        font-size : 0.95em;
+        border-radius: 10px 10px 0 10px;
+
+    }
+
+    .chatbot-section .reponse-User {
+        margin: 20px 0;
+        justify-content: flex-end;
+    }
+        
+    textarea{
+        margin: 0 auto;
+        margin-top: 10%;
+        display: flex;
+        height: 100px;
+        width: 250px;
+        resize: none;
+    }
+    
+    /*Consultant Popup*/
+    .consultant-popup{
+        margin-left: 38%;
+        margin-bottom: 10%;
+    }
+
+    .img-consultant {
+        margin-top: 4%;
+        width: 70px;
+        height: 70px;
+        border-radius: 35px;
+        border: 1.5px solid black;
+        background-color: lightgray;
+        text-align: center;
+    }
+
+    .img-consultant:hover {
+        border: 2px solid darkblue;
+        cursor: pointer;
+        border-radius: 35.5px;
+    } 
+
+    .img-consultant img {
+        width: 60px;
+        margin-top: 2px;
+    }
+
+    .text_popup {
+        position: relative;
+        background: #ffffff;
+        color: #000000;
+        width: 90px;
+        height: 80px;
+        border-radius: 5%;
+        border: #000000 solid 1px;
+    }
+
+    .text_popup:after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 0;
+        z-index: 1;
+        border-style: solid;
+        border-color: #ffffff transparent;
+        border-width: 20px 8px 0;
+        bottom: -20px;
+        left: 70%;
+        margin-left: -8px;
+    }
+
+    .text_popup:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        z-index: 0;
+        border-style: solid;
+        border-color: #000000 transparent;
+        border-width: 21px 9px 0;
+        bottom: -21.5px;
+        left: 70%;
+        margin-left: -9px;
+        display: block;
+    }
+
+    .text_popup .information_proposition {
+        font-size: 12px;
+        color: black;
+        text-align: center;
+    }
+
+    /*FOOTER PART*/
+    .footer{
+        height: 9px;
         width: 100%;
         bottom: 0;
         left: 0;
+        bottom: 0; 
         right: 0;
         margin: 0 auto;
         padding-top: 10px;
         font-size: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
+
 
     .footer-content{
         margin: 0 auto;
@@ -2714,6 +3136,25 @@
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+    }
+
+    .about p{
+        color: darkblue;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: center;
+    }
+
+    .footer-content {
+        margin-top: 20%;
+    }
+
+    .contact-numero{
+        width: 90%;
+    }
+
+    .links{
+        margin-left: 10%;
     }
 
     .links h2{
@@ -2727,7 +3168,7 @@
 
     .links li{
         list-style-type: none;
-        margin-left: 10px;
+        margin-left: 15px;
     }
 
     .links a{
@@ -2735,17 +3176,14 @@
         text-decoration: none;
     }
 
+    .links a:visited{
+        color: #000;
+    }
+
     .links a:hover{
         text-decoration: underline;
         color: darkblue;
         border-radius: 5px;
-
     }
 
-    .links a:visited{
-        color: #000;
-    }
 }
-
-
-

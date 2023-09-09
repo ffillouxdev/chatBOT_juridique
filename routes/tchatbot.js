@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const fetch = require("node-fetch");
 
+let texteJurdique = "";
+
+
 // Permet de récupérer les données du chatbot
 router.post('/api/retrieve-answer', (req, res) => {
 
@@ -11,10 +14,20 @@ router.post('/api/retrieve-answer', (req, res) => {
     const API_KEY = process.env.API_KEY;
 
     const API_URL = "https://api.openai.com/v1/chat/completions";
+
+    // liste des pays francophones
+    const countryFr = ["de France", "de Belgique", "de la partie du Canada Francophone", "du Luxembourg", "de Monaco", "de la Suisse"];
+    const countryEn = ["Australia", "Canada", "England", "India" ,"Ireland", "New Zealand", "Scotland", "South Africa", "USA", "Wales"];
     
-     //const ElementOfMessage = nextChatLi.querySelector('p');
-    const texteJurdique = "Quelle loi " + country + " est en lien avec cette question et explique les fondements de cette loi (répond seulement si la question posé à quelque chose à voir avec le juridique sinon répond juste 'Ce n'est pas une question juridique.') : " + question;
-        
+
+    // si le pays est francophone alors textJurique correspond à la question posé en français
+    if (countryFr.includes(country)) {
+        texteJurdique = "Quelle loi " + country + " est en lien avec cette question et explique les fondements de cette loi de façon concise et preconise d'aller demander des conseils à un / une experte si la question concerne la personne (répond seulement si la question posé à quelque chose à voir avec le juridique sinon répond juste 'Ce n'est pas une question juridique.') : " + question;
+    }else { 
+        if (countryEn.includes(country)) {
+            texteJurdique = "What law " + country + " is related to this question and explains the foundations of this law concisely and recommends seeking advice from an expert if the question concerns the person (only answer if the question asked has something to do with the legal otherwise just answer 'This is not a legal question.') : " + question;
+        }
+    }
     const requestOptions = {
         method: 'POST',
         headers : {

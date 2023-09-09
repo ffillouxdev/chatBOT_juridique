@@ -64,11 +64,6 @@ const submitToClosePopup = document.getElementById("submitP");
 */
 
 
-
-
-
-
-
 // Fonction qui permet de changer de pays en fonction du select en bas de la navbar
 const changeCountry = () => {
     // On recupere le select dans la navbar
@@ -181,7 +176,6 @@ function synchronizeSelectCountry() {
                     language_Popup_container.classList.remove("show");
                     language_Popup_container.classList.add("close");
                     document.getElementById("changer_pays").value = e.data.country;
-                    document.getElementById("changer_pays").value = e.data.country;
                 }
             }
         
@@ -250,7 +244,6 @@ const responseGeneration = (nextChatLi, country) => {
             country: country
         })
         .then(e => {
-            console.log(e.data.response, "responseGeneration")
             nextChatLi.querySelector('p').textContent = e.data.response;
         })
         .catch(error => {

@@ -5,10 +5,9 @@
   const emailInputfr = document.getElementById("Email"); 
   const messageInputfr = document.getElementById("Message");
   const sendBtnfr = document.getElementById("submit");
-  const formfr = document.getElementsByClassName("form")[0];  
 
+  // Variable globale pour le pays
   let countryUser;
-
 
   // On recupere le cookie qui contient le pays de l'utilisateur
   const recupCountryUser = () => {
@@ -21,8 +20,6 @@
       console.log(err);
     })
   }
-
-
 
   // La fonction qui envoie
   const submitMessage = (e) => {

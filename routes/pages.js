@@ -19,7 +19,7 @@ router.use((req, res, next) => {
 
 // on définit la route du fichier index.html qui est la page d'accueil du site
 router.get('/', (req, res) => {
-    const lang = res.locals.language;
+    const lang = res.locals.language[0] + res.locals.language[1];
     let indexHTML;
     // On vérifie la langue de l'utilisateur et on lui envoie la page html correspondante à sa langue
     switch (lang) {
@@ -53,7 +53,8 @@ router.get('/', (req, res) => {
 
 router.get("/Contact", (req, res) => {
     let contactHTML;
-    const lang = res.locals.language;
+    const lang = res.locals.language[0] + res.locals.language[1];
+    console.log(lang);
 
     // On vérifie la langue de l'utilisateur et on lui envoie la page html correspondante à sa langue
     switch (lang) {
@@ -118,7 +119,7 @@ router.post("/Contact", (req, res) => {
 
 router.get("/About", (req, res) => {
     let aboutHTML;
-    const lang = res.locals.language;
+    const lang = res.locals.language[0] + res.locals.language[1];
 
     // On vérifie la langue de l'utilisateur et on lui envoie la page html correspondante à sa langue
     switch (lang) {
@@ -152,7 +153,7 @@ router.get("/About", (req, res) => {
 
 router.get("/CookiePolicy", (req, res) => {
     let cookiePolicyHTML;
-    const lang = res.locals.language;
+    const lang = res.locals.language[0] + res.locals.language[1];
 
     // On vérifie la langue de l'utilisateur et on lui envoie la page html correspondante à sa langue
     switch (lang) {
@@ -187,7 +188,7 @@ router.get("/CookiePolicy", (req, res) => {
 
 router.get("/Privacy-Policy", (req, res) => {
     let privacyPolicyHTML;
-    const lang = res.locals.language;
+    const lang = res.locals.language[0] + res.locals.language[1];
 
     // On vérifie la langue de l'utilisateur et on lui envoie la page html correspondante à sa langue
     switch (lang) {
@@ -222,7 +223,7 @@ router.get("/Privacy-Policy", (req, res) => {
 
 router.get("/FAQ", (req, res) => {
     let faqHTML;
-    const lang = res.locals.language;
+    const lang = res.locals.language[0] + res.locals.language[1];
     
     switch(lang){
         case "fr" :
