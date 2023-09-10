@@ -114,7 +114,7 @@ router.post("/Contact", (req, res) => {
     const mailOptions = {
         from : req.body.email,
         to : 'contactlawtchat@gmail.com',
-        subject : `Message de ${req.body.lastname} ${req.body.firstname} qui vient de ${req.body.country}`,
+        subject : `Message de ${req.body.lastname} ${req.body.firstname} qui vient ${req.body.country}`,
         text : req.body.message
     }
 

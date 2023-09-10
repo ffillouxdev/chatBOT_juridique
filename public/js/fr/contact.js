@@ -21,6 +21,8 @@
     })
   }
 
+  recupCountryUser();
+
   // La fonction qui envoie
   const submitMessage = (e) => {
     e.preventDefault();
@@ -30,7 +32,7 @@
       firstname : firstNameInputfr.value,
       email : emailInputfr.value,
       message : messageInputfr.value,
-      country : countryUser
+      country : countryUser.country
     }
 
     // Envoie les données du formulaire à l'expert
@@ -63,7 +65,6 @@
   // Lorsque l'utilisateur appuie sur la touche "Entrée", le message est envoyé dans la boite mail de l'expert
   sendBtnfr.addEventListener('keypress', (e) => {
     if(e.key === 'Enter'){
-        e.preventDefault();  
         submitMessage();
       }
   });
