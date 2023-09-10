@@ -101,6 +101,7 @@ router.get("/Contact", (req, res) => {
 
 
 router.post("/Contact", (req, res) => {
+    console.log("ok");
     console.log(req.body);
 
     const transporter = nodemailer.createTransport({
