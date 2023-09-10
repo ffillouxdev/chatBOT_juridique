@@ -53,7 +53,7 @@
       }
     }
 
-    xhr.send(JSON.stringify(formDatafr));
+    xhr.send(JSON.stringify(formDatafr, console.log('formDatafr')));
   
   }
 
