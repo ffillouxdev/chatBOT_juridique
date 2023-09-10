@@ -14,7 +14,7 @@
     axios.get("/api/get-country")
     .then(e => {
       countryUser = e.data;
-      console.log(countryUser);
+      console.log(countryUser.country);
     })
     .catch(err => {
       console.log(err);
