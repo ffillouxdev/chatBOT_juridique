@@ -120,11 +120,9 @@ router.post("/Contact", (req, res) => {
 
     transporter.sendMail(mailOptions, (error, info) => {
         if(error){
-            console.log(error);
-            res.send('error');
+            console.log("error",error);
         } else {
-            console.log('Email sent: ' + info.response);
-            res.send('success')
+            console.log('Email successfully sent!' + info.response);
         }
     })
 });
