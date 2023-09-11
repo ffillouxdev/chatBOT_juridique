@@ -16,12 +16,17 @@ const findLanguage = (req, res, next) => {
     const acceptLanguage =  ["fr", "en", "fr-FR", "en-US"];
     const language = req.headers["accept-language"];
     
-    // on fait une boucle dans req.locals.language pour s'arreter à la premiere ',' et on récupère la langue de l'utilisateur
-    for(let i = 0; i < language.length; i++){
-        if(language[i] === ','){
-            lang = language.slice(0, i);
-            break;
+    if (language) {
+        // on fait une boucle dans req.locals.language pour s'arreter à la premiere ',' et on récupère la langue de l'utilisateur
+        for(let i = 0; i < language.length; i++){
+            if(language[i] === ','){
+                lang = language.slice(0, i);
+                break;
+            }
         }
+    } else {
+        // si la langue n'est pas définie, on envoie la page html en français
+        lang = "fr";
     }
     next();
 }
