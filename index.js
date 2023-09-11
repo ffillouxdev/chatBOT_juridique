@@ -6,10 +6,12 @@ const jwt = require('jsonwebtoken'); // Ajout de jsonwebtoken
 const cookieParser = require("cookie-parser");
 
 
+
 // Importation des routes
 const cookieRoutes = require("./routes/cookies");
 const tchatbotRoutes = require("./routes/tchatbot");
 const pagesRoutes = require("./routes/pages");
+const nodemailerRoutes = require("./routes/nodemailer");
 
 // Création de l'application express qui va gérer le serveur
 const app_juridique = express();
@@ -31,6 +33,7 @@ app_juridique.use(cookieParser());
 app_juridique.use("/", tchatbotRoutes);
 app_juridique.use("/", cookieRoutes);
 app_juridique.use("/", pagesRoutes);
+app_juridique.use("/", nodemailerRoutes);
 
 // Fonction pour vérifier l'authentification via un token
 function authenticateToken(req, res, next) {

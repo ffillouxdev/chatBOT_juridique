@@ -4,12 +4,9 @@ const fs = require('fs');
 const fetch = require("node-fetch");
 const { deflate } = require('zlib');
 const exp = require('constants');
-const nodemailer = require('nodemailer');
-const { default: axios } = require("axios");
 
 
 const router = express.Router();
-
 
 // Variable globale pour la langue de l'utilisateur
 let lang;
@@ -100,35 +97,36 @@ router.get("/Contact", (req, res) => {
 });
 
 
-router.post("/Contact", (req, res) => {
-    console.log("ok");
-    console.log(req.body);
+// router.post("/Contact", (req, res) => {
 
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth : {
-        user : process.env.SMTP_EMAIL,
-        pass : process.env.SMTP_PASSWORD
-        }
-    })
+   
+    
+//     console.log(req.body);
 
-    const mailOptions = {
-        from : req.body.email,
-        to : 'contactlawtchat@gmail.com',
-        subject : `Message de ${req.body.lastname} ${req.body.firstname} qui vient ${req.body.country}`,
-        text : req.body.message
-    }
+//     const transporter = nodemailer.createTransport({
+//         service: 'gmail',
+//         host: 'smtp.gmail.com',
+//         auth : {
+//             user : process.env.SMTP_EMAIL,
+//             pass : process.env.SMTP_PASSWORD
+//         }
+//     })
 
-    transporter.sendMail(mailOptions, (error, info) => {
-        if(error){
-            console.log("error",error);
-            res.send('error');
-        } else {
-            console.log('Email successfully sent!' + info.response);
-            res.send('success')
-        }
-    })
-});
+//     const mailOptions = {
+//         from : req.body.email,
+//         to : 'contactlawtchat@gmail.com',
+//         subject : `Message de ${req.body.lastname} ${req.body.firstname} qui vient ${req.body.country}`,
+//         text : req.body.message
+//     }
+
+//     transporter.sendMail(mailOptions, (error, info) => {
+//         if(error){
+//             console.log("error",error);
+//         } else {
+//             console.log('Email successfully sent!' + info.response);
+//         }
+//     })
+// });
 
 
 router.get("/About", (req, res) => {
