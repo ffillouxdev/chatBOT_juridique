@@ -96,39 +96,6 @@ router.get("/Contact", (req, res) => {
     res.send(contactHTML)
 });
 
-
-// router.post("/Contact", (req, res) => {
-
-   
-    
-//     console.log(req.body);
-
-//     const transporter = nodemailer.createTransport({
-//         service: 'gmail',
-//         host: 'smtp.gmail.com',
-//         auth : {
-//             user : process.env.SMTP_EMAIL,
-//             pass : process.env.SMTP_PASSWORD
-//         }
-//     })
-
-//     const mailOptions = {
-//         from : req.body.email,
-//         to : 'contactlawtchat@gmail.com',
-//         subject : `Message de ${req.body.lastname} ${req.body.firstname} qui vient ${req.body.country}`,
-//         text : req.body.message
-//     }
-
-//     transporter.sendMail(mailOptions, (error, info) => {
-//         if(error){
-//             console.log("error",error);
-//         } else {
-//             console.log('Email successfully sent!' + info.response);
-//         }
-//     })
-// });
-
-
 router.get("/About", (req, res) => {
     let aboutHTML;
    
@@ -288,3 +255,47 @@ router.get("/*", (req, res) => {
 })
 
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// router.post("/Contact", (req, res) => {
+
+   
+    
+//     console.log(req.body);
+
+//     const transporter = nodemailer.createTransport({
+//         service: 'gmail',
+//         host: 'smtp.gmail.com',
+//         auth : {
+//             user : process.env.SMTP_EMAIL,
+//             pass : process.env.SMTP_PASSWORD
+//         }
+//     })
+
+//     const mailOptions = {
+//         from : req.body.email,
+//         to : 'contactlawtchat@gmail.com',
+//         subject : `Message de ${req.body.lastname} ${req.body.firstname} qui vient ${req.body.country}`,
+//         text : req.body.message
+//     }
+
+//     transporter.sendMail(mailOptions, (error, info) => {
+//         if(error){
+//             console.log("error",error);
+//         } else {
+//             console.log('Email successfully sent!' + info.response);
+//         }
+//     })
+// });

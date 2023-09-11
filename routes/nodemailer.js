@@ -40,11 +40,12 @@ router.post('/Contact', (req, res) => {
     }
 
     transporter.sendMail(mailOptions, (error, info) => {
-        console.log("ok")
         if(error){
             console.log("error",error);
+            alert("Aie, l'email n'a pas pu être envoyé");
         } else {
             console.log('Email successfully sent!' + info.response);
+            alert("L'email a bien été envoyé");
         }
         transporter.close();
     })
