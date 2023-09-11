@@ -23,14 +23,11 @@ router.post('/api/retrieve-answer', (req, res) => {
     // si le pays est francophone alors textJurique correspond à la question posé en français
     if (countryFr.includes(country)) {
         texteJurdique = "Quelle loi " + country + " est en lien avec cette question et explique les fondements de cette loi de façon concise et preconise d'aller demander des conseils à un / une experte si la question concerne la personne (répond seulement si la question posé à quelque chose à voir avec le juridique sinon répond juste 'Ce n'est pas une question juridique.') : " + question;
-        console.log(texteJurdique)
-    }else { 
-        if (countryEn.includes(country)) {
+    }else if (countryEn.includes(country)) {
             texteJurdique = "What law " + country + " is related to this question and explains the foundations of this law concisely and recommends seeking advice from an expert if the question concerns the person (only answer if the question asked has something to do with the legal otherwise just answer 'This is not a legal question.') : " + question;
-            console.log(texteJurdique)
         }
-    }
-    const requestOptions = {
+        
+        const requestOptions = {
         method: 'POST',
         headers : {
             'Content-Type': 'application/json',
