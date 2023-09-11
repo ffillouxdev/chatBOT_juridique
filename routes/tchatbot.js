@@ -7,7 +7,7 @@ let texteJurdique = "";
 
 // Permet de récupérer les données du chatbot
 router.post('/api/retrieve-answer', (req, res) => {
-
+    
     const question = req.body.question;
     const country = req.body.country;
 
@@ -27,6 +27,7 @@ router.post('/api/retrieve-answer', (req, res) => {
         if (countryEn.includes(country)) {
             texteJurdique = "What law " + country + " is related to this question and explains the foundations of this law concisely and recommends seeking advice from an expert if the question concerns the person (only answer if the question asked has something to do with the legal otherwise just answer 'This is not a legal question.') : " + question;
         }
+        console.log(texteJurdique)
     }
     const requestOptions = {
         method: 'POST',
