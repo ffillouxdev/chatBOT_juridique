@@ -16,7 +16,7 @@ router.post('/api/retrieve-answer', (req, res) => {
     const API_URL = "https://api.openai.com/v1/chat/completions";
 
     // liste des pays francophones
-    const countryFr = ["de France", "de Belgique", "de la partie du Canada Francophone", "du Luxembourg", "de Monaco", "de la Suisse"];
+    const countryFr = ["de France", "de Belgique", "de la partie du Canada Francophone", "du Luxembourg", "de Monaco", "de Suisse"];
     const countryEn = ["Australia", "Canada", "England", "India" ,"Ireland", "New Zealand", "Scotland", "South Africa", "USA", "Wales"];
     
 
