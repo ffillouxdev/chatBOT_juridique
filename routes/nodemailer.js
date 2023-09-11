@@ -35,7 +35,8 @@ router.post('/Contact', (req, res) => {
         from : req.body.email,
         to : 'contactlawtchat@gmail.com',
         subject : `Message de ${req.body.lastname} ${req.body.firstname} qui vient ${req.body.country}`,
-        text : req.body.message
+        text : req.body.message,
+        html : `<p>${req.body.message}</p>`,
     }
 
     transporter.sendMail(mailOptions, (error, info) => {
