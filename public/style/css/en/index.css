@@ -147,7 +147,7 @@
     .cookies_container.close{
         opacity: 0;
         pointer-events: none;
-        transition: opacity 0.2s ease;
+        transition: opacity 0.4s ease;
     }
 
     .cookies{
@@ -215,6 +215,7 @@
     .language_Popup_container.close{
         opacity: 0;
         pointer-events: none;
+        transition: opacity 0.4s ease;
     }
     
     /*Allows you to show the popup with the opacity at 1*/
