@@ -1,0 +1,253 @@
+main {
+    width: 85%;
+    margin-left: 14%;
+    height: 97vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formulaire {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.formulaire h1 {
+    text-align: center;
+}
+
+.formulaire h1:hover {
+    color: var(--primary-color);
+}
+
+.formulaire form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulaire form input {
+    font-family: var(--font-primary);
+    height: 35px;
+}
+
+.formulaire form .yourself {
+    width: 51%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.formulaire form .yourself input {
+    width: 47%;
+}
+
+.formulaire form #Email,
+.formulaire form #Message,
+.formulaire form #submit {
+    margin-top: 10px;
+    width: 50%;
+}
+
+.formulaire form #Message {
+    resize: none;
+    font-family: var(--font-primary);
+    font-size: 13px;
+}
+
+.formulaire form #submit {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.formulaire form #submit:hover {
+    background-color: var(--label-focus-color);
+}
+
+
+
+@media(max-width: 490px) {
+    main{
+        width: 100%;
+        margin-left: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    main h1,
+    .formulaire h1 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    main h1:hover,
+    .formulaire h1:hover {
+        color: var(--primary-color);
+        text-shadow: 0 0 10px #2f2f2f;
+    }
+
+    .formulaire {
+        padding: 20px 30px;
+        border-radius: 5px;
+        margin-top: 18%;
+        margin-left: 2%;
+        margin-bottom: 15%;
+        width: 80%;
+    }
+
+    .formulaire form input {
+        height: 35px;
+    }
+
+    .formulaire form .yourself {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .formulaire form .yourself input,
+    .formulaire form #Email,
+    .formulaire form #Message,
+    .formulaire form #submit {
+        width: 100%;
+        margin-top: 1%;
+    }
+
+    .formulaire form #Message {
+        resize: none;
+        font-size: 13px;
+    }
+
+    .formulaire form #submit {
+        margin-top: 5px;
+    }
+
+    .formulaire form #submit:hover {
+        background-color: var(--primary-color);
+        color: var(--foreground-color);
+    }
+}
+
+@media(max-width: 490px) and (max-height: 700px) {
+
+    main h1,
+    .formulaire h1 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    main h1:hover,
+    .formulaire h1:hover {
+        color: var(--primary-color);
+        text-shadow: 0 0 10px #2f2f2f;
+    }
+
+    .formulaire {
+        padding: 20px 30px;
+        border-radius: 5px;
+        margin-top: 18%;
+        margin-left: 2%;
+        margin-bottom: 15%;
+        width: 80%;
+    }
+
+    .formulaire form input {
+        height: 35px;
+    }
+
+    .formulaire form .yourself {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .formulaire form .yourself input,
+    .formulaire form #Email,
+    .formulaire form #Message,
+    .formulaire form #submit {
+        width: 100%;
+        margin-top: 1%;
+    }
+
+    .formulaire form #Message {
+        resize: none;
+        font-size: 13px;
+    }
+
+    .formulaire form #submit {
+        margin-top: 5px;
+    }
+
+    .formulaire form #submit:hover {
+        background-color: var(--primary-color);
+        color: var(--foreground-color);
+    }
+}
+
+@media(max-width: 360px) {
+
+    main h1,
+    .formulaire h1 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    main h1:hover,
+    .formulaire h1:hover {
+        color: var(--primary-color);
+        text-shadow: 0 0 10px #2f2f2f;
+    }
+
+    .formulaire {
+        padding: 20px 30px;
+        border-radius: 5px;
+        margin-top: 18%;
+        margin-left: 2%;
+        margin-bottom: 15%;
+        width: 80%;
+    }
+
+    .formulaire form input {
+        height: 35px;
+    }
+
+    .formulaire form .yourself {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .formulaire form .yourself input,
+    .formulaire form #Email,
+    .formulaire form #Message,
+    .formulaire form #submit {
+        width: 100%;
+        margin-top: 1%;
+    }
+
+    .formulaire form #Message {
+        resize: none;
+        font-size: 13px;
+    }
+
+    .formulaire form #submit {
+        margin-top: 5px;
+    }
+
+    .formulaire form #submit:hover {
+        background-color: var(--primary-color);
+        color: var(--foreground-color);
+    }
+
+}

@@ -1,0 +1,97 @@
+/*Partie MAIN*/
+main {
+    width: 85%;
+    margin-left: 13.5%;
+    padding: 0px 10px;
+    overflow: hidden;
+    height: 97vh;
+}
+
+.membres {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+
+
+.photo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    margin: 10px;
+}
+
+.photo p {
+    text-align: middle;
+}
+
+.photo h2:hover {
+    color: var(--primary-color);
+}
+
+.photo.membre1 {
+    text-align: center;
+}
+
+.photo.membre1.slide-from-top {
+    animation: slideTop 0.8s ease-in-out;
+}
+
+.photo.membre1 ul li {
+    list-style-type: none;
+}
+
+.photo.membre2 {
+    text-align: center;
+}
+
+.photo.membre2.slide-from-bottom {
+    animation: slideBottom 0.8s ease-in-out;
+}
+
+.reseaux {
+    padding: 0;
+}
+
+.reseaux img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+
+
+
+.photo.membre2 ul li {
+    list-style-type: none;
+}
+
+
+@media (max-width: 768px) {
+
+    /*Partie MAIN*/
+    main {
+        width: 100%;
+        padding: 0;
+        overflow: hidden;
+        margin-left: 0;
+        height: auto;
+    }
+
+    .membres {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .photo.membre1.slide-from-top {
+        animation: slideRight 0.8s ease-in-out;
+    }
+
+    .photo.membre2.slide-from-bottom {
+        animation: slideLeft 0.8s ease-in-out;
+    }
+
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/index.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="javascripts/home.js" defer></script>
+    <link rel="shortcut icon" href="assets/img/logoChatLawBOT-arrondi.ico" type="image/x-icon">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WG4DNV61E9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WG4DNV61E9');
+    </script>
+    <title>ChatBot Juridique</title>
+</head>
+
+<body id="body-content">
+    <nav>
+        <div class="header-computer">
+            <ul class="left-nav">
+                <li><img src="assets/img/logoChatLawBOT.jpeg" alt="logoChatLawBOT" id="logoChatLawBOT"></li>
+                <li class="actual"><a href="/">
+                        <i class="transi home"></i>
+                        <span class="material-symbols-outlined">home</span>
+                        Accueil</a></li>
+                <li><a href="/about">
+                        <span class="material-symbols-outlined">account_circle</span>
+                        A propos</a></li>
+                <li><a href="/contact">
+                        <i class="transi contact"></i>
+                        <span class="material-symbols-outlined">mail</span>
+                        Contact</a></li>
+                <li><a href="/FAQ">
+                        <span class="material-symbols-outlined">help</span>
+                        FAQ</a></li>
+            </ul>
+        </div>
+        <div class="header-mobile">
+            <input type="checkbox" name="checkbox-nav" id="checknav"><label for="checknav"><span
+                    class="material-symbols-outlined">menu</span><img src="assets/img/logoChatLawBOT.jpeg"
+                    alt="logo-CHATLawBOT"></label>
+            <ul class="top-nav">
+                <div class="li-container">
+                    <div class="left-li">
+                        <li class="actual"><a href="#">
+                                <span class="material-symbols-outlined">home</span>
+                                Accueil</a></li>
+                        <li><a href="/about">
+                                <span class="material-symbols-outlined">account_circle</span>
+                                A propos</a></li>
+                    </div>
+                    <div class="right-li">
+                        <li><a href="/contact">
+                                <span class="material-symbols-outlined">mail</span>
+                                Contact</a></li>
+                        <li><a href="#">
+                                <span class="material-symbols-outlined">help</span>
+                                FAQ</a></li>
+                    </div>
+                </div>
+            </ul>
+            <hr>
+        </div>
+    </nav>
+    <main>
+        <div class="cookies_container">
+            <div class="cookies">
+                <h1>Avant de commencer</h1>
+                <p>Nous utilisons des cookies et d'autres données pour le fonctionnement du site et pour améliorer votre
+                    expérience. En cliquant sur "Accepter", vous acceptez l'utilisation des cookies et autres données
+                    sinon cliquez sur "Refuser" mais le site n'utilisera que les cookies nécessaires.</p>
+                <div class="decision-button">
+                    <button id="refuser_cookies" onclick="refuserCookie()">Refuser</button>
+                    <button id="accepter_cookies" onclick="accepterCookie()">Accepter</button>
+                </div>
+            </div>
+        </div>
+        <h1>Bienvenue sur le chatBOT</h1>
+        <p id="p3">"La justice entre vos mains"</p>
+        <article>
+            <div class="chatbot-section">
+                <ul class="chatbot-reponse">
+                    <li class="chat reponse-BOT">
+                        <span class="material-symbols-outlined">smart_toy</span>
+                        <p>Je suis le chatBOT Juridique, comment puis-je vous aider ?</p>
+                    </li>
+                </ul>
+                <form class="user-question">
+                    <textarea type="text" id="userInput" placeholder="Posez votre question ici" maxlength="200"
+                        required></textarea>
+                    <button id="buttonUser" class="material-icons"><span
+                            class="material-symbols-outlined">send</span></button>
+                </form>
+            </div>
+        </article>
+        <div class="consultante-popup">
+            <div class="texte_popup">
+                <p class="information_proposition">Besoin de conseils approfondis en droit, avec une experte ?</p>
+            </div>
+            <div class="img-consultante">
+                <a href="https://lajuristeindependante.com/" target="_blank"><img src="assets/img/logo-consultante.png"
+                        alt="consultante_logo"></a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <hr>
+        <div class="about">
+            <p>
+                Le chatBot est un outil d'aide à l'information mais n'est pas un substitut à un avis juridique
+                professionnel. Nous vous conseillons de consulter un.e spécialiste.
+            </p>
+        </div>
+        <div class="footer-content">
+            <div>
+                <h2>Contact</h2>
+                <div class="contact">
+                   
+                    <p>
+                        <span class="material-symbols-outlined">mail</span>
+                        <a href="mailto:contactlawtchat@gmail.com">contactlawtchat@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+            <div class="links">
+                <h2>Liens utiles</h2>
+                <ul>
+                    <li><a href="/contact">Nous contacter</a></li>
+                    <li><a href="/privacy-policy">Politique de confidentialité</a></li>
+                    <li><a href="/cookie-policy">Politique de cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="copy">
+            <span class="material-symbols-outlined">copyright</span>Lawtchat - Tous droits réservés
+        </p>
+    </footer>
+</body>
+
+</html>
